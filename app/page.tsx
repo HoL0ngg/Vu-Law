@@ -1,6 +1,12 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useEffect, useRef, useState } from "react";
+import Brand from "./components/Brand";
+import ScrollFX from "./components/ScrollFX";
+
+/** Chỉ số xếp lớp cho hiệu ứng reveal (biến --d trong globals.css). */
+const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
 
 const services = [
   {
@@ -38,52 +44,11 @@ const awards = [
   { mark: "AP", type: "Thành viên nghề nghiệp", year: "ASIA PACIFIC", title: "Tên hiệp hội hoặc tổ chức", note: "Nội dung chờ cập nhật từ hồ sơ năng lực" },
 ];
 
-function Mark({ small = false }: { small?: boolean }) {
-  return (
-    <div className={`mark ${small ? "mark--small" : ""}`} aria-label="Integritas Vu Legal">
-      <svg viewBox="0 0 70 70" aria-hidden="true">
-        <path d="M35 5 59 15v19c0 16-10 25-24 31C21 59 11 50 11 34V15L35 5Z" />
-        <path d="M21 21h28M25 27l10 23 10-23M35 19v31" />
-      </svg>
-      <div><b>INTEGRITAS VU LEGAL</b><span>INTEGRITY · STRATEGY · RESULTS</span></div>
-    </div>
-  );
-}
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeService, setActiveService] = useState(0);
   const [awardIndex, setAwardIndex] = useState(0);
-  const hero = useRef<HTMLElement>(null);
-  const heroImage = useRef<HTMLDivElement>(null);
   const dragStart = useRef(0);
-
-  useEffect(() => {
-    const revealObserver = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")),
-      { threshold: 0.14 }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-    let ticking = false;
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        document.documentElement.style.setProperty("--scroll-y", `${window.scrollY}px`);
-        if (hero.current) {
-          const rect = hero.current.getBoundingClientRect();
-          const distance = Math.max(rect.height - window.innerHeight, 1);
-          const progress = Math.max(0, Math.min(1, -rect.top / distance));
-          hero.current.style.setProperty("--hero-p", progress.toFixed(3));
-          if (heroImage.current) heroImage.current.style.transform = `scale(${1.04 + progress * 0.12}) translate3d(0, ${progress * 3}%, 0)`;
-        }
-        ticking = false;
-      });
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => { revealObserver.disconnect(); window.removeEventListener("scroll", onScroll); };
-  }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => setAwardIndex((current) => (current + 1) % awards.length), 5200);
@@ -92,8 +57,10 @@ export default function Home() {
 
   return (
     <main>
+      <ScrollFX />
+
       <header className="nav">
-        <a href="#top" onClick={() => setMenuOpen(false)}><Mark small /></a>
+        <a href="#top" onClick={() => setMenuOpen(false)} aria-label="Integritas Vu Legal — về đầu trang"><Brand /></a>
         <nav className={menuOpen ? "open" : ""}>
           <a href="#about" onClick={() => setMenuOpen(false)}>Giới thiệu</a>
           <a href="#services" onClick={() => setMenuOpen(false)}>Lĩnh vực</a>
@@ -103,9 +70,9 @@ export default function Home() {
         <button className="menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Mở menu"><i /><i /></button>
       </header>
 
-      <section className="hero" id="top" ref={hero}>
+      <section className="hero" id="top" data-hero>
         <div className="hero-stage">
-          <div className="hero-image" ref={heroImage} />
+          <div className="hero-image" data-hero-image />
           <div className="hero-shade" />
 
           <div className="hero-fly hero-fly--pillar" aria-hidden="true"><span /></div>
@@ -129,11 +96,11 @@ export default function Home() {
       </section>
 
       <section className="manifesto" id="about">
-        <div className="orb orb-one" />
-        <div className="section-label reveal">VỀ CHÚNG TÔI</div>
+        <div className="orb orb-one" data-parallax />
+        <div className="section-label reveal">VỀ CHÚNG TÔI<i className="label-rule reveal-rule" /></div>
         <div className="manifesto-grid">
           <p className="lead reveal">Pháp luật không chỉ là khuôn khổ.<br />Đó là <em>đòn bẩy</em> cho những quyết định đúng.</p>
-          <div className="about-copy reveal delay"><p>Chúng tôi kết hợp chuyên môn sâu với tư duy kinh doanh để tìm ra con đường hiệu quả nhất cho mỗi khách hàng.</p><a href="#contact">Hồ sơ năng lực <b>→</b></a></div>
+          <div className="about-copy reveal" style={stagger(2)}><p>Chúng tôi kết hợp chuyên môn sâu với tư duy kinh doanh để tìm ra con đường hiệu quả nhất cho mỗi khách hàng.</p><a href="#contact">Hồ sơ năng lực <b>→</b></a></div>
         </div>
         <div className="awards-showcase reveal">
           <div className="awards-head">
@@ -168,10 +135,10 @@ export default function Home() {
       </section>
 
       <section className="services" id="services">
-        <div className="expertise-head reveal">
-          <div className="section-label">LĨNH VỰC CHUYÊN MÔN</div>
-          <h2>Chuyên môn <em>cốt lõi.</em></h2>
-          <p>Chúng tôi cung cấp giải pháp rõ ràng cho những vấn đề pháp lý phức tạp, kết hợp tư duy chiến lược với kinh nghiệm thực tiễn.</p>
+        <div className="expertise-head">
+          <div className="section-label reveal">LĨNH VỰC CHUYÊN MÔN<i className="label-rule reveal-rule" /></div>
+          <h2 className="reveal-line" style={stagger(1)}>Chuyên môn <em>cốt lõi.</em></h2>
+          <p className="reveal" style={stagger(3)}>Chúng tôi cung cấp giải pháp rõ ràng cho những vấn đề pháp lý phức tạp, kết hợp tư duy chiến lược với kinh nghiệm thực tiễn.</p>
         </div>
         <div className="expertise-tabs reveal" role="tablist" aria-label="Lĩnh vực chuyên môn">
           {services.map((service, index) => <button key={service.title} className={activeService === index ? "is-active" : ""} onClick={() => setActiveService(index)} role="tab" aria-selected={activeService === index}>{service.short}</button>)}
@@ -179,27 +146,30 @@ export default function Home() {
         <div className="expertise-content reveal" role="tabpanel">
           <div className="expertise-current"><span>Đang xem</span><strong>{services[activeService].title}</strong></div>
           <div className="expertise-grid" key={activeService}>
-            {services[activeService].areas.map((area) => <a href="#contact" className="expertise-item" key={area}><span>{area}</span><i>+</i></a>)}
+            {services[activeService].areas.map((area, index) => <a href="#contact" className="expertise-item" key={area} style={stagger(index)}><span>{area}</span><i>+</i></a>)}
           </div>
         </div>
       </section>
 
       <section className="statement">
-        <div className="statement-image" />
+        <div className="statement-image" data-parallax />
         <div className="statement-overlay" />
-        <div className="statement-copy reveal">
-          <span>CHIẾN LƯỢC · TẬN TÂM · HIỆU QUẢ</span>
-          <blockquote>“Mỗi vụ việc là một trách nhiệm.<br />Mỗi giải pháp là một <em>cam kết</em>.”</blockquote>
+        <div className="statement-copy">
+          <span className="reveal">CHIẾN LƯỢC · TẬN TÂM · HIỆU QUẢ</span>
+          <blockquote className="reveal-line" style={stagger(1)}>“Mỗi vụ việc là một trách nhiệm.<br />Mỗi giải pháp là một <em>cam kết</em>.”</blockquote>
         </div>
         <div className="seal" aria-hidden="true"><span>IVL</span><i>INTEGRITAS · VU LEGAL ·</i></div>
       </section>
 
       <section className="insights" id="insights">
-        <div className="insights-head reveal"><div><div className="section-label">GÓC NHÌN</div><h2>Kiến thức tạo nên<br /><em>lợi thế.</em></h2></div><a href="/publications">Xem tất cả <b>→</b></a></div>
+        <div className="insights-head">
+          <div><div className="section-label reveal">GÓC NHÌN<i className="label-rule reveal-rule" /></div><h2 className="reveal-line" style={stagger(1)}>Kiến thức tạo nên<br /><em>lợi thế.</em></h2></div>
+          <a className="reveal" style={stagger(3)} href="/publications">Xem tất cả <b>→</b></a>
+        </div>
         <div className="article-grid">
-          {articles.map((article, i) => (
-            <a className="article reveal" href="/publications" key={article.title} style={{ transitionDelay: `${i * 100}ms` }}>
-              <div className={`article-art art-${i + 1}`}><span>{article.tag}</span><b>↗</b></div>
+          {articles.map((article, index) => (
+            <a className="article reveal" href="/publications" key={article.title} style={stagger(index)}>
+              <div className={`article-art art-${index + 1}`}><span>{article.tag}</span><b>↗</b></div>
               <time>{article.date}</time><h3>{article.title}</h3>
             </a>
           ))}
@@ -207,8 +177,11 @@ export default function Home() {
       </section>
 
       <footer id="contact">
-        <div className="footer-main reveal"><div><div className="section-label">LIÊN HỆ</div><h2>Cùng bắt đầu một<br />cuộc <em>đối thoại.</em></h2></div><a className="contact-circle" href="mailto:hello@integritasvulegal.com"><span>Liên hệ ngay</span><b>↗</b></a></div>
-        <div className="footer-bottom"><Mark /><div><span>TP. Hồ Chí Minh, Việt Nam</span><a href="mailto:hello@integritasvulegal.com">hello@integritasvulegal.com</a></div><span>© 2026 IVL</span></div>
+        <div className="footer-main">
+          <div><div className="section-label reveal">LIÊN HỆ<i className="label-rule reveal-rule" /></div><h2 className="reveal-line" style={stagger(1)}>Cùng bắt đầu một<br />cuộc <em>đối thoại.</em></h2></div>
+          <a className="contact-circle reveal" style={stagger(3)} href="mailto:hello@integritasvulegal.com"><span>Liên hệ ngay</span><b>↗</b></a>
+        </div>
+        <div className="footer-bottom reveal"><Brand size="lg" /><div><span>TP. Hồ Chí Minh, Việt Nam</span><a href="mailto:hello@integritasvulegal.com">hello@integritasvulegal.com</a></div><span>© 2026 IVL</span></div>
       </footer>
     </main>
   );
