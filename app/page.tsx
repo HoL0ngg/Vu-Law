@@ -60,7 +60,7 @@ export default function Home() {
       <ScrollFX />
 
       <header className="nav">
-        <a href="#top" onClick={() => setMenuOpen(false)} aria-label="Integritas Vu Legal — về đầu trang"><Brand /></a>
+        <a href="#top" onClick={() => setMenuOpen(false)} aria-label="Integritas Vu Legal — về đầu trang"><Brand preload /></a>
         <nav className={menuOpen ? "open" : ""}>
           <a href="#about" onClick={() => setMenuOpen(false)}>Giới thiệu</a>
           <a href="#services" onClick={() => setMenuOpen(false)}>Lĩnh vực</a>

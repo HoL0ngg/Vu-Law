@@ -240,31 +240,12 @@ body:before{content:"";position:fixed;inset:0;z-index:70;pointer-events:none;opa
 .service-card,.expertise-item{transition:color .35s var(--ease),border-color .35s var(--ease),
   transform .45s var(--ease),background .35s var(--ease)}
 
-/* --- Biểu trưng IVL --- */
-.ivl-defs{position:absolute;width:0;height:0;overflow:hidden}
-.mark{display:inline-flex;align-items:center;gap:15px}
-.mark .ivl-emblem{height:54px;width:auto;flex:none;fill:none;stroke:none;stroke-width:0;
+/* --- Logo thương hiệu --- */
+.mark{display:inline-flex;align-items:center;line-height:0}
+.mark .brand-logo{display:block;width:auto;height:78px;object-fit:contain;
   transition:filter .55s var(--ease),transform .55s var(--ease)}
-.mark .mark-text{display:flex;flex-direction:column;gap:7px;letter-spacing:normal;color:inherit}
-.mark b{font-family:var(--font-display),Georgia,serif;font-size:13px;font-weight:600;
-  letter-spacing:.19em;line-height:1;color:var(--paper)}
-.mark .mark-text>span{font-family:var(--font-sans),Arial,sans-serif;font-size:7px;
-  letter-spacing:.26em;line-height:1;color:var(--gold-light)}
-.mark--lg .ivl-emblem{height:84px}
-.mark--lg b{font-size:17px;letter-spacing:.21em}
-.mark--lg .mark-text>span{font-size:8px;letter-spacing:.3em}
-.mark-rule{display:block;height:1px;width:100%;
-  background:linear-gradient(90deg,var(--gold),rgba(212,175,55,.05))}
-a:hover .ivl-emblem{filter:drop-shadow(0 4px 18px rgba(212,175,55,.5));transform:translateY(-1px)}
-
-.ivl-shield{fill:none;stroke:url(#ivl-gold);stroke-width:5;stroke-linejoin:round}
-.ivl-shield-inner{fill:none;stroke:url(#ivl-gold);stroke-width:1.6;stroke-linejoin:round;opacity:.55}
-.ivl-v,.ivl-column path,.ivl-pivot{fill:url(#ivl-gold)}
-.ivl-scales{fill:none;stroke:url(#ivl-gold);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
-.ivl-volute{fill:none;stroke:var(--navy);stroke-width:2.4}
-.ivl-volute-eye{fill:var(--navy)}
-.ivl-flute{fill:none;stroke:rgba(13,27,42,.45);stroke-width:1.8;stroke-linecap:round}
-.ivl-letter{fill:url(#ivl-silver)}
+.mark--lg .brand-logo{height:156px}
+a:hover .brand-logo{filter:drop-shadow(0 4px 18px rgba(212,175,55,.5));transform:translateY(-1px)}
 
 /* Cinzel (thay Trajan Pro) cho các cụm chữ Latin không dấu */
 .seal span,.pub-orbit span,.award-medal span,.expertise-visual>i,
@@ -273,12 +254,10 @@ a:hover .ivl-emblem{filter:drop-shadow(0 4px 18px rgba(212,175,55,.5));transform
 .pub-brand{gap:15px}
 
 @media(max-width:900px){
-  .nav .mark-text{display:none}
-  .nav .ivl-emblem{height:46px}
-  .mark--lg .ivl-emblem{height:68px}
-  .pub-brand .mark-text{display:none}
+  .nav .brand-logo,.pub-brand .brand-logo{height:66px}
+  .mark--lg .brand-logo{height:132px}
 }
-@media(max-width:560px){.mark--lg{gap:12px}.mark--lg .ivl-emblem{height:58px}.mark--lg b{font-size:14px}}
+@media(max-width:560px){.pub-brand .mark{display:inline-flex}.mark--lg .brand-logo{height:116px}}
 
 @media(prefers-reduced-motion:reduce){
   .reveal,.reveal-line,.reveal-zoom,.reveal-rule{opacity:1;transform:none;filter:none;
@@ -301,7 +280,6 @@ a:hover .ivl-emblem{filter:drop-shadow(0 4px 18px rgba(212,175,55,.5));transform
 .expertise-item{animation:expertiseIn .6s var(--ease) both;animation-delay:calc(var(--d,0) * .05s)}
 
 /* --- Wordmark lớn ở chân trang --- */
-.footer-bottom .mark--lg b{font-size:17px}
-.footer-bottom .mark--lg .mark-text>span{font-size:8px}
+.footer-bottom .mark--lg{justify-self:start}
 
 @media(prefers-reduced-motion:reduce){.expertise-item{animation:none}}

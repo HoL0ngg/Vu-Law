@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond, Cinzel } from "next/font/google";
-import { BrandDefs } from "./components/Brand";
 import "./globals.css";
 
 // Montserrat + Cinzel (thay cho Trajan Pro) theo bảng typography của thương hiệu.
@@ -36,7 +35,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="vi">
       <body className={`${sans.variable} ${serif.variable} ${display.variable}`}>
-        <BrandDefs />
         {children}
       </body>
     </html>

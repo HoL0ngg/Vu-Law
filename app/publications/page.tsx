@@ -26,7 +26,7 @@ export default function PublicationsPage() {
       <ScrollFX />
 
       <header className="pub-nav">
-        <a className="pub-brand" href="/" aria-label="Integritas Vu Legal — về trang chủ"><Brand /></a>
+        <a className="pub-brand" href="/" aria-label="Integritas Vu Legal — về trang chủ"><Brand preload /></a>
         <a className="pub-back" href="/">Trang chủ <b>↗</b></a>
       </header>
 
