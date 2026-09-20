@@ -72,14 +72,14 @@ Full tree with URL slugs: `.agents/skills/ivl-sitemap-navigation/references/site
 
 Fill this section in on first run (Step 0) and keep it current. Edit only this section of this file.
 
-- Framework / build tool: TBD
-- Package manager: TBD
-- Dev / build / lint / typecheck / test commands: TBD
-- Where page copy lives (components, MDX, JSON, i18n, CMS): TBD
-- Prototype routes/pages found, and how each maps to the sitemap (kept / renamed / removed / unlinked): TBD
-- i18n mechanism in use or chosen (and why): TBD
-- Locale routing decision (default: English at `/`, Vietnamese reserved at `/vi`): TBD
-- Current font family (record BEFORE changing copy or CSS): TBD
+- Framework / build tool: Next.js 16.3.2 with React 19.1 and the App Router; TypeScript; `next dev` / `next build`.
+- Package manager: npm (`package-lock.json` is present).
+- Dev / build / lint / typecheck / test commands: `npm run dev`; `npm run build`; `npm run lint` (this script runs `tsc --noEmit` and is the typecheck); no separate test command exists.
+- Where page copy lives (components, MDX, JSON, i18n, CMS): the prototype hard-codes copy in App Router page/components (`app/page.tsx`, `app/publications/page.tsx`, `app/components/Brand.tsx`) and metadata in `app/layout.tsx`; no MDX, CMS or locale files exist yet. Target: typed dictionaries in `app/i18n/` consumed by components.
+- Prototype routes/pages found, and how each maps to the sitemap (kept / renamed / removed / unlinked): `/` is kept as Home; `/publications` is removed after its prototype-only, unapproved content is unlinked, with the client sitemap represented by the new minimal `/insights` route instead. Prototype header destinations map as follows: `#about` -> `/about`, `#services` -> `/expertise`, `/publications` -> `/insights`, `#contact` -> `/contact`; the logo's `#top` maps to `/`. The missing sitemap routes `/about`, `/expertise`, `/people`, `/insights`, `/careers`, and `/contact` will be created; `/experience` and the three legal placeholder routes will be added per the stated defaults.
+- i18n mechanism in use or chosen (and why): none exists in the prototype. Chosen: dependency-free typed `en` / `vi` dictionaries plus locale and route helpers, because the site is small and Next.js does not include a built-in message-catalogue API; this avoids a new dependency and keeps all visible strings out of components.
+- Locale routing decision (default: English at `/`, Vietnamese reserved at `/vi`): English remains unprefixed. Mirrored `/vi` routing is reserved behind `VI_ENABLED = false`; while disabled, `/vi/*` returns 404 and no switcher, `hreflang`, or Vietnamese sitemap entries are rendered.
+- Current font family (record BEFORE changing copy or CSS): the hero sub-line `Giải pháp pháp lý chiến lược, ...` computes to `"Cormorant Garamond", "Cormorant Garamond Fallback", Georgia, serif`, weight 300, normal style. The prototype loads Cormorant Garamond 400/500/600 normal + italic with the Vietnamese subset, Montserrat 300/400/500/600, and Cinzel 400/600; source and a live Chrome computed-style check both identify Cormorant Garamond as the target family.
 
 ## Definition of done
 
