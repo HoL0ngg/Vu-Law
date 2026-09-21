@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { vi } from "../i18n/vi";
-import { aboutAnchors, routePath } from "../i18n/routes";
+import { aboutAnchorPath, routePath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
@@ -66,7 +66,7 @@ export default function HomePageView({ dictionary, locale = "en" }: HomePageView
           <p className="eyebrow reveal">{home.approach.eyebrow}</p>
           <h2 className="reveal-line" style={stagger(1)}>{home.approach.title}</h2>
           <p className="reveal" style={stagger(2)}>{home.approach.statement}</p>
-          <Link className="text-link reveal" style={stagger(3)} href={aboutAnchors.approach}>
+          <Link className="text-link reveal" style={stagger(3)} href={aboutAnchorPath("approach", locale)}>
             {home.approach.cta}<span aria-hidden="true">→</span>
           </Link>
         </div>
@@ -128,4 +128,3 @@ export default function HomePageView({ dictionary, locale = "en" }: HomePageView
     </PageFrame>
   );
 }
-

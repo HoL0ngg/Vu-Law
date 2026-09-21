@@ -32,3 +32,8 @@ export const aboutAnchors = {
   values: `${routes.about}#our-values`,
 } as const;
 
+export type AboutAnchorKey = keyof typeof aboutAnchors;
+
+export function aboutAnchorPath(anchor: AboutAnchorKey, locale: Locale = "en"): string {
+  return localePath(aboutAnchors[anchor], locale);
+}
