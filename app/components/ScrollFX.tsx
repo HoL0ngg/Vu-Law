@@ -57,11 +57,15 @@ export default function ScrollFX() {
 
       if (!reduced && hero) {
         const rect = hero.getBoundingClientRect();
-        const distance = Math.max(rect.height - viewport, 1);
-        const progress = Math.min(1, Math.max(0, -rect.top / distance));
+        // Measure against the hero's own height, not its overflow past the viewport.
+        // The hero is one viewport tall, so `height - viewport` collapses to ~0 and the
+        // clamp floor of 1px made the whole animation complete within a single pixel of
+        // scroll - the image snapped from scale(1.05) to scale(1.18) instead of drifting.
+        const progress = Math.min(1, Math.max(0, -rect.top / Math.max(rect.height, 1)));
         hero.style.setProperty("--hero-p", progress.toFixed(3));
         if (heroImage) {
-          heroImage.style.transform = `scale(${(1.05 + progress * 0.13).toFixed(3)}) translate3d(0,${(progress * 3).toFixed(2)}%,0)`;
+          // A 6% drift over a full viewport of scroll; the old 13% read as a jump.
+          heroImage.style.transform = `scale(${(1.06 + progress * 0.06).toFixed(3)}) translate3d(0,${(progress * 4).toFixed(2)}%,0)`;
         }
       }
 
