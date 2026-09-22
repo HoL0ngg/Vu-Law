@@ -70,7 +70,8 @@ Implement the strategy systematically, adapt when circumstances change and maint
 
 ## Our values (`#our-values`)
 
-An intro line and three values (name in capitals + one sentence).
+An intro line and five values (name in capitals + one sentence). EXCELLENCE and COMMITMENT
+were added by the Client in `Feedbacks/IVL _ WEBSITE content.docx`.
 
 ```text
 Our values
@@ -81,6 +82,10 @@ INTEGRITY
 We value honesty, transparency and consistency in every professional relationship.
 CONFIDENTIALITY
 Client information is handled with care and in strict accordance with our professional duties of confidentiality.
+EXCELLENCE
+Every matter is handled with diligence, precision and professional responsibility.
+COMMITMENT
+We take responsibility for the work entrusted to us and remain engaged throughout the course of the matter.
 ```
 
 ## Notes

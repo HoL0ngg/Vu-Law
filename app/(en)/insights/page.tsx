@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/PlaceholderPage";
+import InsightsPageView from "../../components/InsightsPageView";
 import { en } from "../../i18n/en";
 
-export const metadata: Metadata = { title: en.meta.insightsTitle, robots: { index: false, follow: true } };
+export const metadata: Metadata = { title: en.meta.insightsTitle };
 
 export default function InsightsPage() {
-  return <PlaceholderPage dictionary={en} title={en.pages.insights} />;
+  return <InsightsPageView dictionary={en} />;
 }
-

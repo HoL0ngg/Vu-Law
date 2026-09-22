@@ -1228,3 +1228,415 @@ a:hover .brand-logo {
     transform: none !important;
   }
 }
+
+/* ==========================================================================
+   Phase 3-6 pages: Expertise, People, Contact, Careers, Insights
+   Reuses the navy/gold language and the reveal hooks already in this file.
+   ========================================================================== */
+
+.page-hero .about-hero-copy .text-link {
+  margin-top: 40px;
+  color: var(--paper);
+}
+
+/* --- Expertise: index of practice areas --- */
+.practice-index {
+  padding: 90px 8vw;
+}
+
+.practice-index-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(13, 33, 48, 0.16);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  list-style: none;
+}
+
+.practice-index-list li {
+  border-bottom: 1px solid rgba(13, 33, 48, 0.16);
+}
+
+.practice-index-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 26px 24px 0;
+  font-size: clamp(21px, 1.9vw, 28px);
+  gap: 18px;
+  transition: color 0.3s var(--ease), padding 0.3s var(--ease);
+}
+
+.practice-index-list a:hover {
+  padding-left: 12px;
+  color: var(--gold-deep);
+}
+
+.practice-index-list i {
+  flex: none;
+  color: var(--gold-deep);
+  font-size: 17px;
+  font-style: normal;
+}
+
+/* --- Expertise: one block per practice area --- */
+.practice-area {
+  display: grid;
+  padding: 110px 8vw;
+  gap: 8vw;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  scroll-margin-top: 96px;
+}
+
+.practice-area-copy .display-heading {
+  margin-bottom: 30px;
+}
+
+.practice-area-copy p {
+  max-width: 44ch;
+  margin-bottom: 20px;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.65;
+}
+
+.practice-area-copy .text-link {
+  margin-top: 22px;
+}
+
+.practice-area-services ul {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(13, 33, 48, 0.16);
+  list-style: none;
+}
+
+.practice-area-services li {
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(13, 33, 48, 0.14);
+  font-size: clamp(16px, 1.25vw, 19px);
+}
+
+.practice-area-services .section-label {
+  margin-bottom: 26px;
+  color: var(--gold-deep);
+}
+
+.practice-closing {
+  padding: 130px 8vw;
+  text-align: center;
+}
+
+.practice-closing .display-heading {
+  max-width: 24ch;
+  margin: 0 auto 44px;
+  font-size: clamp(30px, 3.4vw, 52px);
+  line-height: 1.24;
+}
+
+.practice-closing .cta-row {
+  justify-content: center;
+}
+
+/* --- People --- */
+.people-list {
+  padding: 110px 8vw;
+}
+
+.lawyer-card {
+  display: grid;
+  padding: 60px 0;
+  border-bottom: 1px solid rgba(13, 33, 48, 0.16);
+  gap: 6vw;
+  grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+}
+
+.lawyer-card:last-child {
+  border-bottom: 0;
+}
+
+.lawyer-card .portrait-placeholder {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+}
+
+.lawyer-copy .display-heading {
+  margin-bottom: 12px;
+  font-size: clamp(32px, 3.4vw, 52px);
+}
+
+.lawyer-role {
+  margin-bottom: 30px;
+  color: var(--gold-deep);
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-style: italic;
+}
+
+.lawyer-copy p {
+  max-width: 68ch;
+  margin-bottom: 18px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.72;
+}
+
+/* --- Contact --- */
+.contact-lawyer {
+  padding: 100px 8vw;
+}
+
+.contact-card {
+  max-width: 620px;
+  padding: 46px 48px;
+  border: 1px solid rgba(13, 33, 48, 0.18);
+}
+
+.contact-card h2 {
+  margin-bottom: 10px;
+  font-size: clamp(26px, 2.6vw, 38px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.contact-details {
+  margin: 0 0 32px;
+}
+
+.contact-details > div {
+  display: flex;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(13, 33, 48, 0.12);
+  gap: 14px;
+}
+
+.contact-details dt {
+  flex: none;
+  min-width: 92px;
+  color: var(--gold-deep);
+}
+
+.contact-details dd {
+  margin: 0;
+}
+
+/* --- Contact: enquiry form --- */
+.enquiry {
+  padding: 110px 8vw 130px;
+}
+
+.enquiry-head {
+  max-width: 760px;
+  margin-bottom: 58px;
+}
+
+.enquiry-head .display-heading {
+  margin-bottom: 20px;
+  font-size: clamp(30px, 3.6vw, 56px);
+}
+
+.enquiry-form {
+  max-width: 880px;
+}
+
+.enquiry-form fieldset {
+  margin: 0 0 42px;
+  padding: 0;
+  border: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 30px;
+}
+
+.enquiry-form legend {
+  margin-bottom: 22px;
+  padding: 0;
+  color: var(--gold-deep);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.enquiry-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.enquiry-form label span {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+.enquiry-form label b {
+  color: var(--gold-deep);
+  font-weight: 400;
+}
+
+.enquiry-description {
+  grid-column: 1 / -1;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+  padding: 13px 15px;
+  border: 1px solid rgba(13, 33, 48, 0.24);
+  background: rgba(255, 255, 255, 0.65);
+  color: inherit;
+  font-size: 17px;
+  transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.enquiry-form textarea {
+  resize: vertical;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+  border-color: var(--gold-deep);
+  background: #fff;
+  outline: none;
+}
+
+.enquiry-notice {
+  margin-bottom: 38px;
+  padding: 30px 34px;
+  border-left: 2px solid var(--gold-deep);
+  background: rgba(13, 33, 48, 0.04);
+}
+
+.enquiry-notice h3 {
+  margin-bottom: 16px;
+  color: var(--gold-deep);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.enquiry-notice p {
+  max-width: 80ch;
+  margin-bottom: 13px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.enquiry-notice p:last-child {
+  margin-bottom: 0;
+}
+
+.enquiry-submit {
+  display: inline-flex;
+  align-items: center;
+  padding: 17px 38px;
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: var(--paper);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+.enquiry-submit:hover {
+  background: transparent;
+  color: var(--navy);
+}
+
+/* --- Careers --- */
+.careers {
+  display: grid;
+  padding: 110px 8vw 130px;
+  gap: 8vw;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.careers-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(13, 33, 48, 0.16);
+  list-style: none;
+}
+
+.careers-list li {
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(13, 33, 48, 0.14);
+  font-size: clamp(22px, 2.2vw, 32px);
+}
+
+.careers-block p {
+  max-width: 46ch;
+  font-size: clamp(16px, 1.25vw, 19px);
+  line-height: 1.7;
+}
+
+.careers-email {
+  margin-top: 8px;
+  color: var(--gold-deep);
+  font-size: clamp(19px, 1.7vw, 26px);
+}
+
+/* --- Insights page reuses the homepage card grid --- */
+.insights-section .insight-card h2 {
+  margin: 12px 0 18px;
+  font-size: clamp(22px, 1.9vw, 28px);
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .practice-area,
+  .lawyer-card {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+
+  .practice-area {
+    padding: 80px 24px;
+  }
+
+  .practice-index,
+  .people-list,
+  .contact-lawyer,
+  .careers {
+    padding: 80px 24px;
+  }
+
+  .enquiry {
+    padding: 80px 24px 100px;
+  }
+
+  .practice-closing {
+    padding: 90px 24px;
+  }
+
+  .lawyer-card .portrait-placeholder {
+    max-width: 260px;
+  }
+
+  .contact-card {
+    padding: 34px 26px;
+  }
+}
+
+@media (max-width: 560px) {
+  .enquiry-form fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-notice {
+    padding: 22px 20px;
+  }
+
+  .enquiry-submit {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .contact-details > div {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

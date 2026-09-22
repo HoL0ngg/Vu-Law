@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/PlaceholderPage";
+import CareersPageView from "../../components/CareersPageView";
 import { en } from "../../i18n/en";
 
-export const metadata: Metadata = { title: en.meta.careersTitle, robots: { index: false, follow: true } };
+export const metadata: Metadata = { title: en.meta.careersTitle };
 
 export default function CareersPage() {
-  return <PlaceholderPage dictionary={en} title={en.pages.careers} />;
+  return <CareersPageView dictionary={en} />;
 }
-

@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "../../components/PlaceholderPage";
+import ContactPageView from "../../components/ContactPageView";
 import { en } from "../../i18n/en";
 
-export const metadata: Metadata = { title: en.meta.contactTitle, robots: { index: false, follow: true } };
+export const metadata: Metadata = { title: en.meta.contactTitle };
 
 export default function ContactPage() {
-  return <PlaceholderPage dictionary={en} title={en.pages.contact} />;
+  return <ContactPageView dictionary={en} />;
 }
-
