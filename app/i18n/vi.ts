@@ -384,6 +384,26 @@ export const vi = {
     closingCta: "TRAO ĐỔI VỚI LUẬT SƯ",
     insightsCta: "GÓC NHÌN PHÁP LÝ",
   },
+  // "Góc nhìn" and "Đọc thêm" are the Client's own words, reused from their navigation
+  // and their Homepage insight cards. The article titles stay as placeholders.
+  insightsPage: {
+    heading: "Góc nhìn",
+    readMore: "Đọc thêm",
+  },
+  // Page labels, taken word for word from the Client's own Vietnamese navigation and
+  // footer lists in the source document. Nothing here is translated by us.
+  pages: {
+    expertise: "Chuyên môn",
+    people: "Đội ngũ",
+    insights: "Góc nhìn",
+    careers: "Cơ hội nghề nghiệp",
+    contact: "Liên hệ",
+    // TODO(client): the Client's Vietnamese footer has no "Experience" entry
+    // (AGENTS.md question 1), so this label falls back to English.
+    terms: "Điều khoản sử dụng",
+    privacy: "Chính sách bảo mật",
+    legalDisclaimer: "Miễn trừ trách nhiệm",
+  },
   // TODO(client): Vietnamese copy for People, Contact, Careers and Insights pages is pending.
   footer: {
     navigationTitle: "Điều hướng",

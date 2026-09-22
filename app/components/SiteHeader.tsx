@@ -6,6 +6,7 @@ import { useState } from "react";
 import type { Dictionary, Locale } from "../i18n/config";
 import { routePath, type RouteKey } from "../i18n/routes";
 import Brand from "./Brand";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navItems: ReadonlyArray<{ label: keyof Dictionary["navigation"]; route: RouteKey }> = [
   { label: "home", route: "home" },
@@ -46,6 +47,7 @@ export default function SiteHeader({ dictionary, locale }: SiteHeaderProps) {
             </Link>
           );
         })}
+        <LanguageSwitcher locale={locale} onNavigate={() => setMenuOpen(false)} />
       </nav>
       <button
         className={menuOpen ? "menu is-open" : "menu"}

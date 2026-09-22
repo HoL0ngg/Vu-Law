@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import AboutPageView from "../../../components/AboutPageView";
 import CareersPageView from "../../../components/CareersPageView";
@@ -7,11 +8,43 @@ import HomePageView from "../../../components/HomePageView";
 import InsightsPageView from "../../../components/InsightsPageView";
 import PeoplePageView from "../../../components/PeoplePageView";
 import PlaceholderPage from "../../../components/PlaceholderPage";
-import { getVietnameseDictionary, VI_ENABLED } from "../../../i18n/config";
+import { getVietnameseDictionary, VI_ENABLED, type Dictionary } from "../../../i18n/config";
+import { languageAlternates, type RouteKey } from "../../../i18n/routes";
 
 type VietnamesePageProps = {
   params: Promise<{ segments?: string[] }>;
 };
+
+/** Slug -> the route key and the `meta` entry that names the page. */
+const PAGES: Record<string, { route: RouteKey; meta: keyof Dictionary["meta"] }> = {
+  "": { route: "home", meta: "homeTitle" },
+  about: { route: "about", meta: "aboutTitle" },
+  expertise: { route: "expertise", meta: "expertiseTitle" },
+  people: { route: "people", meta: "peopleTitle" },
+  insights: { route: "insights", meta: "insightsTitle" },
+  careers: { route: "careers", meta: "careersTitle" },
+  contact: { route: "contact", meta: "contactTitle" },
+  experience: { route: "experience", meta: "experienceTitle" },
+  "terms-of-use": { route: "terms", meta: "termsTitle" },
+  "privacy-policy": { route: "privacy", meta: "privacyTitle" },
+  "legal-disclaimer": { route: "legalDisclaimer", meta: "legalDisclaimerTitle" },
+};
+
+export async function generateMetadata({ params }: VietnamesePageProps): Promise<Metadata> {
+  if (!VI_ENABLED) return {};
+  const { segments = [] } = await params;
+  const page = PAGES[segments.join("/")];
+  if (!page) return {};
+
+  // The Client has supplied no Vietnamese metadata, so these titles come through the
+  // dictionary merge as the approved English. A `/vi` page previously rendered with no
+  // <title> at all, which is worse than an English one.
+  // TODO(client): Vietnamese page titles and meta descriptions.
+  return {
+    title: getVietnameseDictionary().meta[page.meta],
+    alternates: { languages: languageAlternates(page.route) },
+  };
+}
 
 export default async function VietnamesePage({ params }: VietnamesePageProps) {
   if (!VI_ENABLED) notFound();

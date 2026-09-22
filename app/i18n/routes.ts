@@ -37,3 +37,23 @@ export type AboutAnchorKey = keyof typeof aboutAnchors;
 export function aboutAnchorPath(anchor: AboutAnchorKey, locale: Locale = "en"): string {
   return localePath(aboutAnchors[anchor], locale);
 }
+
+/** Strip a `/vi` prefix, giving the canonical English path. */
+export function stripLocale(pathname: string): string {
+  if (pathname === "/vi") return "/";
+  if (pathname.startsWith("/vi/")) return pathname.slice(3);
+  return pathname;
+}
+
+/** The same page in the other locale, for the language switcher and hreflang tags. */
+export function switchLocalePath(pathname: string, target: Locale): string {
+  return localePath(stripLocale(pathname), target);
+}
+
+/** hreflang map for a route, used in each page's `alternates.languages` metadata. */
+export function languageAlternates(key: RouteKey) {
+  return {
+    en: routePath(key, "en"),
+    vi: routePath(key, "vi"),
+  };
+}
