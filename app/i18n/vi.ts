@@ -89,13 +89,15 @@ export const vi = {
   // TODO(client): Vietnamese metadata, brand and page-title copy is still pending.
   navigation: {
     label: "Điều hướng",
+    // Approved by the site owner, not taken from the Client's document - their Vietnamese
+    // navigation list has no entry for Home. Worth confirming with the Client at sign-off.
+    home: "Trang chủ",
     about: "Về chúng tôi",
     expertise: "Chuyên môn",
     people: "Đội ngũ",
     insights: "Góc nhìn",
     careers: "Cơ hội nghề nghiệp",
     contact: "Liên hệ",
-    // TODO(client): Vietnamese label for Home is not in the Client's document.
   },
   home: {
     hero: {
