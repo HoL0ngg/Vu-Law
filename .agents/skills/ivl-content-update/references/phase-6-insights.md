@@ -1,5 +1,9 @@
 # Phase 6 - Insights (Client-approved copy)
 
+> **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
+> "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
+> in Vietnamese. Strings below carry the revised form.
+
 Source: `Feedbacks/IVL _ WEBSITE content.docx`, section "PHASE INSIGHTS".
 
 Rule for this file: lines inside `text` fences must appear verbatim. Arrows (`→`) are omitted

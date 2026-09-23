@@ -117,15 +117,15 @@ export const vi = {
       ],
       paragraphs: [
         "Tại Integritas Vũ Legal, chúng tôi tin rằng giá trị của tư vấn pháp lý không chỉ nằm ở việc xác định pháp luật quy định như thế nào.",
-        "IVL được xây dựng theo mô hình một công ty luật tập trung vào chuyên môn, nơi mỗi vấn đề được tiếp cận bằng sự độc lập trong nhận định, chiều sâu trong phân tích và tư duy hướng đến giải pháp.",
+        "Integritas Vũ Legal được xây dựng theo mô hình một công ty luật tập trung vào chuyên môn, nơi mỗi vấn đề được tiếp cận bằng sự độc lập trong nhận định, chiều sâu trong phân tích và tư duy hướng đến giải pháp.",
       ],
       cta: "VỀ INTEGRITAS VŨ LEGAL",
     },
     approach: {
-      eyebrow: "Cách tiếp cận của IVL",
+      eyebrow: "Cách tiếp cận của Integritas Vũ Legal",
       title: "Chính trực — Chiến lược — Chính xác — Kết quả",
       statement: "Chính trực trong nguyên tắc. Nhìn xa hơn câu hỏi pháp lý trước mắt. Chính xác trong thực thi. Hướng đến kết quả cao.",
-      cta: "KHÁM PHÁ CÁCH IVL LÀM VIỆC",
+      cta: "KHÁM PHÁ CÁCH INTEGRITAS VŨ LEGAL LÀM VIỆC",
     },
     expertise: {
       heading: "Chuyên môn",
@@ -152,14 +152,14 @@ export const vi = {
         // TODO(client): Supply the article title and URL.
         { category: "HƯỚNG DẪN DOANH NGHIỆP", title: "[Article title]", linkLabel: "Đọc thêm" },
       ],
-      cta: "KHÁM PHÁ GÓC NHÌN CỦA IVL",
+      cta: "KHÁM PHÁ GÓC NHÌN CỦA INTEGRITAS VŨ LEGAL",
     },
     people: {
       heading: "Đội ngũ của chúng tôi",
       name: "NGUYỄN HÀ THANH VŨ",
       role: "Người sáng lập | Luật sư điều hành",
       profileCta: "XEM HỒ SƠ",
-      peopleCta: "GẶP GỠ ĐỘI NGŨ IVL",
+      peopleCta: "GẶP GỠ ĐỘI NGŨ INTEGRITAS VŨ LEGAL",
       // TODO(client): Supply the photograph of Mr. Vũ.
       portraitAlt: "Ảnh chân dung",
     },
@@ -167,14 +167,14 @@ export const vi = {
   about: {
     title: "Về chúng tôi",
     opening: [
-      "Integritas Vũ Legal (“IVL”) là công ty luật tại Việt Nam, cung cấp dịch vụ tư vấn và đại diện pháp lý cho doanh nghiệp, nhà đầu tư và Khách hàng cá nhân.",
+      "Integritas Vũ Legal là công ty luật tại Việt Nam, cung cấp dịch vụ tư vấn và đại diện pháp lý cho doanh nghiệp, nhà đầu tư và Khách hàng cá nhân.",
       "Chúng tôi tập trung vào giải quyết tranh chấp, doanh nghiệp và thương mại, đầu tư, M&A, bất động sản và xây dựng, cùng các vấn đề pháp lý có tính chất phức tạp hoặc ảnh hưởng đáng kể đến quyền và lợi ích của Khách hàng.",
-      "IVL tiếp cận mỗi vụ việc từ mục tiêu thực tế của Khách hàng. Chúng tôi xác định vấn đề pháp lý, đánh giá rủi ro, cân nhắc các phương án và xây dựng chiến lược phù hợp với từng hoàn cảnh cụ thể.",
+      "Integritas Vũ Legal tiếp cận mỗi vụ việc từ mục tiêu thực tế của Khách hàng. Chúng tôi xác định vấn đề pháp lý, đánh giá rủi ro, cân nhắc các phương án và xây dựng chiến lược phù hợp với từng hoàn cảnh cụ thể.",
     ],
     firm: {
       // TODO(client): Vietnamese heading for "Our firm" is not in the Client's document.
       paragraphs: [
-        "IVL được xây dựng theo mô hình công ty luật boutique, với trọng tâm là chất lượng chuyên môn, sự tham gia trực tiếp của luật sư và khả năng phản hồi linh hoạt.",
+        "Integritas Vũ Legal được xây dựng theo mô hình công ty luật boutique, với trọng tâm là chất lượng chuyên môn, sự tham gia trực tiếp của luật sư và khả năng phản hồi linh hoạt.",
         "Chúng tôi không tiếp cận một vấn đề pháp lý một cách tách biệt. Mỗi tư vấn đều được đặt trong bối cảnh cụ thể của Khách hàng — từ mục tiêu kinh doanh, quyền lợi cần bảo vệ đến những rủi ro và hệ quả có thể phát sinh.",
         "Trong giao dịch, chúng tôi hướng đến việc nhận diện và kiểm soát rủi ro trước khi chúng trở thành tranh chấp.",
         "Trong tranh chấp, chúng tôi tập trung vào việc xác định vị thế của Khách hàng, xây dựng chiến lược và lựa chọn phương thức giải quyết phù hợp.",
@@ -192,12 +192,12 @@ export const vi = {
         {
           term: "Chiến lược",
           descriptor: "Chiến lược trong cách tiếp cận",
-          body: "Pháp luật cung cấp khuôn khổ. Còn đội ngũ tại IVL xác định cách vận dụng khuôn khổ đó để phục vụ mục tiêu của Khách hàng.",
+          body: "Pháp luật cung cấp khuôn khổ. Còn đội ngũ tại Integritas Vũ Legal xác định cách vận dụng khuôn khổ đó để phục vụ mục tiêu của Khách hàng.",
         },
         {
           term: "Chính xác",
           descriptor: "Chính xác trong thực thi",
-          body: "IVL đề cao sự chính xác trong nghiên cứu, chứng cứ, lập luận, soạn thảo và triển khai công việc.",
+          body: "Integritas Vũ Legal đề cao sự chính xác trong nghiên cứu, chứng cứ, lập luận, soạn thảo và triển khai công việc.",
         },
         {
           term: "Kết quả",
@@ -210,7 +210,7 @@ export const vi = {
       heading: "Cách chúng tôi tiếp cận vụ việc",
       title: "Từ vấn đề pháp lý đến chiến lược hành động.",
       paragraphs: [
-        "Mỗi vụ việc có hoàn cảnh, rủi ro và mục tiêu riêng. Vì vậy, IVL không áp dụng một giải pháp giống nhau cho mọi Khách hàng.",
+        "Mỗi vụ việc có hoàn cảnh, rủi ro và mục tiêu riêng. Vì vậy, Integritas Vũ Legal không áp dụng một giải pháp giống nhau cho mọi Khách hàng.",
         "Cách chúng tôi làm việc được xây dựng trên bốn bước:",
       ],
       steps: [
@@ -235,7 +235,7 @@ export const vi = {
   expertisePage: {
     intro: "Integritas Vũ Legal tư vấn và đại diện cho doanh nghiệp, nhà đầu tư và Khách hàng cá nhân trong các giao dịch, tranh chấp và những vấn đề pháp lý quan trọng. Mỗi vụ việc được tiếp cận trên cơ sở mục tiêu của Khách hàng, các rủi ro liên quan và tính khả thi của từng phương án.",
     areasTitle: "Lĩnh vực hành nghề chính của chúng tôi:",
-    lawyersCta: "TRAO ĐỔI VỚI LUẬT SƯ IVL",
+    lawyersCta: "TRAO ĐỔI VỚI LUẬT SƯ INTEGRITAS VŨ LEGAL",
     servicesTitle: "PHẠM VI DỊCH VỤ",
     areaCta: "TRAO ĐỔI VỀ VẤN ĐỀ CỦA BẠN",
     areas: [
@@ -243,7 +243,7 @@ export const vi = {
         id: "dispute-resolution",
         name: "Giải quyết tranh chấp",
         paragraphs: [
-          "IVL tư vấn và đại diện cho khách hàng trong các tranh chấp dân sự, kinh doanh và thương mại tại Tòa án, cũng như trong quá trình thương lượng và giải quyết tranh chấp ngoài tố tụng.",
+          "Integritas Vũ Legal tư vấn và đại diện cho khách hàng trong các tranh chấp dân sự, kinh doanh và thương mại tại Tòa án, cũng như trong quá trình thương lượng và giải quyết tranh chấp ngoài tố tụng.",
           "Chúng tôi tập trung vào việc xác định vị thế pháp lý, kiểm soát rủi ro và xây dựng chiến lược phù hợp với mục tiêu thực tế của khách hàng.",
         ],
         services: [
@@ -262,7 +262,7 @@ export const vi = {
         id: "arbitration",
         name: "Trọng tài",
         paragraphs: [
-          "IVL tư vấn cho khách hàng trong các vụ việc trọng tài thương mại trong nước và quốc tế, từ giai đoạn trước tranh chấp đến công nhận và thi hành phán quyết.",
+          "Integritas Vũ Legal tư vấn cho khách hàng trong các vụ việc trọng tài thương mại trong nước và quốc tế, từ giai đoạn trước tranh chấp đến công nhận và thi hành phán quyết.",
         ],
         services: [
           "Tư vấn điều khoản trọng tài",
@@ -276,7 +276,7 @@ export const vi = {
         id: "enforcement-asset-recovery",
         name: "Thi hành & Thu hồi tài sản",
         paragraphs: [
-          "Việc có được bản án hoặc phán quyết thuận lợi không phải lúc nào cũng là điểm kết thúc của tranh chấp. IVL hỗ trợ khách hàng xây dựng và triển khai chiến lược thi hành, từ đánh giá khả năng thu hồi đến thực hiện các thủ tục pháp lý cần thiết.",
+          "Việc có được bản án hoặc phán quyết thuận lợi không phải lúc nào cũng là điểm kết thúc của tranh chấp. Integritas Vũ Legal hỗ trợ khách hàng xây dựng và triển khai chiến lược thi hành, từ đánh giá khả năng thu hồi đến thực hiện các thủ tục pháp lý cần thiết.",
         ],
         services: [
           "Thi hành bản án, quyết định của Tòa án",
@@ -291,7 +291,7 @@ export const vi = {
         id: "corporate-commercial",
         name: "Doanh nghiệp & Thương mại",
         paragraphs: [
-          "IVL tư vấn cho doanh nghiệp, chủ sở hữu và nhà đầu tư trong suốt quá trình hoạt động, từ thành lập và quản trị đến giao dịch thương mại, tái cấu trúc và xử lý các vấn đề phát sinh giữa các bên liên quan.",
+          "Integritas Vũ Legal tư vấn cho doanh nghiệp, chủ sở hữu và nhà đầu tư trong suốt quá trình hoạt động, từ thành lập và quản trị đến giao dịch thương mại, tái cấu trúc và xử lý các vấn đề phát sinh giữa các bên liên quan.",
           "Mục tiêu của chúng tôi là giúp khách hàng nhận diện rủi ro sớm và xây dựng cấu trúc pháp lý phù hợp trước khi vấn đề trở thành tranh chấp.",
         ],
         services: [
@@ -310,7 +310,7 @@ export const vi = {
         id: "m-and-a-investment",
         name: "M&A & Đầu tư",
         paragraphs: [
-          "IVL tư vấn cho doanh nghiệp, nhà đầu tư và chủ sở hữu trong các giao dịch mua bán, sáp nhập và đầu tư tại Việt Nam, từ giai đoạn chuẩn bị và thẩm định đến đàm phán, ký kết và hoàn tất giao dịch.",
+          "Integritas Vũ Legal tư vấn cho doanh nghiệp, nhà đầu tư và chủ sở hữu trong các giao dịch mua bán, sáp nhập và đầu tư tại Việt Nam, từ giai đoạn chuẩn bị và thẩm định đến đàm phán, ký kết và hoàn tất giao dịch.",
         ],
         services: [
           "Cấu trúc giao dịch",
@@ -329,7 +329,7 @@ export const vi = {
         id: "real-estate-construction",
         name: "Bất động sản & Xây dựng",
         paragraphs: [
-          "IVL tư vấn cho chủ sở hữu, nhà đầu tư, doanh nghiệp và các bên liên quan trong giao dịch, phát triển dự án và giải quyết tranh chấp bất động sản, xây dựng.",
+          "Integritas Vũ Legal tư vấn cho chủ sở hữu, nhà đầu tư, doanh nghiệp và các bên liên quan trong giao dịch, phát triển dự án và giải quyết tranh chấp bất động sản, xây dựng.",
         ],
         services: [
           "Thẩm định pháp lý bất động sản và dự án",
@@ -348,7 +348,7 @@ export const vi = {
         name: "Lao động",
         paragraphs: [
           "Các quyết định về nhân sự có thể tạo ra hệ quả pháp lý đáng kể nếu không được chuẩn bị và thực hiện đúng quy trình.",
-          "IVL tư vấn cho doanh nghiệp về các vấn đề phát sinh trong quan hệ lao động, từ thiết lập hợp đồng và chính sách nội bộ đến xử lý kỷ luật, chấm dứt quan hệ lao động và tranh chấp.",
+          "Integritas Vũ Legal tư vấn cho doanh nghiệp về các vấn đề phát sinh trong quan hệ lao động, từ thiết lập hợp đồng và chính sách nội bộ đến xử lý kỷ luật, chấm dứt quan hệ lao động và tranh chấp.",
         ],
         services: [
           "Hợp đồng lao động",
@@ -367,7 +367,7 @@ export const vi = {
         id: "private-clients",
         name: "Khách hàng cá nhân",
         paragraphs: [
-          "IVL tư vấn và đại diện cho khách hàng cá nhân trong các vấn đề dân sự và tài sản có tính chất phức tạp, với cách tiếp cận thận trọng, bảo mật và hướng đến giải pháp.",
+          "Integritas Vũ Legal tư vấn và đại diện cho khách hàng cá nhân trong các vấn đề dân sự và tài sản có tính chất phức tạp, với cách tiếp cận thận trọng, bảo mật và hướng đến giải pháp.",
         ],
         services: [
           "Tranh chấp tài sản",
@@ -382,7 +382,7 @@ export const vi = {
         ],
       },
     ],
-    closing: "Mỗi vụ việc đều có những yếu tố pháp lý, thương mại và thực tiễn riêng. IVL hỗ trợ khách hàng xác định vấn đề cốt lõi, đánh giá các lựa chọn và xây dựng phương án phù hợp với mục tiêu cần đạt được.",
+    closing: "Mỗi vụ việc đều có những yếu tố pháp lý, thương mại và thực tiễn riêng. Integritas Vũ Legal hỗ trợ khách hàng xác định vấn đề cốt lõi, đánh giá các lựa chọn và xây dựng phương án phù hợp với mục tiêu cần đạt được.",
     closingCta: "TRAO ĐỔI VỚI LUẬT SƯ",
     insightsCta: "GÓC NHÌN PHÁP LÝ",
   },
@@ -436,7 +436,7 @@ export const vi = {
     legalTitle: "Thông tin pháp lý",
     legalLinks: ["Điều khoản sử dụng", "Chính sách bảo mật", "Miễn trừ trách nhiệm"],
     disclaimerTitle: "Miễn trừ trách nhiệm",
-    disclaimerBody: "Nội dung trên trang web của Integritas Vu Legal chỉ nhằm mục đích cung cấp thông tin chung và không cấu thành tư vấn pháp lý hay giải pháp cho bất kỳ vấn đề cụ thể nào. Việc truy cập trang web hoặc liên hệ với IVL không mặc nhiên xác lập mối quan hệ luật sư - Khách hàng.",
+    disclaimerBody: "Nội dung trên trang web của Integritas Vu Legal chỉ nhằm mục đích cung cấp thông tin chung và không cấu thành tư vấn pháp lý hay giải pháp cho bất kỳ vấn đề cụ thể nào. Việc truy cập trang web hoặc liên hệ với Integritas Vũ Legal không mặc nhiên xác lập mối quan hệ luật sư - Khách hàng.",
     copyright: "© 2026 Integritas Vu Legal. All rights reserved.",
   },
 } as const satisfies Scaffold<EnglishDictionary>;

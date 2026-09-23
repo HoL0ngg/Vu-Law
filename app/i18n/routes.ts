@@ -57,3 +57,8 @@ export function languageAlternates(key: RouteKey) {
     vi: routePath(key, "vi"),
   };
 }
+
+/** A lawyer's profile page, e.g. `/people/nguyen-ha-thanh-vu`. */
+export function personPath(slug: string, locale: Locale = "en"): string {
+  return localePath(`${routes.people}/${slug}`, locale);
+}

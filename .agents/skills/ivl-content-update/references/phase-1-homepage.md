@@ -1,6 +1,10 @@
 # Phase 1 - Homepage (client-approved copy)
 
-Section order on the page: Hero -> Introduction -> The IVL approach -> Our expertise -> Featured insights -> People -> Footer.
+> **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
+> "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
+> in Vietnamese. Strings below carry the revised form.
+
+Section order on the page: Hero -> Introduction -> The Integritas Vu Legal approach -> Our expertise -> Featured insights -> People -> Footer.
 
 Rule for this file: lines inside `text` fences must appear verbatim. Arrows (`→`) are omitted from the strings; the site draws its own.
 
@@ -29,8 +33,8 @@ Two-line headline, two paragraphs, one CTA. The two headline lines belong to one
 ```text
 Law is more than a framework.
 It is the foundation for sound decisions.
-At IVL, we believe the value of legal advice lies in helping clients understand the issues, identify risks, evaluate their options and determine the course of action that best serves their objectives.
-IVL is built as a focused law firm where each matter is approached with independent judgment, rigorous analysis and a solution-oriented mindset.
+At Integritas Vu Legal, we believe the value of legal advice lies in helping clients understand the issues, identify risks, evaluate their options and determine the course of action that best serves their objectives.
+Integritas Vu Legal is built as a focused law firm where each matter is approached with independent judgment, rigorous analysis and a solution-oriented mindset.
 VỀ INTEGRITAS VŨ LEGAL
 ```
 
@@ -43,15 +47,15 @@ This CTA is Vietnamese inside the English copy. Keep it verbatim as the `en` val
 ## 3. The IVL approach
 
 ```text
-THE IVL APPROACH
+THE INTEGRITAS VU LEGAL APPROACH
 Integrity — Strategy — Precision — Results
 Principled in judgment. Strategic in approach. Precise in execution. Focused on results.
-DISCOVER HOW IVL WORKS
+DISCOVER HOW INTEGRITAS VU LEGAL WORKS
 ```
 
 | CTA | Destination |
 |---|---|
-| DISCOVER HOW IVL WORKS | `/about#our-approach` |
+| DISCOVER HOW Integritas Vu Legal WORKS | `/about#our-approach` |
 
 ## 4. Our expertise
 
@@ -82,7 +86,7 @@ LEGAL INSIGHT
 CASE NOTE
 PRACTICAL GUIDE
 Read More
-EXPLORE IVL INSIGHTS
+EXPLORE INTEGRITAS VU LEGAL INSIGHTS
 ```
 
 | Placeholder | Where |
@@ -92,7 +96,7 @@ EXPLORE IVL INSIGHTS
 | CTA | Destination |
 |---|---|
 | Read More | the article URL; until it exists, `/insights` |
-| EXPLORE IVL INSIGHTS | `/insights` |
+| EXPLORE Integritas Vu Legal INSIGHTS | `/insights` |
 
 ## 6. People
 
@@ -140,7 +144,7 @@ Terms of Use
 Privacy Policy
 Legal Disclaimer
 Disclaimer
-The content on the Integritas Vu Legal website is provided for general informational purposes only and does not constitute legal advice or solutions for any specific matter. Accessing the website or contacting IVL does not automatically establish an attorney-client relationship.
+The content on the Integritas Vu Legal website is provided for general informational purposes only and does not constitute legal advice or solutions for any specific matter. Accessing the website or contacting Integritas Vu Legal does not automatically establish an attorney-client relationship.
 © 2026 Integritas Vu Legal. All rights reserved.
 ```
 

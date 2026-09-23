@@ -1,5 +1,9 @@
 # Phase 5 - Contact (Client-approved copy)
 
+> **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
+> "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
+> in Vietnamese. Strings below carry the revised form.
+
 Source: `Feedbacks/IVL _ WEBSITE content.docx`, section "PHASE CONTACT".
 
 Rule for this file: lines inside `text` fences must appear verbatim. Arrows (`→`) are omitted
@@ -8,7 +12,7 @@ from the strings; the site draws its own.
 ## 1. Contact - page head (`/contact`)
 
 ```text
-LET’S START WITH IVL BY A CONVERSATION
+LET’S START WITH INTEGRITAS VU LEGAL BY A CONVERSATION
 Every legal matter has its own context and objectives. If you would like to discuss a transaction, dispute or specific legal issue, please contact our lawyer directly or submit your enquiry through the form below.
 The initial information will help us understand the nature of your matter before speaking with you.
 NGUYEN HA THANH VU
@@ -42,7 +46,7 @@ text of your own, and do not wire the form to any third party.
 
 ```text
 HOW CAN WE ASSIST?
-Please provide some initial information below. IVL will review your enquiry and contact you to discuss the appropriate next step.
+Please provide some initial information below. Integritas Vu Legal will review your enquiry and contact you to discuss the appropriate next step.
 CONTACT DETAILS
 Full Name
 Email
@@ -52,9 +56,9 @@ YOUR ENQUIRY
 Area of Assistance
 Brief description of your matter
 BEFORE YOU SUBMIT
-Submitting this form or otherwise contacting IVL does not by itself create a lawyer-client relationship.
-IVL can only accept and act on a matter after completing the necessary intake process, including assessing whether we are able to accept the matter, conducting an appropriate conflict check where required, and agreeing the scope of our engagement with the client.
-You should therefore not submit original documents or particularly sensitive information through this form before IVL confirms that the matter has been accepted.
+Submitting this form or otherwise contacting Integritas Vu Legal does not by itself create a lawyer-client relationship.
+Integritas Vu Legal can only accept and act on a matter after completing the necessary intake process, including assessing whether we are able to accept the matter, conducting an appropriate conflict check where required, and agreeing the scope of our engagement with the client.
+You should therefore not submit original documents or particularly sensitive information through this form before Integritas Vu Legal confirms that the matter has been accepted.
 At this stage, please provide only a general description of your matter. You should not submit confidential or sensitive documents or information through this initial enquiry form.
 SUBMIT ENQUIRY
 ```

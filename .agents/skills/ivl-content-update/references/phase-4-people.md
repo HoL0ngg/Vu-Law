@@ -1,8 +1,19 @@
 # Phase 4 - People (Client-approved copy)
 
+> **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
+> "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
+> in Vietnamese. Strings below carry the revised form.
+
 Source: `Feedbacks/IVL _ WEBSITE content.docx`, section "PHASE 4: PEOPLE".
 
-One page at `/people`: page intro, then one card per lawyer.
+**Client revision (Feedbacks, 2026-09):** `/people` shows only each lawyer's portrait,
+name and role. The biography opens on its own page when the visitor clicks the card:
+`/people/nguyen-ha-thanh-vu` and `/people/truc-nguyen`. The second slug is not in the
+Client's sitemap (Dr Truc Nguyen is new); it follows the same lowercase, ASCII,
+hyphenated convention.
+
+Because of that split, `check_copy.py` should be run against `/people` for sections 1-2
+and against each profile page for the biography in section 3.
 
 Rule for this file: lines inside `text` fences must appear verbatim. Arrows (`→`) are omitted
 from the strings; the site draws its own.
@@ -13,7 +24,7 @@ The Client's document writes "client's" and "clients" in lower case in the intro
 ## 1. Page intro
 
 ```text
-At IVL, we believe the quality of legal advice depends not only on knowledge of the law, but also on the judgment, strategic thinking and professional responsibility of the lawyers providing it.
+At Integritas Vu Legal, we believe the quality of legal advice depends not only on knowledge of the law, but also on the judgment, strategic thinking and professional responsibility of the lawyers providing it.
 Each matter is approached with an understanding of the Client's objectives, independence of judgment and careful consideration at every stage.
 Our lawyer work directly with Clients, communicate clearly and remain accountable throughout the course of each matter.
 ```
@@ -45,7 +56,12 @@ form its own section uses. Flagged for the Client.
 | Biography | The Client's note reads: "Phần mô tả anh Vũ chưa gửi cho c nên tạm thời trống phần mô tả của a Vũ nha e" - the biography has not been supplied. Render no biography. `TODO(client)` |
 | Photograph | Not supplied. Neutral placeholder. |
 
+His card links to `/people/nguyen-ha-thanh-vu`, which carries the name and role but no
+biography, since none was supplied.
+
 ## 3. Dr. Truc Nguyen
+
+Name and role appear on `/people`; the biography is on `/people/truc-nguyen`.
 
 ```text
 DR. TRUC NGUYEN

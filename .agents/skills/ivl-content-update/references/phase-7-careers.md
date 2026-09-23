@@ -1,5 +1,9 @@
 # Phase 7 - Careers (Client-approved copy)
 
+> **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
+> "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
+> in Vietnamese. Strings below carry the revised form.
+
 Source: `Feedbacks/IVL _ WEBSITE content.docx`, section "PHASE CAREER".
 
 Rule for this file: lines inside `text` fences must appear verbatim. Arrows (`→`) are omitted
@@ -12,10 +16,10 @@ BUILD YOUR PRACTICE WITH US
 OPPORTUNITIES
 Legal Assistants
 Legal Interns
-JOIN IVL
-If you are interested in joining IVL, please send your CV and a brief introduction to:
+JOIN INTEGRITAS VU LEGAL
+If you are interested in joining Integritas Vu Legal, please send your CV and a brief introduction to:
 ```
 
 | Placeholder | Where |
 |---|---|
-| `[Career Email]` | under "JOIN IVL" |
+| `[Career Email]` | under "JOIN Integritas Vu Legal" |

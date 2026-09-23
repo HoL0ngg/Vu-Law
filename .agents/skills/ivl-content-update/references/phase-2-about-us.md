@@ -1,5 +1,9 @@
 # Phase 2 - About Us (client-approved copy)
 
+> **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
+> "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
+> in Vietnamese. Strings below carry the revised form.
+
 One page at `/about` with four anchored sections, in this order: Our firm (`#our-firm`), Our Philosophy (`#our-philosophy`), Our approach (`#our-approach`), Our values (`#our-values`). The sitemap calls the last one "Values"; the client's heading text is "Our values". Use the client's heading text.
 
 Rule for this file: lines inside `text` fences must appear verbatim. Where the client wrote "Term - Descriptor", the two parts are split onto separate lines below so they can be laid out as heading + subheading.
@@ -18,7 +22,7 @@ We approach each matter with the client's objectives in mind. We identify the le
 
 ```text
 Our firm
-IVL is structured as a boutique law firm with an emphasis on legal quality, direct lawyer involvement and responsive execution.
+Integritas Vu Legal is structured as a boutique law firm with an emphasis on legal quality, direct lawyer involvement and responsive execution.
 We do not consider legal issues in isolation. Our advice takes into account the client's circumstances, commercial objectives, rights to be protected and the risks and consequences of each available course of action.
 In transactions, we seek to identify and manage legal risks before they develop into disputes.
 In disputes, we focus on understanding the client's position, developing the appropriate strategy and selecting the most effective path toward resolution.
@@ -40,7 +44,7 @@ Principled in judgment
 “Integritas” reflects the foundation of our practice: independence in judgment, honesty in advice and consistency in protecting our clients' legitimate interests.
 Strategy
 Strategic in approach
-Law provides the framework. IVL’s team determines how that framework is used to advance the client's objectives.
+Law provides the framework. Integritas Vu Legal’s team determines how that framework is used to advance the client's objectives.
 Precision
 Precise in execution
 We place precision at the centre of our legal research, evidence analysis, advocacy, drafting and execution.
@@ -75,7 +79,7 @@ were added by the Client in `Feedbacks/IVL _ WEBSITE content.docx`.
 
 ```text
 Our values
-The team at IVL always places core principles at the heart of the case-handling process.
+The team at Integritas Vu Legal always places core principles at the heart of the case-handling process.
 INDEPENDENCE
 Our professional judgment is guided by the law, the facts and our clients' legitimate interests.
 INTEGRITY

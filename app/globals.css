@@ -1701,3 +1701,153 @@ a:hover .brand-logo {
     border-left: 0;
   }
 }
+
+/* ==========================================================================
+   People index and lawyer profiles
+   The index shows portrait, name and role only; the biography lives one click
+   away at /people/<slug>, as the Client asked.
+   ========================================================================== */
+
+.people-grid {
+  display: grid;
+  gap: 5vw 4vw;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Replaces the old stacked bio row: the whole card is one link. */
+.people-grid .lawyer-card {
+  display: block;
+  padding: 0;
+  border-bottom: 0;
+  text-align: left;
+}
+
+.people-grid .portrait-placeholder {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  place-items: center;
+  transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+.people-grid .lawyer-card:hover .portrait-placeholder {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(13, 33, 48, 0.24);
+}
+
+.lawyer-card-copy {
+  display: block;
+  padding-top: 26px;
+}
+
+.lawyer-name {
+  display: block;
+  margin-bottom: 8px;
+  font-size: clamp(24px, 2.2vw, 34px);
+  letter-spacing: 0.01em;
+  line-height: 1.12;
+  transition: color 0.35s var(--ease);
+}
+
+.people-grid .lawyer-role {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.lawyer-more {
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--gold-deep);
+  color: var(--gold-deep);
+  font-size: 14px;
+  font-weight: 600;
+  gap: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lawyer-more i {
+  font-style: normal;
+  transition: transform 0.35s var(--ease);
+}
+
+.people-grid .lawyer-card:hover .lawyer-name {
+  color: var(--gold-deep);
+}
+
+.people-grid .lawyer-card:hover .lawyer-more i {
+  transform: translateX(5px);
+}
+
+/* --- One lawyer's page --- */
+.profile-hero {
+  position: relative;
+  display: flex;
+  min-height: 52svh;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 136px 8vw 70px;
+  isolation: isolate;
+}
+
+.profile-hero-copy {
+  display: grid;
+  width: 100%;
+  align-items: end;
+  gap: 4vw;
+  grid-template-columns: minmax(150px, 230px) minmax(0, 1fr);
+}
+
+.profile-hero .portrait-placeholder {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  place-items: center;
+}
+
+.profile-hero h1 {
+  margin-bottom: 14px;
+  font-size: clamp(38px, 5vw, 76px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.profile-body {
+  padding: 100px 8vw 120px;
+}
+
+.profile-prose p {
+  max-width: 74ch;
+  margin-bottom: 22px;
+  font-size: clamp(18px, 1.3vw, 20px);
+  line-height: 1.75;
+}
+
+.profile-body .text-link {
+  margin-top: 26px;
+}
+
+@media (max-width: 900px) {
+  .people-grid {
+    gap: 48px 32px;
+  }
+
+  .profile-hero {
+    padding: 120px 24px 56px;
+  }
+
+  .profile-hero-copy {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .profile-hero .portrait-placeholder {
+    max-width: 200px;
+  }
+
+  .profile-body {
+    padding: 70px 24px 90px;
+  }
+}

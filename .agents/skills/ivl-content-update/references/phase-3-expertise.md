@@ -1,5 +1,9 @@
 # Phase 3 - Expertise (Client-approved copy)
 
+> **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
+> "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
+> in Vietnamese. Strings below carry the revised form.
+
 Source: `Feedbacks/IVL _ WEBSITE content.docx`, section "PHASE 3: EXPERTISE - CHUYÊN MÔN".
 
 One page at `/expertise`: page intro, the list of core practice areas, then one block per
@@ -54,17 +58,17 @@ Each is an in-page anchor to the matching block below.
 ## 3. Practice area blocks
 
 Every block uses the heading "OUR SERVICES" above its list, and the CTA
-"DISCUSS YOUR DISPUTE WITH IVL" pointing to `/contact`, exactly as the Client wrote it.
+"DISCUSS YOUR DISPUTE WITH Integritas Vu Legal" pointing to `/contact`, exactly as the Client wrote it.
 
 ```text
 OUR SERVICES
-DISCUSS YOUR DISPUTE WITH IVL
+DISCUSS YOUR DISPUTE WITH INTEGRITAS VU LEGAL
 ```
 
 ### Dispute Resolution
 
 ```text
-IVL advises and represents Clients in civil, business and commercial disputes before Vietnamese courts, as well as in negotiations and other forms of dispute resolution.
+Integritas Vu Legal advises and represents Clients in civil, business and commercial disputes before Vietnamese courts, as well as in negotiations and other forms of dispute resolution.
 Our focus is to define the Client's legal position, manage risk and develop a strategy aligned with the Client's practical objectives.
 Contract and commercial disputes
 Corporate and shareholder/member disputes
@@ -80,7 +84,7 @@ Judgment enforcement and asset recovery
 ### Arbitration
 
 ```text
-IVL advises Clients in domestic and international commercial arbitration, from pre-dispute assessment through recognition and enforcement of arbitral awards.
+Integritas Vu Legal advises Clients in domestic and international commercial arbitration, from pre-dispute assessment through recognition and enforcement of arbitral awards.
 Arbitration clause advice and drafting
 Pre-dispute assessment
 Contract and corporate disputes
@@ -91,7 +95,7 @@ Interim measures
 ### Enforcement & Asset Recovery
 
 ```text
-Obtaining a favourable judgment or award is not always the end of a dispute. IVL assists Clients in developing and implementing enforcement strategies, from assessing recoverability to pursuing the necessary legal procedures.
+Obtaining a favourable judgment or award is not always the end of a dispute. Integritas Vu Legal assists Clients in developing and implementing enforcement strategies, from assessing recoverability to pursuing the necessary legal procedures.
 Enforcement of court judgments and decisions
 Enforcement and recoverability assessment
 Asset identification for enforcement purposes
@@ -103,7 +107,7 @@ Debt and asset recovery
 ### Corporate & Commercial
 
 ```text
-IVL advises companies, business owners and investors throughout the corporate lifecycle, from establishment and governance to commercial transactions, restructuring and issues arising among stakeholders.
+Integritas Vu Legal advises companies, business owners and investors throughout the corporate lifecycle, from establishment and governance to commercial transactions, restructuring and issues arising among stakeholders.
 Our objective is to help Clients identify legal risks early and establish appropriate structures before those risks develop into disputes.
 Company establishment and corporate structuring
 Corporate governance
@@ -119,7 +123,7 @@ Legal risk management
 ### M&A & Investment
 
 ```text
-IVL advises companies, investors and business owners on acquisitions, disposals and investments in Vietnam, from initial structuring and due diligence through negotiation, documentation and completion.
+Integritas Vu Legal advises companies, investors and business owners on acquisitions, disposals and investments in Vietnam, from initial structuring and due diligence through negotiation, documentation and completion.
 Transaction structuring
 Legal due diligence
 Share and equity acquisitions
@@ -135,7 +139,7 @@ Post-transaction legal matters
 ### Real Estate & Construction
 
 ```text
-IVL advises owners, investors, businesses and other stakeholders on transactions, project development and disputes involving real estate and construction.
+Integritas Vu Legal advises owners, investors, businesses and other stakeholders on transactions, project development and disputes involving real estate and construction.
 Real estate and project due diligence
 Real estate transactions
 Project transfers
@@ -151,7 +155,7 @@ Payment, delay and variation claims
 
 ```text
 Employment decisions can carry significant legal consequences if they are not properly structured and implemented.
-IVL advises employers on matters arising throughout the employment relationship, from contracts and internal policies to disciplinary action, termination and disputes.
+Integritas Vu Legal advises employers on matters arising throughout the employment relationship, from contracts and internal policies to disciplinary action, termination and disputes.
 Employment contracts
 Internal labour rules and policies
 Compensation, benefits and employment obligations
@@ -167,7 +171,7 @@ Employment litigation
 ### Private Clients
 
 ```text
-IVL advises and represents private Clients in complex civil and property matters with a discreet, considered and solution-oriented approach.
+Integritas Vu Legal advises and represents private Clients in complex civil and property matters with a discreet, considered and solution-oriented approach.
 Property disputes
 Ownership and property rights
 Inheritance and estate matters
@@ -182,15 +186,15 @@ Court representation
 ## 4. Closing statement
 
 ```text
-Every matter involves its own legal, commercial and practical considerations. IVL helps Clients identify the issues that matter, assess their options and develop a course of action aligned with their objectives.
+Every matter involves its own legal, commercial and practical considerations. Integritas Vu Legal helps Clients identify the issues that matter, assess their options and develop a course of action aligned with their objectives.
 DISCUSS YOUR MATTER WITH LAWYER
-EXPLORE IVL INSIGHTS
+EXPLORE INTEGRITAS VU LEGAL INSIGHTS
 ```
 
 | CTA | Destination |
 |---|---|
 | DISCUSS YOUR MATTER WITH LAWYER | `/contact` |
-| EXPLORE IVL INSIGHTS | `/insights` |
+| EXPLORE Integritas Vu Legal INSIGHTS | `/insights` |
 
 The Client wrote `CTA: DISCUSS YOUR MATTER WITH LAWYER→` with no space before the arrow and no
 article before "LAWYER". Kept verbatim; reported as a suspected typo.

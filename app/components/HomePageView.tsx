@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { vi } from "../i18n/vi";
-import { aboutAnchorPath, routePath } from "../i18n/routes";
+import { aboutAnchorPath, personPath, routePath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
@@ -113,14 +113,15 @@ export default function HomePageView({ dictionary, locale = "en" }: HomePageView
 
       <section className="people-section section-dark">
         <div className="portrait-placeholder reveal-zoom" role="img" aria-label={home.people.portraitAlt}>
-          <span aria-hidden="true">{dictionary.brand.monogram}</span>
+          {/* Mr Vu's photo placeholder, so his initials rather than the firm monogram. */}
+          <span aria-hidden="true">{dictionary.peoplePage.members[0].initials}</span>
         </div>
         <div className="people-copy">
           <h2 className="section-label reveal">{home.people.heading}</h2>
           <h3 className="display-heading reveal-line" lang="vi">{home.people.name}</h3>
           <p className="reveal">{home.people.role}</p>
           <div className="cta-row reveal">
-            <Link className="text-link" href={routePath("people", locale)}>{home.people.profileCta}<span aria-hidden="true">→</span></Link>
+            <Link className="text-link" href={personPath(dictionary.peoplePage.members[0].slug, locale)}>{home.people.profileCta}<span aria-hidden="true">→</span></Link>
             <Link className="text-link text-link-muted" href={routePath("people", locale)}>{home.people.peopleCta}<span aria-hidden="true">→</span></Link>
           </div>
         </div>
