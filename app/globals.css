@@ -1710,8 +1710,11 @@ a:hover .brand-logo {
 
 .people-grid {
   display: grid;
-  gap: 5vw 4vw;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4vw 3vw;
+  /* Capped rather than `1fr`: with only two lawyers, free-growing columns made each
+     portrait about 510px wide and 680px tall, which swamped the page. */
+  grid-template-columns: repeat(auto-fill, minmax(220px, 300px));
+  justify-content: start;
 }
 
 /* Replaces the old stacked bio row: the whole card is one link. */
@@ -1886,9 +1889,13 @@ a:hover .brand-logo {
   box-shadow: 0 26px 54px rgba(13, 33, 48, 0.24);
 }
 
-.people-section .portrait,
 .profile-hero .portrait {
   max-width: 100%;
+}
+
+/* The Homepage feature portrait is larger than the index cards but still capped. */
+.people-section .portrait {
+  max-width: 340px;
 }
 
 /* --- Footer contact details --------------------------------------------- */

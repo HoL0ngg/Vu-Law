@@ -386,11 +386,21 @@ export const vi = {
     closingCta: "TRAO ĐỔI VỚI LUẬT SƯ",
     insightsCta: "GÓC NHÌN PHÁP LÝ",
   },
-  // "Góc nhìn" and "Đọc thêm" are the Client's own words, reused from their navigation
-  // and their Homepage insight cards. The article titles stay as placeholders.
+  // Confirmed by the Client's updated document (PHASE INSIGHTS - GÓC NHÌN).
+  // The article titles stay as placeholders.
   insightsPage: {
     heading: "Góc nhìn",
     readMore: "Đọc thêm",
+    cards: [
+      // TODO(client): Supply the article title and URL.
+      { category: "CẬP NHẬT QUY ĐỊNH PHÁP LUẬT", title: "[Article title]" },
+      // TODO(client): Supply the article title and URL.
+      { category: "GÓC NHÌN PHÁP LÝ", title: "[Article title]" },
+      // TODO(client): Supply the article title and URL.
+      { category: "BẢN ÁN/ÁN LỆ", title: "[Article title]" },
+      // TODO(client): Supply the article title and URL.
+      { category: "HƯỚNG DẪN DOANH NGHIỆP", title: "[Article title]" },
+    ],
   },
   // Page labels, taken word for word from the Client's own Vietnamese navigation and
   // footer lists in the source document. Nothing here is translated by us.
@@ -406,7 +416,94 @@ export const vi = {
     privacy: "Chính sách bảo mật",
     legalDisclaimer: "Miễn trừ trách nhiệm",
   },
-  // TODO(client): Vietnamese copy for People, Contact, Careers and Insights pages is pending.
+  peoplePage: {
+    paragraphs: [
+      "Tại Integritas Vũ Legal, chúng tôi tin rằng chất lượng của dịch vụ pháp lý được quyết định không chỉ bởi kiến thức pháp luật, mà còn bởi khả năng nhận định, tư duy chiến lược và trách nhiệm nghề nghiệp của luật sư.",
+      "Mỗi vụ việc được tiếp cận với sự thấu hiểu về mục tiêu của khách hàng, sự độc lập trong đánh giá và sự cẩn trọng trong từng quyết định chuyên môn.",
+      "Các luật sư của Integritas Vũ Legal làm việc trực tiếp với khách hàng, duy trì trao đổi rõ ràng và chịu trách nhiệm xuyên suốt quá trình xử lý vụ việc.",
+    ],
+    portraitAlt: "Ảnh chân dung",
+    viewProfile: "XEM HỒ SƠ LUẬT SƯ",
+    backToPeople: "GẶP GỠ ĐỘI NGŨ INTEGRITAS VŨ LEGAL",
+    members: [
+      {
+        photoAlt: "Nguyễn Hà Thanh Vũ",
+        name: "NGUYỄN HÀ THANH VŨ",
+        role: "Nhà sáng lập | Luật sư điều hành",
+        // TODO(client): biography still not supplied ("Phần mô tả anh Vũ chưa gửi").
+        biography: [],
+      },
+      {
+        photoAlt: "TS. Trúc Nguyễn",
+        name: "TS. TRÚC NGUYỄN",
+        // The Client's text has two spaces around the pipe here; kept as supplied.
+        role: "Đồng sáng lập  |  Cố vấn Đạo đức, Tổ chức, Quản trị & Lãnh đạo",
+        biography: [
+          "TS. Trúc Nguyễn là cố vấn về đạo đức, tổ chức, quản trị và lãnh đạo, với nhiều kinh nghiệm học thuật và chuyên môn tại Việt Nam và Vương quốc Anh. Bà từng đảm nhiệm các vị trí học thuật tại các trường đại học ở cả hai quốc gia. Bà có bằng Tiến sĩ Quản trị từ University of Kent (Vương quốc Anh), MBA từ RMIT University Việt Nam và Cử nhân Quản trị Kinh doanh tại Phần Lan.",
+          "Lĩnh vực chuyên môn của bà bao gồm đạo đức kinh doanh, quản trị tổ chức, lãnh đạo, logic thể chế và quản trị đa văn hóa. Thông qua hoạt động nghiên cứu, bà có nhiều cơ hội làm việc và trao đổi với các nhà quản lý tại các tập đoàn đa quốc gia (MNCs), qua đó có những hiểu biết sâu sắc về cách các nhà quản lý tư duy, ra quyết định và xử lý các vấn đề đạo đức, tổ chức và pháp lý trong bối cảnh Việt Nam.",
+          "Đối với khách hàng, Trúc đã tư vấn cho các tổ chức về nhiều vấn đề phức tạp liên quan đến hoạt động kinh doanh và tổ chức, bao gồm các vấn đề nội bộ về lao động và nơi làm việc, tái cơ cấu nhân sự và quyết định cắt giảm lao động, thực tiễn làm thêm giờ, đối xử với người lao động, tuân thủ trong tổ chức và phát triển bền vững về môi trường. Qua những hoạt động này, bà hỗ trợ các tổ chức xem xét và xử lý các khía cạnh đạo đức trong quyết định kinh doanh, cân bằng giữa mục tiêu kinh doanh, yêu cầu pháp luật, phúc lợi người lao động, tính công bằng, lợi ích của các bên liên quan và trách nhiệm của tổ chức, đồng thời tính đến bối cảnh văn hóa và tổ chức tại Việt Nam.",
+          "Phương pháp tiếp cận của bà dựa trên giá trị “Tâm” – lương tâm, nhận thức đạo đức và tinh thần trách nhiệm – đồng thời tôn trọng các yêu cầu pháp luật và chuẩn mực quốc tế. Trong công ty, Trúc đóng vai trò quan trọng trong việc xây dựng văn hóa và môi trường tổ chức đề cao đạo đức, thúc đẩy quản trị có trách nhiệm và các phương thức quản lý lấy con người làm trọng tâm. Những nguyên tắc này cũng được thể hiện trong cách công ty đồng hành cùng khách hàng: thấu hiểu hoàn cảnh của từng khách hàng, tôn trọng nhu cầu và giá trị riêng của họ, đồng thời cung cấp dịch vụ chuyên nghiệp dựa trên sự chính trực, đồng cảm và tôn trọng.",
+        ],
+      },
+    ],
+  },
+  contactPage: {
+    heading: "Bắt đầu bằng một cuộc trao đổi.",
+    paragraphs: [
+      "Mỗi vấn đề pháp lý đều có bối cảnh và mục tiêu riêng. Nếu Quý khách cần trao đổi về một giao dịch, tranh chấp hoặc vấn đề pháp lý cụ thể, vui lòng liên hệ trực tiếp với luật sư của Integritas Vũ Legal hoặc gửi thông tin qua biểu mẫu bên dưới.",
+      "Thông tin ban đầu sẽ giúp chúng tôi hiểu khái quát vấn đề trước khi trao đổi cùng Quý khách.",
+    ],
+    lawyerName: "NGUYỄN HÀ THANH VŨ",
+    lawyerRole: "Luật sư Điều hành | Managing Lawyer",
+    directLabel: "Điện thoại:",
+    emailLabel: "Email:",
+    linkedinLabel: "LinkedIn:",
+    // TODO(client): Mr Vũ's own line and professional email are still unsupplied.
+    direct: "[Số điện thoại]",
+    email: "[Email công việc]",
+    linkedin: "[LinkedIn Profile]",
+    profileCta: "XEM HỒ SƠ LUẬT SƯ",
+    form: {
+      heading: "Quý khách cần trao đổi vấn đề gì?",
+      intro: "Vui lòng cung cấp một số thông tin cơ bản dưới đây. Integritas Vũ Legal sẽ xem xét nội dung và liên hệ lại để trao đổi về bước tiếp theo phù hợp.",
+      detailsTitle: "THÔNG TIN LIÊN HỆ",
+      enquiryTitle: "NỘI DUNG CẦN TƯ VẤN",
+      fullName: "Họ và tên",
+      email: "Email",
+      telephone: "Số điện thoại",
+      company: "Công ty / Tổ chức",
+      area: "Lĩnh vực cần hỗ trợ",
+      description: "Mô tả ngắn vấn đề cần trao đổi",
+      areaOptions: [
+        "Giải quyết tranh chấp",
+        "Trọng tài",
+        "Thi hành & Thu hồi tài sản",
+        "Doanh nghiệp & Thương mại",
+        "M&A & Đầu tư",
+        "Bất động sản & Xây dựng",
+        "Lao động",
+        "Khách hàng cá nhân",
+        "Khác",
+      ],
+      noticeTitle: "TRƯỚC KHI GỬI YÊU CẦU",
+      notice: [
+        "Việc gửi thông tin qua biểu mẫu này hoặc liên hệ với Integritas Vũ Legal không tự động làm phát sinh quan hệ luật sư – khách hàng.",
+        "Integritas Vũ Legal chỉ có thể nhận và thực hiện một vụ việc sau khi hoàn thành các bước cần thiết, bao gồm việc xem xét khả năng tiếp nhận vụ việc, kiểm tra xung đột lợi ích khi phù hợp và thống nhất phạm vi dịch vụ với khách hàng.",
+        "Vì vậy, Quý khách không nên gửi qua biểu mẫu này các tài liệu gốc hoặc thông tin đặc biệt nhạy cảm trước khi Integritas Vũ Legal xác nhận việc tiếp nhận vụ việc.",
+        "Quý khách chỉ cần cung cấp thông tin khái quát ở bước này. Không cần gửi các tài liệu hoặc thông tin mật, nhạy cảm qua biểu mẫu liên hệ ban đầu.",
+      ],
+      submit: "GỬI YÊU CẦU",
+    },
+  },
+  careersPage: {
+    heading: "PHÁT TRIỂN CƠ HỘI NGHỀ NGHIỆP CÙNG CHÚNG TÔI",
+    opportunitiesTitle: "CƠ HỘI",
+    opportunities: ["Trợ lý Luật sư", "Thực tập sinh Pháp lý"],
+    joinTitle: "Gia nhập Integritas Vũ Legal",
+    joinBody: "Nếu bạn quan tâm đến cơ hội nghề nghiệp tại Integritas Vũ Legal, vui lòng gửi CV và thư giới thiệu ngắn đến:",
+    // TODO(client): Supply the careers email address.
+    careerEmail: "[Career Email]",
+  },
   footer: {
     navigationTitle: "Điều hướng",
     // TODO(client): deliberately omitted. The Client's Vietnamese footer lists six entries
