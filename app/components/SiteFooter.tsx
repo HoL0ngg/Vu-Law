@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { routePath, type RouteKey } from "../i18n/routes";
+import { isPlaceholder, mailHref, telHref } from "../lib/contact";
 import Brand from "./Brand";
 
 const footerNavigationRoutes: readonly RouteKey[] = [
@@ -52,8 +53,16 @@ export default function SiteFooter({ dictionary, locale }: SiteFooterProps) {
         <section className="footer-contact">
           <h2 lang="vi">{dictionary.footer.entityName}</h2>
           <p>{dictionary.footer.officeAddress}</p>
-          <p>{dictionary.footer.telephone}</p>
-          <p>{dictionary.footer.email}</p>
+          <p>
+            {isPlaceholder(dictionary.footer.telephone)
+              ? dictionary.footer.telephone
+              : <a href={telHref(dictionary.footer.telephone)}>{dictionary.footer.telephone}</a>}
+          </p>
+          <p>
+            {isPlaceholder(dictionary.footer.email)
+              ? dictionary.footer.email
+              : <a href={mailHref(dictionary.footer.email)}>{dictionary.footer.email}</a>}
+          </p>
         </section>
         <section>
           <h2>{dictionary.footer.legalTitle}</h2>

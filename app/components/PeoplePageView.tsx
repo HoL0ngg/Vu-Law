@@ -4,6 +4,7 @@ import type { Dictionary, Locale } from "../i18n/config";
 import { personPath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
 import PageHero from "./PageHero";
+import Portrait from "./Portrait";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
 
@@ -33,9 +34,12 @@ export default function PeoplePageView({ dictionary, locale = "en" }: PeoplePage
               key={member.slug}
               style={stagger(index)}
             >
-              <span className="portrait-placeholder" role="img" aria-label={page.portraitAlt}>
-                <span aria-hidden="true">{member.initials}</span>
-              </span>
+              <Portrait
+                src={member.photo}
+                alt={member.photoAlt || page.portraitAlt}
+                initials={member.initials}
+                sizes="(max-width: 900px) 92vw, 34vw"
+              />
               <span className="lawyer-card-copy">
                 <span className="lawyer-name">{member.name}</span>
                 <span className="lawyer-role">{member.role}</span>

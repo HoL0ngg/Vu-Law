@@ -150,11 +150,16 @@ The content on the Integritas Vu Legal website is provided for general informati
 
 The Contact column shows the entity name followed by three placeholders:
 
-| Placeholder | Where |
+**Supplied by the Client, 2026-09** (no longer placeholders):
+
+| Item | Value |
 |---|---|
-| `[Office Address]` | Contact column |
-| `[Telephone]` | Contact column |
-| `[Email]` | Contact column |
+| Office address (EN) | 37/16 Tran Dinh Xu Street, Cau Ong Lanh Ward, Ho Chi Minh City |
+| Office address (VN) | 37/16 Trần Đình Xu, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh |
+| Telephone | 0938 170 130 |
+| Email | contact@integritasvulegal.com |
+
+The telephone and email render as `tel:` and `mailto:` links.
 
 Footer links: see `ivl-sitemap-navigation` (Key Expertise link mapping; the "Experience" link is AGENTS.md open question 1). Terms of Use, Privacy Policy and Legal Disclaimer pages need client-supplied text; do not write it.
 

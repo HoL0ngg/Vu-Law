@@ -54,7 +54,7 @@ form its own section uses. Flagged for the Client.
 | Missing input | Handling |
 |---|---|
 | Biography | The Client's note reads: "Phần mô tả anh Vũ chưa gửi cho c nên tạm thời trống phần mô tả của a Vũ nha e" - the biography has not been supplied. Render no biography. `TODO(client)` |
-| Photograph | Not supplied. Neutral placeholder. |
+| Photograph | Supplied 2026-09: `public/images/nguyen-ha-thanh-vu.png`. |
 
 His card links to `/people/nguyen-ha-thanh-vu`, which carries the name and role but no
 biography, since none was supplied.
@@ -77,4 +77,4 @@ Notes on this biography, all kept verbatim:
 - "Co Founder" has no hyphen in the Client's text.
 - "Dr Truc Nguyen" in the body has no full stop after "Dr", while the heading has "DR.".
 - `Tâm` carries its diacritic and is joined by em dashes without spaces, as supplied.
-- No photograph was supplied. Neutral placeholder.
+- Photograph supplied 2026-09: `public/images/truc-nguyen.png`.

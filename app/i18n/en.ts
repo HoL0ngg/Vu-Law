@@ -326,7 +326,9 @@ export const en = {
       // The Client wrote "Our lawyer work" (singular noun, plural verb); kept verbatim.
       "Our lawyer work directly with Clients, communicate clearly and remain accountable throughout the course of each matter.",
     ],
-    // TODO(client): Supply photographs for both lawyers.
+    // Portraits supplied by the Client (public/images). `alt` names the person because
+    // the Client named them; ivl-legal-guardrails rule 11 only forbids naming someone
+    // they have not identified.
     portraitAlt: "Portrait placeholder",
     // The Client gave no label for this link; reuse their own "VIEW PROFILE" from Phase 1.
     viewProfile: "VIEW PROFILE",
@@ -336,6 +338,8 @@ export const en = {
         // The Client writes this name without diacritics on this page, and with
         // diacritics on the Homepage. AGENTS.md rule 8: do not normalise either form.
         slug: "nguyen-ha-thanh-vu",
+        photo: "/images/nguyen-ha-thanh-vu.png",
+        photoAlt: "Nguyen Ha Thanh Vu",
         name: "NGUYEN HA THANH VU",
         role: "Founder | Managing Lawyer",
         initials: "NV",
@@ -345,6 +349,8 @@ export const en = {
       {
         // Not in the Client's sitemap; slug follows the same convention.
         slug: "truc-nguyen",
+        photo: "/images/truc-nguyen.png",
+        photoAlt: "Dr. Truc Nguyen",
         name: "DR. TRUC NGUYEN",
         // "Co Founder" is unhyphenated in the Client's text; kept verbatim.
         role: "Co Founder | Ethics, Organisation, Management & Leadership Advisor",
@@ -462,12 +468,9 @@ export const en = {
       "Employment",
     ],
     entityName: "CÔNG TY LUẬT TNHH INTEGRITAS VŨ LEGAL",
-    // TODO(client): Supply the office address.
-    officeAddress: "[Office Address]",
-    // TODO(client): Supply the telephone number.
-    telephone: "[Telephone]",
-    // TODO(client): Supply the email address.
-    email: "[Email]",
+    officeAddress: "37/16 Tran Dinh Xu Street, Cau Ong Lanh Ward, Ho Chi Minh City",
+    telephone: "0938 170 130",
+    email: "contact@integritasvulegal.com",
     legalTitle: "Legal",
     legalLinks: ["Terms of Use", "Privacy Policy", "Legal Disclaimer"],
     disclaimerTitle: "Disclaimer",

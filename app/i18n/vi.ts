@@ -427,12 +427,9 @@ export const vi = {
       "Lao động",
     ],
     entityName: "CÔNG TY LUẬT TNHH INTEGRITAS VŨ LEGAL",
-    // TODO(client): Supply the office address.
-    officeAddress: "[Office Address]",
-    // TODO(client): Supply the telephone number.
-    telephone: "[Telephone]",
-    // TODO(client): Supply the email address.
-    email: "[Email]",
+    officeAddress: "37/16 Trần Đình Xu, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh",
+    telephone: "0938 170 130",
+    email: "contact@integritasvulegal.com",
     legalTitle: "Thông tin pháp lý",
     legalLinks: ["Điều khoản sử dụng", "Chính sách bảo mật", "Miễn trừ trách nhiệm"],
     disclaimerTitle: "Miễn trừ trách nhiệm",

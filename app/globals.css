@@ -1851,3 +1851,87 @@ a:hover .brand-logo {
     padding: 70px 24px 90px;
   }
 }
+
+/* --- Lawyer portraits ---------------------------------------------------- */
+/* One 3:4 box whether a photograph exists or not, so a missing photo does not
+   change the layout. `.portrait-placeholder` keeps the old initials treatment. */
+.portrait {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--navy-soft);
+}
+
+.portrait img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.portrait--placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--gold-light);
+  font-size: clamp(46px, 6vw, 86px);
+  letter-spacing: 0.06em;
+}
+
+.people-grid .portrait {
+  transition: transform 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+.people-grid .lawyer-card:hover .portrait {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(13, 33, 48, 0.24);
+}
+
+.people-section .portrait,
+.profile-hero .portrait {
+  max-width: 100%;
+}
+
+/* --- Footer contact details --------------------------------------------- */
+.footer-contact a {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.footer-contact a:hover {
+  border-bottom-color: var(--gold);
+  color: var(--gold-light);
+}
+
+@media (max-width: 900px) {
+  .people-section .portrait {
+    max-width: 320px;
+  }
+}
+
+/* Two cards side by side on Contact: the lawyer, then the firm's own details. */
+.contact-lawyer {
+  display: grid;
+  gap: 4vw;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
+}
+
+.contact-lawyer .contact-card {
+  max-width: none;
+  height: 100%;
+}
+
+.contact-details dt:empty,
+.contact-details div:has(> dd:only-child) dt {
+  display: none;
+}
+
+.contact-details a {
+  border-bottom: 1px solid rgba(169, 130, 49, 0.45);
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.contact-details a:hover {
+  border-bottom-color: var(--gold-deep);
+  color: var(--gold-deep);
+}

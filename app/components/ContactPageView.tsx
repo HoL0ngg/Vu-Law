@@ -4,6 +4,7 @@ import type { Dictionary, Locale } from "../i18n/config";
 import { routePath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
 import PageHero from "./PageHero";
+import { isPlaceholder, mailHref, telHref } from "../lib/contact";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
 
@@ -32,6 +33,31 @@ export default function ContactPageView({ dictionary, locale = "en" }: ContactPa
           <Link className="text-link" href={routePath("people", locale)}>
             {page.profileCta}<span aria-hidden="true">→</span>
           </Link>
+        </div>
+
+        {/* The firm's own details, as supplied by the Client. The Client's Contact
+            structure gives Mr Vu a separate "Direct" line and professional email, which
+            they have not supplied, so those stay as placeholders above rather than being
+            filled with the firm's switchboard. */}
+        <div className="contact-card reveal">
+          <h2 lang="vi">{dictionary.footer.entityName}</h2>
+          <dl className="contact-details">
+            <div><dd>{dictionary.footer.officeAddress}</dd></div>
+            <div>
+              <dd>
+                {isPlaceholder(dictionary.footer.telephone)
+                  ? dictionary.footer.telephone
+                  : <a href={telHref(dictionary.footer.telephone)}>{dictionary.footer.telephone}</a>}
+              </dd>
+            </div>
+            <div>
+              <dd>
+                {isPlaceholder(dictionary.footer.email)
+                  ? dictionary.footer.email
+                  : <a href={mailHref(dictionary.footer.email)}>{dictionary.footer.email}</a>}
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 

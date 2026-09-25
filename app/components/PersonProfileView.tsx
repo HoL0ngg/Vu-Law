@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { routePath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
+import Portrait from "./Portrait";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
 
@@ -24,9 +25,14 @@ export default function PersonProfileView({ dictionary, member, locale = "en" }:
         <div className="about-hero-image" aria-hidden="true" />
         <div className="about-hero-shade" />
         <div className="profile-hero-copy">
-          <div className="portrait-placeholder reveal-zoom" role="img" aria-label={page.portraitAlt}>
-            <span aria-hidden="true">{member.initials}</span>
-          </div>
+          <Portrait
+            className="reveal-zoom"
+            src={member.photo}
+            alt={member.photoAlt || page.portraitAlt}
+            initials={member.initials}
+            sizes="(max-width: 900px) 60vw, 230px"
+            priority
+          />
           <div>
             <h1 className="reveal-line">{member.name}</h1>
             <p className="lawyer-role reveal" style={stagger(2)}>{member.role}</p>

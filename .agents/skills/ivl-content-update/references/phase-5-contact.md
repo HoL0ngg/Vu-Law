@@ -32,6 +32,12 @@ The heading uses a curly apostrophe in `LET’S`, as supplied.
 | `[Professional Email]` | labelled `Email:` |
 | `[LinkedIn Profile]` | labelled `LinkedIn:` |
 
+These three are Mr Vu's own details and are still unsupplied - the Client's updated
+document keeps them as `[Số điện thoại]` and `[Email công việc]`. The firm's switchboard
+number and `contact@` inbox are **not** substituted for them; they appear in a separate
+card carrying the entity name, office address, telephone and email, the same values the
+footer shows.
+
 ```text
 Direct:
 Email:

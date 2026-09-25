@@ -4,6 +4,7 @@ import type { Dictionary, Locale } from "../i18n/config";
 import { vi } from "../i18n/vi";
 import { aboutAnchorPath, personPath, routePath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
+import Portrait from "./Portrait";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
 
@@ -14,6 +15,7 @@ type HomePageViewProps = {
 
 export default function HomePageView({ dictionary, locale = "en" }: HomePageViewProps) {
   const { home } = dictionary;
+  const lead = dictionary.peoplePage.members[0];
   const featuredExpertise = home.expertise.featuredItems.length
     ? home.expertise.featuredItems
     : vi.home.expertise.featuredItems;
@@ -112,10 +114,13 @@ export default function HomePageView({ dictionary, locale = "en" }: HomePageView
       </section>
 
       <section className="people-section section-dark">
-        <div className="portrait-placeholder reveal-zoom" role="img" aria-label={home.people.portraitAlt}>
-          {/* Mr Vu's photo placeholder, so his initials rather than the firm monogram. */}
-          <span aria-hidden="true">{dictionary.peoplePage.members[0].initials}</span>
-        </div>
+        <Portrait
+          className="reveal-zoom"
+          src={lead.photo}
+          alt={lead.photoAlt || home.people.portraitAlt}
+          initials={lead.initials}
+          sizes="(max-width: 900px) 80vw, 38vw"
+        />
         <div className="people-copy">
           <h2 className="section-label reveal">{home.people.heading}</h2>
           <h3 className="display-heading reveal-line" lang="vi">{home.people.name}</h3>
