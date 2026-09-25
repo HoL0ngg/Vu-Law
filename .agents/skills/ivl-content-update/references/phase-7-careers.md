@@ -20,6 +20,10 @@ JOIN INTEGRITAS VU LEGAL
 If you are interested in joining Integritas Vu Legal, please send your CV and a brief introduction to:
 ```
 
-| Placeholder | Where |
+| Item | Value |
 |---|---|
-| `[Career Email]` | under "JOIN Integritas Vu Legal" |
+| Application address | contact@integritasvulegal.com |
+
+The Client's document leaves this as `[Career Email]`. The general inbox is used at the
+site owner's direction; a dedicated careers address can replace it later. Rendered as a
+`mailto:` link.
