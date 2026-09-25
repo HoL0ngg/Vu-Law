@@ -458,9 +458,10 @@ export const vi = {
     directLabel: "Điện thoại:",
     emailLabel: "Email:",
     linkedinLabel: "LinkedIn:",
-    // TODO(client): Mr Vũ's own line and professional email are still unsupplied.
-    direct: "[Số điện thoại]",
-    email: "[Email công việc]",
+    // Số và hộp thư của công ty, điền theo chỉ định của chủ website.
+    // Tài liệu của Client vẫn để đây là thông tin riêng của anh Vũ.
+    direct: "0938 170 130",
+    email: "contact@integritasvulegal.com",
     linkedin: "[LinkedIn Profile]",
     profileCta: "XEM HỒ SƠ LUẬT SƯ",
     form: {
@@ -501,8 +502,7 @@ export const vi = {
     opportunities: ["Trợ lý Luật sư", "Thực tập sinh Pháp lý"],
     joinTitle: "Gia nhập Integritas Vũ Legal",
     joinBody: "Nếu bạn quan tâm đến cơ hội nghề nghiệp tại Integritas Vũ Legal, vui lòng gửi CV và thư giới thiệu ngắn đến:",
-    // TODO(client): Supply the careers email address.
-    careerEmail: "[Career Email]",
+    careerEmail: "contact@integritasvulegal.com",
   },
   footer: {
     navigationTitle: "Điều hướng",

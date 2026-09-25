@@ -26,17 +26,18 @@ The heading uses a curly apostrophe in `LET’S`, as supplied.
 |---|---|
 | VIEW LAWYER PROFILE | `/people` (the per-lawyer route does not exist) |
 
-| Placeholder | Where |
+| Item | Value |
 |---|---|
-| `[Telephone]` | labelled `Direct:` |
-| `[Professional Email]` | labelled `Email:` |
-| `[LinkedIn Profile]` | labelled `LinkedIn:` |
+| `Direct:` | 0938 170 130 |
+| `Email:` | contact@integritasvulegal.com |
+| `LinkedIn:` | `[LinkedIn Profile]` - still unsupplied |
 
-These three are Mr Vu's own details and are still unsupplied - the Client's updated
-document keeps them as `[Số điện thoại]` and `[Email công việc]`. The firm's switchboard
-number and `contact@` inbox are **not** substituted for them; they appear in a separate
-card carrying the entity name, office address, telephone and email, the same values the
-footer shows.
+The Client's document lists the first two as Mr Vu's **own** details and still leaves
+them as `[Số điện thoại]` and `[Email công việc]`. The values shown are the firm's
+switchboard and general inbox, filled at the site owner's direction. Confirm the
+attribution with the Client at sign-off. The same values also appear in a second card
+carrying the entity name and office address, as in the footer. Telephone and email
+render as `tel:` and `mailto:` links.
 
 ```text
 Direct:

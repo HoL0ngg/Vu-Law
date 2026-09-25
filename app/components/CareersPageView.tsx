@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Dictionary, Locale } from "../i18n/config";
 import PageFrame from "./PageFrame";
 import PageHero from "./PageHero";
+import { isPlaceholder, mailHref } from "../lib/contact";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
 
@@ -29,8 +30,11 @@ export default function CareersPageView({ dictionary, locale = "en" }: CareersPa
         <div className="careers-block">
           <h2 className="section-label reveal">{page.joinTitle}</h2>
           <p className="reveal" style={stagger(1)}>{page.joinBody}</p>
-          {/* TODO(client): Supply the careers email address; rendered as a placeholder until then. */}
-          <p className="careers-email reveal" style={stagger(2)}>{page.careerEmail}</p>
+          <p className="careers-email reveal" style={stagger(2)}>
+            {isPlaceholder(page.careerEmail)
+              ? page.careerEmail
+              : <a href={mailHref(page.careerEmail)}>{page.careerEmail}</a>}
+          </p>
         </div>
       </section>
     </PageFrame>

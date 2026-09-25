@@ -26,8 +26,22 @@ export default function ContactPageView({ dictionary, locale = "en" }: ContactPa
           <h2>{page.lawyerName}</h2>
           <p className="lawyer-role">{page.lawyerRole}</p>
           <dl className="contact-details">
-            <div><dt>{page.directLabel}</dt><dd>{page.direct}</dd></div>
-            <div><dt>{page.emailLabel}</dt><dd>{page.email}</dd></div>
+            <div>
+              <dt>{page.directLabel}</dt>
+              <dd>
+                {isPlaceholder(page.direct)
+                  ? page.direct
+                  : <a href={telHref(page.direct)}>{page.direct}</a>}
+              </dd>
+            </div>
+            <div>
+              <dt>{page.emailLabel}</dt>
+              <dd>
+                {isPlaceholder(page.email)
+                  ? page.email
+                  : <a href={mailHref(page.email)}>{page.email}</a>}
+              </dd>
+            </div>
             <div><dt>{page.linkedinLabel}</dt><dd>{page.linkedin}</dd></div>
           </dl>
           <Link className="text-link" href={routePath("people", locale)}>

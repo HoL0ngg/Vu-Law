@@ -375,10 +375,11 @@ export const en = {
     directLabel: "Direct:",
     emailLabel: "Email:",
     linkedinLabel: "LinkedIn:",
-    // TODO(client): Supply the direct telephone number.
-    direct: "[Telephone]",
-    // TODO(client): Supply the professional email address.
-    email: "[Professional Email]",
+    // The firm's switchboard and inbox, used here at the site owner's direction.
+    // The Client's document still lists these as Mr Vu's own [Telephone] and
+    // [Professional Email]; confirm the attribution at sign-off.
+    direct: "0938 170 130",
+    email: "contact@integritasvulegal.com",
     // TODO(client): Supply the LinkedIn profile URL.
     linkedin: "[LinkedIn Profile]",
     profileCta: "VIEW LAWYER PROFILE",
@@ -422,8 +423,9 @@ export const en = {
     opportunities: ["Legal Assistants", "Legal Interns"],
     joinTitle: "JOIN INTEGRITAS VU LEGAL",
     joinBody: "If you are interested in joining Integritas Vu Legal, please send your CV and a brief introduction to:",
-    // TODO(client): Supply the careers email address.
-    careerEmail: "[Career Email]",
+    // The general inbox, used for applications at the site owner's direction;
+    // the Client's document leaves this as [Career Email].
+    careerEmail: "contact@integritasvulegal.com",
   },
   insightsPage: {
     heading: "Insights",
