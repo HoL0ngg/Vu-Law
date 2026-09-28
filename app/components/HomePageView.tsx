@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { vi } from "../i18n/vi";
 import { aboutAnchorPath, personPath, routePath } from "../i18n/routes";
+import { isPlaceholder } from "../lib/contact";
 import PageFrame from "./PageFrame";
 import Portrait from "./Portrait";
 
@@ -16,6 +17,7 @@ type HomePageViewProps = {
 export default function HomePageView({ dictionary, locale = "en" }: HomePageViewProps) {
   const { home } = dictionary;
   const lead = dictionary.peoplePage.members[0];
+  const hasArticles = home.insights.cards.some((card) => !isPlaceholder(card.title));
   const featuredExpertise = home.expertise.featuredItems.length
     ? home.expertise.featuredItems
     : vi.home.expertise.featuredItems;
@@ -101,16 +103,28 @@ export default function HomePageView({ dictionary, locale = "en" }: HomePageView
             {home.insights.cta}<span aria-hidden="true">→</span>
           </Link>
         </div>
-        <div className="insight-grid">
-          {home.insights.cards.map((card, index) => (
-            <article className="insight-card reveal" key={card.category} style={stagger(index)}>
-              <div className={`insight-art insight-art-${index + 1}`} aria-hidden="true" />
-              <p>{card.category}</p>
-              <h3>{card.title}</h3>
-              <Link href={routePath("insights", locale)}>{card.linkLabel}<span aria-hidden="true">→</span></Link>
-            </article>
-          ))}
-        </div>
+        {/* Until the Client publishes articles the cards carry only "[Article title]",
+            so the section says so in their own words instead. The heading above already
+            names the section, so the "Insights Coming Soon" title is not repeated here.
+            The cards return by themselves once a real title reaches the locale file. */}
+        {hasArticles ? (
+          <div className="insight-grid">
+            {home.insights.cards.map((card, index) => (
+              <article className="insight-card reveal" key={card.category} style={stagger(index)}>
+                <div className={`insight-art insight-art-${index + 1}`} aria-hidden="true" />
+                <p>{card.category}</p>
+                <h3>{card.title}</h3>
+                <Link href={routePath("insights", locale)}>{card.linkLabel}<span aria-hidden="true">→</span></Link>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <div className="insights-pending">
+            {dictionary.insightsPage.comingSoonBody.map((paragraph, index) => (
+              <p className="reveal" key={paragraph} style={stagger(index)}>{paragraph}</p>
+            ))}
+          </div>
+        )}
       </section>
 
       <section className="people-section section-dark">

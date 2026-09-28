@@ -516,6 +516,10 @@ export const vi = {
     expertiseTitle: "Lĩnh vực chuyên môn",
     expertiseLinks: [
       "Giải quyết tranh chấp",
+      // TODO(client): Vietnamese name pending - the Client supplied this practice area in
+      // English only. Holding the slot keeps the rest of this list on its own labels,
+      // because these arrays merge by index.
+      "White-Collar Crime",
       "Trọng tài",
       "Thi hành án",
       "Doanh nghiệp & Thương mại",

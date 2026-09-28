@@ -504,6 +504,7 @@ export const en = {
     expertiseTitle: "Key Expertise",
     expertiseLinks: [
       "Dispute Resolution",
+      "White-Collar Crime",
       "Arbitration",
       "Enforcement",
       "Corporate & Commercial",

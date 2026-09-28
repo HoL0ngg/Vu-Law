@@ -2003,3 +2003,19 @@ a:hover .brand-logo {
     padding: 80px 24px 70px;
   }
 }
+
+/* Homepage Featured Insights, while no articles exist. */
+.insights-pending {
+  max-width: 1100px;
+  margin-top: 46px;
+}
+
+.insights-pending p {
+  margin-bottom: 20px;
+  font-size: clamp(18px, 1.35vw, 21px);
+  line-height: 1.7;
+}
+
+.insights-pending p:last-child {
+  margin-bottom: 0;
+}

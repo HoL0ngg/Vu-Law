@@ -86,17 +86,29 @@ Do not resolve this ambiguity yourself. See AGENTS.md open question 3. Conservat
 Section heading: "Featured Insights" (the client's section name). Four cards, each with a category label, an article title and a Read More link, then one section CTA. Titles are placeholders until the client supplies articles. Build the cards from a data array so real articles can be dropped in.
 
 ```text
-LEGAL UPDATE
-LEGAL INSIGHT
-CASE NOTE
-PRACTICAL GUIDE
-Read More
 EXPLORE INTEGRITAS VU LEGAL INSIGHTS
 ```
 
+**While no articles exist**, the four cards are replaced by the Client's own
+"coming soon" wording from Phase 6, which is why the card strings sit outside the fence
+above - `check_copy` would otherwise report them missing. The section heading already
+names the section, so the "Insights Coming Soon" title is not repeated here; only the two
+body paragraphs are shown:
+
+```text
+Our Insights section is currently being developed. We will soon share legal updates, practical perspectives, and analysis on key developments relevant to businesses and individuals.
+Please check back soon for our latest insights.
+```
+
+The cards come back on their own as soon as a real title reaches the locale file -
+`HomePageView` tests the titles rather than a separate switch. Their wording is kept in
+the locale files and in `phase-6-insights.md`:
+
+- `LEGAL UPDATE`, `LEGAL INSIGHT`, `CASE NOTE`, `PRACTICAL GUIDE`, `Read More`
+
 | Placeholder | Where |
 |---|---|
-| `[Article title]` | each of the four cards |
+| `[Article title]` | each of the four cards, once they are shown |
 
 | CTA | Destination |
 |---|---|
