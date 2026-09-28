@@ -718,8 +718,10 @@ a:hover .brand-logo {
 /* The intro beside the page heading is the first thing read on every inner page, so it
    sits a step above body size rather than inheriting it. */
 .about-opening p {
-  font-size: clamp(21px, 1.5vw, 27px);
-  line-height: 1.6;
+  /* Stepped back down from 27px at the site owner's request. The floor stays at 21px so
+     the phone size, which was the one reported as hard to read, does not move. */
+  font-size: clamp(21px, 1.2vw, 23px);
+  line-height: 1.62;
 }
 
 .about-opening p:last-child,
