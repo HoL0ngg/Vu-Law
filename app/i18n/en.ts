@@ -369,7 +369,9 @@ export const en = {
         slug: "nguyen-ha-thanh-vu",
         photo: "/images/nguyen-ha-thanh-vu.png",
         photoAlt: "Nguyen Ha Thanh Vu",
-        name: "NGUYEN HA THANH VU (VU NGUYEN)",
+        name: "NGUYEN HA THANH VU",
+        // Rendered on its own line under the name.
+        nameAlt: "(VU NGUYEN)",
         role: "Founder | Managing Lawyer",
         // `shortRole` is what the People index shows; `role` is the full title on the
         // profile page. The Client asked for a short line on the index only.
@@ -384,6 +386,7 @@ export const en = {
         photo: "/images/truc-nguyen.png",
         photoAlt: "Dr. Truc Nguyen",
         name: "DR. TRUC NGUYEN",
+        nameAlt: "",
         // "Co Founder" is unhyphenated in the Client's text; kept verbatim.
         role: "Co Founder | Ethics, Organisation, Management & Leadership Advisor",
         shortRole: "Special Advisor",

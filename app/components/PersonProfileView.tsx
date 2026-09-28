@@ -34,7 +34,10 @@ export default function PersonProfileView({ dictionary, member, locale = "en" }:
             priority
           />
           <div>
-            <h1 className="reveal-line">{member.name}</h1>
+            <h1 className="reveal-line">
+              {member.name}
+              {member.nameAlt ? <><br />{member.nameAlt}</> : null}
+            </h1>
             <p className="lawyer-role reveal" style={stagger(2)}>{member.role}</p>
           </div>
         </div>

@@ -1821,11 +1821,30 @@ a:hover .brand-logo {
   padding: 100px 8vw 120px;
 }
 
+/* A single 74ch column left the right half of a wide screen empty. Two columns use the
+   width while each line stays inside a readable measure - widening one column instead
+   would have pushed lines past 110 characters, which reads worse, not better. */
+.profile-prose {
+  max-width: 1480px;
+  columns: 2;
+  column-gap: 5vw;
+}
+
 .profile-prose p {
-  max-width: 74ch;
-  margin-bottom: 22px;
-  font-size: clamp(18px, 1.3vw, 20px);
-  line-height: 1.75;
+  max-width: none;
+  margin-bottom: 26px;
+  font-size: clamp(19px, 1.45vw, 22px);
+  line-height: 1.8;
+}
+
+@media (max-width: 1100px) {
+  .profile-prose {
+    columns: 1;
+  }
+
+  .profile-prose p {
+    max-width: 68ch;
+  }
 }
 
 .profile-body .text-link {

@@ -41,7 +41,10 @@ export default function PeoplePageView({ dictionary, locale = "en" }: PeoplePage
                 sizes="(max-width: 900px) 92vw, 34vw"
               />
               <span className="lawyer-card-copy">
-                <span className="lawyer-name">{member.name}</span>
+                <span className="lawyer-name">
+                  {member.name}
+                  {member.nameAlt ? <><br />{member.nameAlt}</> : null}
+                </span>
                 {/* The index carries the short title; the profile page shows the full one. */}
                 <span className="lawyer-role">{member.shortRole}</span>
                 <span className="lawyer-more">{page.viewProfile}<i aria-hidden="true">→</i></span>
