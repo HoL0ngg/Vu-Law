@@ -1942,3 +1942,39 @@ a:hover .brand-logo {
   border-bottom-color: var(--gold-deep);
   color: var(--gold-deep);
 }
+
+/* The Client asked for the gold role line to be upright, not italic. */
+.lawyer-role {
+  font-style: normal;
+}
+
+/* White-Collar Crime states its services as a paragraph rather than a list. */
+.practice-area-services-text {
+  max-width: 46ch;
+  margin: 0;
+  font-size: clamp(18px, 1.35vw, 21px);
+  line-height: 1.7;
+}
+
+/* Insights: the notice that stands in until articles are published. */
+.coming-soon {
+  padding: 110px 8vw 90px;
+}
+
+.coming-soon .display-heading {
+  margin-bottom: 30px;
+  font-size: clamp(34px, 4vw, 62px);
+}
+
+.coming-soon p {
+  max-width: 62ch;
+  margin-bottom: 20px;
+  font-size: clamp(18px, 1.35vw, 21px);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .coming-soon {
+    padding: 80px 24px 70px;
+  }
+}

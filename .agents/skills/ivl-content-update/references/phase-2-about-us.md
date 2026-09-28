@@ -1,5 +1,7 @@
 # Phase 2 - About Us (client-approved copy)
 
+> **Client revision (Website - feedback update 28-9-26.docx):** the line introducing the four steps was reworded.
+
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
 > "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
 > in Vietnamese. Strings below carry the revised form.
@@ -61,7 +63,7 @@ A headline, two paragraphs, then four steps (step name + description). Numbering
 Our approach
 From legal issues to a course of action.
 Every matter presents different circumstances, risks and objectives. We therefore do not apply a standard solution to every client.
-Our approach follows four steps:
+We structure each engagement around four key stages:
 Understand the matter
 Identify the facts, context, interests and practical objectives of the client.
 Assess the position

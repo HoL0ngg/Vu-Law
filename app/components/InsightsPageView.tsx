@@ -19,7 +19,15 @@ export default function InsightsPageView({ dictionary, locale = "en" }: Insights
     <PageFrame dictionary={dictionary} locale={locale}>
       <PageHero title={page.heading} />
 
-      <section className="insights-section section-paper">
+      {/* No articles exist yet, so the Client asked for this notice in their place. */}
+      <section className="coming-soon section-paper">
+        <h2 className="display-heading reveal-line">{page.comingSoonTitle}</h2>
+        {page.comingSoonBody.map((paragraph, index) => (
+          <p className="reveal" key={paragraph} style={stagger(index + 1)}>{paragraph}</p>
+        ))}
+      </section>
+
+      <section className="insights-section section-light">
         <div className="insight-grid">
           {page.cards.map((card, index) => (
             <article className="insight-card reveal" key={card.category} style={stagger(index)}>

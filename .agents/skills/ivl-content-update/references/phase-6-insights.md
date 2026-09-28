@@ -21,6 +21,16 @@ PRACTICAL GUIDE
 Read More
 ```
 
+No articles exist yet, so the Client asked that the page carry this notice instead:
+
+```text
+Insights Coming Soon
+Our Insights section is currently being developed. We will soon share legal updates, practical perspectives, and analysis on key developments relevant to businesses and individuals.
+Please check back soon for our latest insights.
+```
+
+The four category cards stay below it.
+
 | Placeholder | Where |
 |---|---|
 | `[Article title]` | each of the four cards |

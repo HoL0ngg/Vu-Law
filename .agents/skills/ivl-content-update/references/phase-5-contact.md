@@ -1,5 +1,7 @@
 # Phase 5 - Contact (Client-approved copy)
 
+> **Client revision (Website - feedback update 28-9-26.docx):** the lawyer is named in short form as "Vu Nguyen" and the Client supplied his own address, vu.nguyen@integritasvulegal.com, replacing the general inbox.
+
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
 > "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
 > in Vietnamese. Strings below carry the revised form.
@@ -15,7 +17,7 @@ from the strings; the site draws its own.
 LET’S START WITH INTEGRITAS VU LEGAL BY A CONVERSATION
 Every legal matter has its own context and objectives. If you would like to discuss a transaction, dispute or specific legal issue, please contact our lawyer directly or submit your enquiry through the form below.
 The initial information will help us understand the nature of your matter before speaking with you.
-NGUYEN HA THANH VU
+Vu Nguyen
 Managing Lawyer
 VIEW LAWYER PROFILE
 ```
@@ -29,7 +31,7 @@ The heading uses a curly apostrophe in `LET’S`, as supplied.
 | Item | Value |
 |---|---|
 | `Direct:` | 0938 170 130 |
-| `Email:` | contact@integritasvulegal.com |
+| `Email:` | vu.nguyen@integritasvulegal.com |
 | `LinkedIn:` | `[LinkedIn Profile]` - still unsupplied |
 
 The Client's document lists the first two as Mr Vu's **own** details and still leaves

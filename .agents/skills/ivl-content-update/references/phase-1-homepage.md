@@ -1,5 +1,7 @@
 # Phase 1 - Homepage (client-approved copy)
 
+> **Client revision (Website - feedback update 28-9-26.docx):** the introduction CTA is English, the office address gained "(GF)" and ", Vietnam", and the eight featured expertise items now render in English.
+
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
 > "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
 > in Vietnamese. Strings below carry the revised form.
@@ -35,14 +37,17 @@ Law is more than a framework.
 It is the foundation for sound decisions.
 At Integritas Vu Legal, we believe the value of legal advice lies in helping clients understand the issues, identify risks, evaluate their options and determine the course of action that best serves their objectives.
 Integritas Vu Legal is built as a focused law firm where each matter is approached with independent judgment, rigorous analysis and a solution-oriented mindset.
-VỀ INTEGRITAS VŨ LEGAL
+ABOUT US
 ```
 
 | CTA | Destination |
 |---|---|
-| VỀ INTEGRITAS VŨ LEGAL | `/about` |
+| ABOUT US | `/about` |
 
-This CTA is Vietnamese inside the English copy. Keep it verbatim as the `en` value, mark it `lang="vi"`, and flag it (AGENTS.md open question 4). Do not write an English replacement.
+The Client's original CTA here was `VỀ INTEGRITAS VŨ LEGAL`. In the 28-9 feedback they
+circled it with the note "Vẫn còn tiếng Việt" and asked that the English page carry no
+Vietnamese, but supplied no English replacement. `ABOUT US` - their own navigation label -
+was chosen by the site owner. **Confirm at sign-off.** The Vietnamese CTA is unchanged on `/vi`.
 
 ## 3. The IVL approach
 
@@ -154,7 +159,7 @@ The Contact column shows the entity name followed by three placeholders:
 
 | Item | Value |
 |---|---|
-| Office address (EN) | 37/16 Tran Dinh Xu Street, Cau Ong Lanh Ward, Ho Chi Minh City |
+| Office address (EN) | 37/16 (GF) Tran Dinh Xu Street, Cau Ong Lanh Ward, Ho Chi Minh City, Vietnam |
 | Office address (VN) | 37/16 Trần Đình Xu, Phường Cầu Ông Lãnh, Thành phố Hồ Chí Minh |
 | Telephone | 0938 170 130 |
 | Email | contact@integritasvulegal.com |

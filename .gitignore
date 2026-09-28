@@ -11,3 +11,6 @@ npm-debug.log*
 .chrome-audit-profile/
 
 .chrome-audit-profile/
+
+# Word lock files
+~$*

@@ -461,7 +461,8 @@ export const vi = {
     // Số và hộp thư của công ty, điền theo chỉ định của chủ website.
     // Tài liệu của Client vẫn để đây là thông tin riêng của anh Vũ.
     direct: "0938 170 130",
-    email: "contact@integritasvulegal.com",
+    // Supplied by the Client 2026-09-28; an address, not language-specific.
+    email: "vu.nguyen@integritasvulegal.com",
     linkedin: "[LinkedIn Profile]",
     profileCta: "XEM HỒ SƠ LUẬT SƯ",
     form: {

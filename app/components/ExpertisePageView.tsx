@@ -51,11 +51,17 @@ export default function ExpertisePageView({ dictionary, locale = "en" }: Experti
           </div>
           <div className="practice-area-services">
             <h3 className="section-label reveal">{page.servicesTitle}</h3>
-            <ul>
-              {area.services.map((service, i) => (
-                <li className="reveal" key={service} style={stagger(i)}>{service}</li>
-              ))}
-            </ul>
+            {/* Most areas list their services; White-Collar Crime is written as one
+                paragraph, which is how the Client supplied it. */}
+            {"servicesText" in area && area.servicesText ? (
+              <p className="practice-area-services-text reveal">{area.servicesText}</p>
+            ) : (
+              <ul>
+                {area.services.map((service, i) => (
+                  <li className="reveal" key={service} style={stagger(i)}>{service}</li>
+                ))}
+              </ul>
+            )}
           </div>
         </section>
       ))}

@@ -51,7 +51,10 @@ export const en = {
         "At Integritas Vu Legal, we believe the value of legal advice lies in helping Clients understand the issues, identify risks, evaluate their options and determine the course of action that best serves their objectives.",
         "Integritas Vu Legal is built as a focused law firm where each matter is approached with independent judgment, rigorous analysis and a solution-oriented mindset.",
       ],
-      cta: "VỀ INTEGRITAS VŨ LEGAL",
+      // Was the Client's Vietnamese CTA; they asked for the English page to carry no
+    // Vietnamese and supplied no replacement, so this reuses their own nav label,
+    // chosen by the site owner. Confirm at sign-off.
+    cta: "ABOUT US",
     },
     approach: {
       eyebrow: "THE INTEGRITAS VU LEGAL APPROACH",
@@ -67,8 +70,21 @@ export const en = {
         "Real Estate & Construction",
         "Private Clients",
       ],
-      // TODO(client): English text for the eight featured expertise items is pending.
-      featuredItems: [] as string[],
+      // TODO(client): confirm this English wording. The Client supplied these eight only
+      // in Vietnamese and asked that the English page show no Vietnamese, so they are
+      // rendered into English at the site owner's direction. Four reuse the Client's own
+      // English from the Expertise page (legal due diligence, risk management, debt
+      // recovery, transaction/investment structuring); the rest are new wording.
+      featuredItems: [
+        "Corporate finance",
+        "Secured transactions",
+        "Legal due diligence",
+        "Investment structuring",
+        "Risk management",
+        "Debt recovery",
+        "Tax advisory",
+        "Banking & credit",
+      ] as string[],
     },
     insights: {
       heading: "Featured Insights",
@@ -143,7 +159,7 @@ export const en = {
       title: "From legal issues to a course of action.",
       paragraphs: [
         "Every matter presents different circumstances, risks and objectives. We therefore do not apply a standard solution to every Client.",
-        "Our approach follows four steps:",
+        "We structure each engagement around four key stages:",
       ],
       steps: [
         { name: "Understand the matter", body: "Identify the facts, context, interests and practical objectives of the Client." },
@@ -191,6 +207,17 @@ export const en = {
         ],
       },
       {
+        id: "white-collar-crime",
+        name: "White-Collar Crime",
+        paragraphs: [
+          "White-Collar Crime matters can expose businesses and individuals to significant legal, financial, and reputational risks. Integritas Vu Legal advises and represents Clients in sensitive and complex matters involving alleged economic and corporate misconduct, from early-stage risk assessment and internal investigations to proceedings before competent authorities and courts.",
+          "We combine legal analysis with a practical understanding of business operations and evidentiary issues to develop a clear strategy, protect our clients’ legitimate interests and manage risks throughout each stage of the matter.",
+        ],
+        // The Client wrote this area's services as one paragraph rather than a list.
+        servicesText: "Our work covers fraud, misappropriation, bribery and corruption, corporate and economic offences, internal investigations, and regulatory and criminal proceedings. We advise and represent businesses and individuals throughout investigations, prosecutions and court proceedings, as well as on asset recovery, compliance and preventive measures to identify and mitigate potential legal and regulatory risks.",
+        services: [] as string[],
+      },
+      {
         id: "arbitration",
         name: "Arbitration",
         paragraphs: [
@@ -211,7 +238,7 @@ export const en = {
           "Obtaining a favourable judgment or award is not always the end of a dispute. Integritas Vu Legal assists Clients in developing and implementing enforcement strategies, from assessing recoverability to pursuing the necessary legal procedures.",
         ],
         services: [
-          "Enforcement of court judgments and decisions",
+          "Enforcement of Court Judgments and Decisions and Arbitration Award",
           "Enforcement and recoverability assessment",
           "Asset identification for enforcement purposes",
           "Enforcement against shares, equity interests and corporate assets",
@@ -311,6 +338,8 @@ export const en = {
           "Civil contract disputes",
           "Negotiation and mediation",
           "Court representation",
+          "Prenuptial Agreement",
+          "Will",
         ],
       },
     ],
@@ -340,8 +369,11 @@ export const en = {
         slug: "nguyen-ha-thanh-vu",
         photo: "/images/nguyen-ha-thanh-vu.png",
         photoAlt: "Nguyen Ha Thanh Vu",
-        name: "NGUYEN HA THANH VU",
+        name: "NGUYEN HA THANH VU (VU NGUYEN)",
         role: "Founder | Managing Lawyer",
+        // `shortRole` is what the People index shows; `role` is the full title on the
+        // profile page. The Client asked for a short line on the index only.
+        shortRole: "Founder | Managing Lawyer",
         initials: "NV",
         // TODO(client): Biography not supplied ("Phần mô tả anh Vũ chưa gửi").
         biography: [] as string[],
@@ -354,6 +386,7 @@ export const en = {
         name: "DR. TRUC NGUYEN",
         // "Co Founder" is unhyphenated in the Client's text; kept verbatim.
         role: "Co Founder | Ethics, Organisation, Management & Leadership Advisor",
+        shortRole: "Special Advisor",
         initials: "TN",
         biography: [
           "Dr Truc Nguyen is an ethics, organisation, management and leadership advisor with extensive academic and professional experience across Vietnam and the UK. She has held academic positions at universities in both countries. She holds a PhD in Management from the University of Kent, an MBA from RMIT University Vietnam, and a Bachelor's degree in Business Management from Finland.",
@@ -370,7 +403,7 @@ export const en = {
       "Every legal matter has its own context and objectives. If you would like to discuss a transaction, dispute or specific legal issue, please contact our lawyer directly or submit your enquiry through the form below.",
       "The initial information will help us understand the nature of your matter before speaking with you.",
     ],
-    lawyerName: "NGUYEN HA THANH VU",
+    lawyerName: "Vu Nguyen",
     lawyerRole: "Managing Lawyer",
     directLabel: "Direct:",
     emailLabel: "Email:",
@@ -379,7 +412,8 @@ export const en = {
     // The Client's document still lists these as Mr Vu's own [Telephone] and
     // [Professional Email]; confirm the attribution at sign-off.
     direct: "0938 170 130",
-    email: "contact@integritasvulegal.com",
+    // Supplied by the Client, 2026-09-28: his own address, replacing the general inbox.
+    email: "vu.nguyen@integritasvulegal.com",
     // TODO(client): Supply the LinkedIn profile URL.
     linkedin: "[LinkedIn Profile]",
     profileCta: "VIEW LAWYER PROFILE",
@@ -430,6 +464,12 @@ export const en = {
   insightsPage: {
     heading: "Insights",
     readMore: "Read More",
+    // Shown in place of articles until the Client publishes any, wording supplied by them.
+    comingSoonTitle: "Insights Coming Soon",
+    comingSoonBody: [
+      "Our Insights section is currently being developed. We will soon share legal updates, practical perspectives, and analysis on key developments relevant to businesses and individuals.",
+      "Please check back soon for our latest insights.",
+    ],
     cards: [
       // TODO(client): Supply the article title and URL.
       { category: "LEGAL UPDATE", title: "[Article title]" },
@@ -470,7 +510,7 @@ export const en = {
       "Employment",
     ],
     entityName: "CÔNG TY LUẬT TNHH INTEGRITAS VŨ LEGAL",
-    officeAddress: "37/16 Tran Dinh Xu Street, Cau Ong Lanh Ward, Ho Chi Minh City",
+    officeAddress: "37/16 (GF) Tran Dinh Xu Street, Cau Ong Lanh Ward, Ho Chi Minh City, Vietnam",
     telephone: "0938 170 130",
     email: "contact@integritasvulegal.com",
     legalTitle: "Legal",

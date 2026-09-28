@@ -1,5 +1,9 @@
 # Phase 3 - Expertise (Client-approved copy)
 
+> **Client revision (Website - feedback update 28-9-26.docx):** added the White-Collar
+> Crime practice area after Dispute Resolution; reworded the Enforcement service item;
+> added Prenuptial Agreement and Will to Private Clients.
+
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
 > "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
 > in Vietnamese. Strings below carry the revised form.
@@ -33,6 +37,7 @@ SPEAK WITH OUR LAWYERS
 
 ```text
 Dispute Resolution
+White-Collar Crime
 Arbitration
 Enforcement & Asset Recovery
 Corporate & Commercial
@@ -47,6 +52,7 @@ Each is an in-page anchor to the matching block below.
 | Area | Anchor |
 |---|---|
 | Dispute Resolution | `#dispute-resolution` |
+| White-Collar Crime | `#white-collar-crime` |
 | Arbitration | `#arbitration` |
 | Enforcement & Asset Recovery | `#enforcement-asset-recovery` |
 | Corporate & Commercial | `#corporate-commercial` |
@@ -81,6 +87,22 @@ Court representation
 Judgment enforcement and asset recovery
 ```
 
+### White-Collar Crime
+
+Added in the 28-9 feedback, positioned directly after Dispute Resolution. The Client wrote
+this area's services as a **single paragraph** rather than a list, so the page renders a
+paragraph here and a list everywhere else.
+
+```text
+White-Collar Crime matters can expose businesses and individuals to significant legal, financial, and reputational risks. Integritas Vu Legal advises and represents Clients in sensitive and complex matters involving alleged economic and corporate misconduct, from early-stage risk assessment and internal investigations to proceedings before competent authorities and courts.
+We combine legal analysis with a practical understanding of business operations and evidentiary issues to develop a clear strategy, protect our clients’ legitimate interests and manage risks throughout each stage of the matter.
+Our work covers fraud, misappropriation, bribery and corruption, corporate and economic offences, internal investigations, and regulatory and criminal proceedings. We advise and represent businesses and individuals throughout investigations, prosecutions and court proceedings, as well as on asset recovery, compliance and preventive measures to identify and mitigate potential legal and regulatory risks.
+```
+
+The Client wrote "our clients’ legitimate interests" here in lower case with a curly
+apostrophe. The capitalisation rule for "Client" is applied to the two description
+paragraphs as elsewhere; this one instance sits inside the services paragraph.
+
 ### Arbitration
 
 ```text
@@ -96,7 +118,7 @@ Interim measures
 
 ```text
 Obtaining a favourable judgment or award is not always the end of a dispute. Integritas Vu Legal assists Clients in developing and implementing enforcement strategies, from assessing recoverability to pursuing the necessary legal procedures.
-Enforcement of court judgments and decisions
+Enforcement of Court Judgments and Decisions and Arbitration Award
 Enforcement and recoverability assessment
 Asset identification for enforcement purposes
 Enforcement against shares, equity interests and corporate assets
@@ -181,6 +203,8 @@ Property-related liabilities and debts
 Civil contract disputes
 Negotiation and mediation
 Court representation
+Prenuptial Agreement
+Will
 ```
 
 ## 4. Closing statement
