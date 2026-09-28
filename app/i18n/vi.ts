@@ -430,8 +430,14 @@ export const vi = {
         photoAlt: "Nguyễn Hà Thanh Vũ",
         name: "NGUYỄN HÀ THANH VŨ",
         role: "Nhà sáng lập | Luật sư điều hành",
-        // TODO(client): biography still not supplied ("Phần mô tả anh Vũ chưa gửi").
-        biography: [],
+        biography: [
+          "Luật sư Nguyễn Hà Thanh Vũ (Vũ Nguyễn) là Nhà sáng lập kiêm Luật sư Điều hành của Integritas Vu Legal, công ty luật tại Việt Nam được xây dựng trên quan điểm rằng tư vấn pháp lý cần chặt chẽ, gắn với thực tiễn kinh doanh và hướng đến những kết quả có ý nghĩa thực chất cho khách hàng.",
+          "Luật sư Vũ tư vấn và đại diện cho khách hàng trong và ngoài nước trong nhiều vụ việc tranh tụng và phi tranh tụng, với thế mạnh đặc biệt trong các lĩnh vực tranh chấp thương mại, trọng tài, thi hành án, tội phạm kinh tế, doanh nghiệp và đầu tư.",
+          "Ông đã đại diện cho doanh nghiệp và cá nhân trong nhiều thủ tục tố tụng phức tạp trước Tòa án, Hội đồng Trọng tài và các cơ quan có thẩm quyền, đồng thời tư vấn cho doanh nghiệp có vốn đầu tư nước ngoài và nhà đầu tư về các vấn đề doanh nghiệp, tái cơ cấu và đầu tư tại Việt Nam. Cách tiếp cận của ông kết hợp phân tích pháp lý chuyên sâu với sự thấu hiểu thực tế về mục tiêu kinh doanh, hoạt động vận hành và mức độ rủi ro của khách hàng.",
+          "Với vai trò Nhà sáng lập, Luật sư Vũ định hướng chiến lược cho Integritas Vu Legal và trực tiếp tham gia vào quá trình cung cấp dịch vụ pháp lý của công ty. Ông cam kết xây dựng một mô hình hành nghề hiện đại, linh hoạt và hướng đến kết quả, mang đến cho khách hàng những ý kiến tư vấn rõ ràng, sự đại diện hiệu quả và các giải pháp hợp lý về mặt kinh doanh trong những vấn đề pháp lý phức tạp.",
+          "Trước khi thành lập Integritas Vu Legal, Luật sư Vũ từng hành nghề tại một công ty luật hàng đầu Việt Nam, nơi ông tích lũy kinh nghiệm dày dặn trong các vụ tranh chấp phức tạp và nhiều vụ việc pháp lý quan trọng khác.",
+          "Luật sư Vũ có bằng Thạc sĩ Luật Dân sự tại Đại học Paris 1 Panthéon-Sorbonne, một trong những trường đại học hàng đầu của Pháp và châu Âu, đồng thời là thành viên Đoàn Luật sư Thành phố Hồ Chí Minh và Liên đoàn Luật sư Việt Nam.",
+        ],
       },
       {
         photoAlt: "TS. Trúc Nguyễn",
@@ -519,7 +525,7 @@ export const vi = {
       // TODO(client): Vietnamese name pending - the Client supplied this practice area in
       // English only. Holding the slot keeps the rest of this list on its own labels,
       // because these arrays merge by index.
-      "White-Collar Crime",
+      "White-Collar Crimes",
       "Trọng tài",
       "Thi hành án",
       "Doanh nghiệp & Thương mại",

@@ -207,10 +207,10 @@ export const en = {
         ],
       },
       {
-        id: "white-collar-crime",
-        name: "White-Collar Crime",
+        id: "white-collar-crimes",
+        name: "White-Collar Crimes",
         paragraphs: [
-          "White-Collar Crime matters can expose businesses and individuals to significant legal, financial, and reputational risks. Integritas Vu Legal advises and represents Clients in sensitive and complex matters involving alleged economic and corporate misconduct, from early-stage risk assessment and internal investigations to proceedings before competent authorities and courts.",
+          "White-Collar Crimes matters can expose businesses and individuals to significant legal, financial, and reputational risks. Integritas Vu Legal advises and represents Clients in sensitive and complex matters involving alleged economic and corporate misconduct, from early-stage risk assessment and internal investigations to proceedings before competent authorities and courts.",
           "We combine legal analysis with a practical understanding of business operations and evidentiary issues to develop a clear strategy, protect our clients’ legitimate interests and manage risks throughout each stage of the matter.",
         ],
         // The Client wrote this area's services as one paragraph rather than a list.
@@ -377,8 +377,14 @@ export const en = {
         // profile page. The Client asked for a short line on the index only.
         shortRole: "Founder | Managing Lawyer",
         initials: "NV",
-        // TODO(client): Biography not supplied ("Phần mô tả anh Vũ chưa gửi").
-        biography: [] as string[],
+        biography: [
+          "Nguyen Ha Thanh Vu (Vu Nguyen) is the Founder and Managing Lawyer of Integritas Vu Legal, a Vietnam-based law firm built on the belief that legal advice should be rigorous, commercially grounded and focused on achieving meaningful outcomes for Clients.",
+          "Vu advises and represents domestic and international Clients in a broad range of contentious and non-contentious matters, with particular experience in commercial disputes, arbitration, judgment enforcement, white-collar crime, corporate and investment matters.",
+          "He has represented businesses and individuals in complex proceedings before courts, arbitral tribunals and competent authorities, while also advising foreign-invested enterprises and investors on corporate, restructuring and investment matters in Vietnam. His work combines in-depth legal analysis with a practical understanding of Clients' commercial objectives, operational realities and risk exposure.",
+          "As the founder of Integritas Vu Legal, Vu leads the firm's strategic direction and is closely involved in the delivery of its legal services. He is committed to building a modern, responsive and results-oriented practice that provides Clients with clear advice, effective representation and commercially sensible solutions in complex legal matters.",
+          "Before founding Integritas Vu Legal, Vu practised at a top-tier Vietnamese law firm, where he developed substantial experience in complex disputes and other significant legal matters.",
+          "Vu holds a Master of Civil Law from Université Paris 1 Panthéon-Sorbonne, a leading university in France and Europe, and he is a member of the Ho Chi Minh City Bar Association and the Vietnam Bar Federation.",
+        ],
       },
       {
         // Not in the Client's sitemap; slug follows the same convention.
@@ -504,7 +510,7 @@ export const en = {
     expertiseTitle: "Key Expertise",
     expertiseLinks: [
       "Dispute Resolution",
-      "White-Collar Crime",
+      "White-Collar Crimes",
       "Arbitration",
       "Enforcement",
       "Corporate & Commercial",

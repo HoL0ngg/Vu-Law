@@ -226,6 +226,15 @@ a:hover .brand-logo {
     linear-gradient(0deg, rgba(8, 20, 31, 0.86), transparent 55%);
 }
 
+/* The Homepage keeps its copy on the left, so the gradient above suits it. The inner
+   pages put a paragraph on the right, where that gradient has faded to 0.18 and the
+   columns photograph is at its brightest - which is why the text was hard to read. */
+.about-hero-shade {
+  background:
+    linear-gradient(90deg, rgba(8, 22, 34, 0.95) 0%, rgba(10, 26, 40, 0.89) 52%, rgba(10, 26, 40, 0.84) 100%),
+    linear-gradient(0deg, rgba(8, 20, 31, 0.72), transparent 62%);
+}
+
 .hero-columns {
   position: absolute;
   z-index: -1;
@@ -268,14 +277,26 @@ a:hover .brand-logo {
   content: "";
 }
 
-.hero h1,
-.about-hero h1 {
+.hero h1 {
   max-width: 880px;
   margin-bottom: 34px;
   font-size: clamp(58px, 7.6vw, 116px);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 0.94;
+}
+
+/* Inner-page headings run from one word ("People") to a full sentence ("LET'S START
+   WITH INTEGRITAS VU LEGAL BY A CONVERSATION"), so they take a smaller size than the
+   Homepage hero and are held inside their own column. */
+.about-hero h1 {
+  max-width: 100%;
+  margin-bottom: 0;
+  font-size: clamp(36px, 4.2vw, 68px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  overflow-wrap: break-word;
 }
 
 .hero-body {
@@ -674,9 +695,11 @@ a:hover .brand-logo {
 .about-hero-copy {
   display: grid;
   width: 100%;
-  grid-template-columns: minmax(280px, 0.8fr) minmax(340px, 1.2fr);
+  /* Equal tracks: the old 0.8 / 1.2 split gave the heading the narrower column, which is
+     what pushed the longest heading out of it. */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: end;
-  gap: 9vw;
+  gap: 6vw;
 }
 
 .about-hero h1 {
@@ -684,7 +707,7 @@ a:hover .brand-logo {
 }
 
 .about-opening {
-  color: #d1dade;
+  color: #e0e7ea;
 }
 
 .about-opening p:last-child,
@@ -1971,7 +1994,7 @@ a:hover .brand-logo {
   font-style: normal;
 }
 
-/* White-Collar Crime states its services as a paragraph rather than a list. */
+/* White-Collar Crimes states its services as a paragraph rather than a list. */
 .practice-area-services-text {
   max-width: 46ch;
   margin: 0;

@@ -43,21 +43,32 @@ Homepage, or should the People page carry a different CTA?
 
 ```text
 NGUYEN HA THANH VU
+(VU NGUYEN)
 Founder | Managing Lawyer
+Nguyen Ha Thanh Vu (Vu Nguyen) is the Founder and Managing Lawyer of Integritas Vu Legal, a Vietnam-based law firm built on the belief that legal advice should be rigorous, commercially grounded and focused on achieving meaningful outcomes for Clients.
+Vu advises and represents domestic and international Clients in a broad range of contentious and non-contentious matters, with particular experience in commercial disputes, arbitration, judgment enforcement, white-collar crime, corporate and investment matters.
+He has represented businesses and individuals in complex proceedings before courts, arbitral tribunals and competent authorities, while also advising foreign-invested enterprises and investors on corporate, restructuring and investment matters in Vietnam. His work combines in-depth legal analysis with a practical understanding of Clients' commercial objectives, operational realities and risk exposure.
+As the founder of Integritas Vu Legal, Vu leads the firm's strategic direction and is closely involved in the delivery of its legal services. He is committed to building a modern, responsive and results-oriented practice that provides Clients with clear advice, effective representation and commercially sensible solutions in complex legal matters.
+Before founding Integritas Vu Legal, Vu practised at a top-tier Vietnamese law firm, where he developed substantial experience in complex disputes and other significant legal matters.
+Vu holds a Master of Civil Law from Université Paris 1 Panthéon-Sorbonne, a leading university in France and Europe, and he is a member of the Ho Chi Minh City Bar Association and the Vietnam Bar Federation.
 ```
+
+Supplied 2026-09-29, English and Vietnamese. `(VU NGUYEN)` renders on its own line under
+the name. Note that this text says "white-collar crime" in lower case and singular, as a
+field of law; the practice area itself is titled "White-Collar Crimes". Both are kept as
+written.
 
 The Client's document writes this name **without diacritics** in Phase 4 and Contact, but
 **with** diacritics on the Homepage (`NGUYỄN HÀ THANH VŨ`). AGENTS.md rule 8 says names are
 intentional as supplied and must not be normalised in either direction, so each page keeps the
 form its own section uses. Flagged for the Client.
 
-| Missing input | Handling |
+| Input | Status |
 |---|---|
-| Biography | The Client's note reads: "Phần mô tả anh Vũ chưa gửi cho c nên tạm thời trống phần mô tả của a Vũ nha e" - the biography has not been supplied. Render no biography. `TODO(client)` |
+| Biography | Supplied 2026-09-29, in both languages. |
 | Photograph | Supplied 2026-09: `public/images/nguyen-ha-thanh-vu.png`. |
 
-His card links to `/people/nguyen-ha-thanh-vu`, which carries the name and role but no
-biography, since none was supplied.
+His card links to `/people/nguyen-ha-thanh-vu`, which now carries the full biography.
 
 ## 3. Dr. Truc Nguyen
 
