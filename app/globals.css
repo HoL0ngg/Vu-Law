@@ -684,10 +684,10 @@ a:hover .brand-logo {
      500px of empty image above the title on About and People. The section now sizes to
      its content, with just enough height to read as a hero and enough top padding to
      clear the fixed 92px header. */
-  min-height: 58svh;
+  min-height: 40svh;
   align-items: flex-end;
   overflow: hidden;
-  padding: 136px 8vw 74px;
+  padding: 122px 8vw 66px;
   isolation: isolate;
 }
 
@@ -713,6 +713,13 @@ a:hover .brand-logo {
 
 .about-opening {
   color: #e0e7ea;
+}
+
+/* The intro beside the page heading is the first thing read on every inner page, so it
+   sits a step above body size rather than inheriting it. */
+.about-opening p {
+  font-size: clamp(21px, 1.5vw, 27px);
+  line-height: 1.6;
 }
 
 .about-opening p:last-child,
@@ -1070,7 +1077,9 @@ a:hover .brand-logo {
 
 @media (max-width: 720px) {
   body {
-    font-size: 19px;
+    /* Was 19px, which undid the desktop increases on exactly the screens where the copy
+       is hardest to read. */
+    font-size: 21px;
   }
 
   .nav nav {
@@ -1187,8 +1196,11 @@ a:hover .brand-logo {
   }
 
   .about-hero {
-    min-height: 970px;
-    padding: 135px 22px 75px;
+    /* Was min-height: 970px, taller than the phone viewport itself, which pushed the
+       heading below the fold behind a wall of empty photograph. The hero now sizes to
+       its content, with only enough top padding to clear the fixed header. */
+    min-height: 0;
+    padding: 112px 22px 56px;
   }
 
   .about-hero-copy {
