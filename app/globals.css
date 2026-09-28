@@ -473,8 +473,10 @@ a:hover .brand-logo {
 
 .expertise-category {
   display: flex;
-  min-height: 210px;
-  align-items: flex-end;
+  /* Was min-height: 210px with the label bottom-aligned, which left about 139px of empty
+     box above every label. The box now fits its content. */
+  min-height: 0;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 30px;
@@ -599,9 +601,11 @@ a:hover .brand-logo {
 
 .people-section {
   display: grid;
-  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+  /* The first track is sized to the portrait itself rather than a fraction of the row,
+     so the copy sits beside the photograph instead of a column-width away from it. */
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
   align-items: center;
-  gap: 10vw;
+  gap: 5vw;
 }
 
 .portrait-placeholder {
@@ -1986,7 +1990,9 @@ a:hover .brand-logo {
 }
 
 .coming-soon p {
-  max-width: 62ch;
+  /* 62ch left about 990px of a 1920 row empty; this uses the width while keeping the
+     line inside a readable measure. */
+  max-width: 1100px;
   margin-bottom: 20px;
   font-size: clamp(18px, 1.35vw, 21px);
   line-height: 1.7;

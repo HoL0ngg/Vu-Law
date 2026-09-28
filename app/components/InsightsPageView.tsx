@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { routePath } from "../i18n/routes";
+import { isPlaceholder } from "../lib/contact";
 import PageFrame from "./PageFrame";
 import PageHero from "./PageHero";
 
@@ -14,6 +15,7 @@ type InsightsPageViewProps = {
 
 export default function InsightsPageView({ dictionary, locale = "en" }: InsightsPageViewProps) {
   const page = dictionary.insightsPage;
+  const hasArticles = page.cards.some((card) => !isPlaceholder(card.title));
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
@@ -27,6 +29,10 @@ export default function InsightsPageView({ dictionary, locale = "en" }: Insights
         ))}
       </section>
 
+      {/* The cards carry only "[Article title]" until the Client supplies articles, so
+          they stay hidden and the coming-soon notice stands alone. They reappear on
+          their own once a real title lands in the locale file. */}
+      {hasArticles ? (
       <section className="insights-section section-light">
         <div className="insight-grid">
           {page.cards.map((card, index) => (
@@ -42,6 +48,7 @@ export default function InsightsPageView({ dictionary, locale = "en" }: Insights
           ))}
         </div>
       </section>
+      ) : null}
     </PageFrame>
   );
 }
