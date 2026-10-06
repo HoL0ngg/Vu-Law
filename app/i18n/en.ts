@@ -458,6 +458,9 @@ export const en = {
         "At this stage, please provide only a general description of your matter. You should not submit confidential or sensitive documents or information through this initial enquiry form.",
       ],
       submit: "SUBMIT ENQUIRY",
+      submitting: "SUBMITTING…",
+      success: "Your enquiry has been submitted.",
+      error: "Your enquiry could not be submitted. Please try again.",
     },
   },
   careersPage: {
