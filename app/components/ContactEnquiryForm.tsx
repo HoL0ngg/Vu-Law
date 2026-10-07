@@ -14,11 +14,12 @@ export default function ContactEnquiryForm({ form }: ContactEnquiryFormProps) {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const formElement = event.currentTarget;
     setStatus("submitting");
 
     try {
       const payload = new URLSearchParams();
-      new FormData(event.currentTarget).forEach((value, key) => {
+      new FormData(formElement).forEach((value, key) => {
         if (typeof value === "string") payload.append(key, value);
       });
 
@@ -28,7 +29,7 @@ export default function ContactEnquiryForm({ form }: ContactEnquiryFormProps) {
       });
 
       if (!response.ok) throw new Error("Contact submission failed");
-      event.currentTarget.reset();
+      formElement.reset();
       setStatus("success");
     } catch {
       setStatus("error");
