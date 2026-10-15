@@ -400,8 +400,8 @@ export const en = {
         biography: [
           "Dr Truc Nguyen is an ethics, organisation, management and leadership advisor with extensive academic and professional experience across Vietnam and the UK. She has held academic positions at universities in both countries. She holds a PhD in Management from the University of Kent, an MBA from RMIT University Vietnam, and a Bachelor's degree in Business Management from Finland.",
           "Her expertise covers business ethics, organisational management, leadership, institutional logics and cross-cultural management. Through her research, she has worked extensively with managerial leaders in multinational corporations (MNCs), gaining deep insights into how business leaders think, make decisions and navigate ethical, organisational and legal considerations in Vietnam.",
-          "For Clients, Truc has advised organisations on complex organisational and business matters, including internal employment and workplace issues, workforce restructuring and layoff decisions, overtime practices, employee treatment, organisational compliance and environmental sustainability. Through this work, she has helped organisations address the ethical dimensions of business decisions, balancing business objectives, legal requirements, employee wellbeing, fairness, stakeholder interests and organisational responsibility, while taking into account the cultural and organisational context of Vietnam.",
-          "Her approach is grounded in Tâm—conscience, moral awareness and responsibility—while respecting legal requirements and international standards. Within the firm, Truc plays a key role in building an ethical organisational culture and climate, supporting responsible management and people-focused practices. These principles also shape the firm's approach to Clients: understanding each Client's circumstances, respecting their individual needs and values, and providing professional advice grounded in integrity, empathy and respect.",
+          "For Clients, Dr. Truc Nguyen has advised organisations on complex organisational and business matters, including internal employment and workplace issues, workforce restructuring and layoff decisions, overtime practices, employee treatment, organisational compliance and environmental sustainability. Through this work, she has helped organisations address the ethical dimensions of business decisions, balancing business objectives, legal requirements, employee wellbeing, fairness, stakeholder interests and organisational responsibility, while taking into account the cultural and organisational context of Vietnam.",
+          "Her approach is grounded in Tâm—conscience, moral awareness and responsibility—while respecting legal requirements and international standards. Within the firm, Dr. Truc Nguyen plays a key role in building an ethical organisational culture and climate, supporting responsible management and people-focused practices. These principles also shape the firm's approach to Clients: understanding each Client's circumstances, respecting their individual needs and values, and providing professional advice grounded in integrity, empathy and respect.",
         ],
       },
     ],
@@ -522,7 +522,9 @@ export const en = {
       "Real Estate & Construction",
       "Employment",
     ],
-    entityName: "CÔNG TY LUẬT TNHH INTEGRITAS VŨ LEGAL",
+    // The Client asked (15-10) for the English footer and Contact to read "INTEGRITAS VU
+    // LEGAL LLC". The Vietnamese locale keeps the legal entity name with its diacritics.
+    entityName: "INTEGRITAS VU LEGAL LLC",
     officeAddress: "37/16 (GF) Tran Dinh Xu Street, Cau Ong Lanh Ward, Ho Chi Minh City, Vietnam",
     telephone: "0938 170 130",
     email: "contact@integritasvulegal.com",

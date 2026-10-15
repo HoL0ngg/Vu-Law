@@ -1,5 +1,7 @@
 # Phase 4 - People (Client-approved copy)
 
+> **Client revision (feedbacks chỉnh sửa web 15-10.docx):** wherever the biography named her as just "Truc" it now reads "Dr. Truc Nguyen" (English) and "Bà Trúc Nguyễn" (Vietnamese, third and last paragraphs). On `/vi/people` the profile link reads `XEM HỒ SƠ`.
+
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
 > "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
 > in Vietnamese. Strings below carry the revised form.
@@ -79,8 +81,8 @@ DR. TRUC NGUYEN
 Co Founder | Ethics, Organisation, Management & Leadership Advisor
 Dr Truc Nguyen is an ethics, organisation, management and leadership advisor with extensive academic and professional experience across Vietnam and the UK. She has held academic positions at universities in both countries. She holds a PhD in Management from the University of Kent, an MBA from RMIT University Vietnam, and a Bachelor's degree in Business Management from Finland.
 Her expertise covers business ethics, organisational management, leadership, institutional logics and cross-cultural management. Through her research, she has worked extensively with managerial leaders in multinational corporations (MNCs), gaining deep insights into how business leaders think, make decisions and navigate ethical, organisational and legal considerations in Vietnam.
-For Clients, Truc has advised organisations on complex organisational and business matters, including internal employment and workplace issues, workforce restructuring and layoff decisions, overtime practices, employee treatment, organisational compliance and environmental sustainability. Through this work, she has helped organisations address the ethical dimensions of business decisions, balancing business objectives, legal requirements, employee wellbeing, fairness, stakeholder interests and organisational responsibility, while taking into account the cultural and organisational context of Vietnam.
-Her approach is grounded in Tâm—conscience, moral awareness and responsibility—while respecting legal requirements and international standards. Within the firm, Truc plays a key role in building an ethical organisational culture and climate, supporting responsible management and people-focused practices. These principles also shape the firm's approach to Clients: understanding each Client's circumstances, respecting their individual needs and values, and providing professional advice grounded in integrity, empathy and respect.
+For Clients, Dr. Truc Nguyen has advised organisations on complex organisational and business matters, including internal employment and workplace issues, workforce restructuring and layoff decisions, overtime practices, employee treatment, organisational compliance and environmental sustainability. Through this work, she has helped organisations address the ethical dimensions of business decisions, balancing business objectives, legal requirements, employee wellbeing, fairness, stakeholder interests and organisational responsibility, while taking into account the cultural and organisational context of Vietnam.
+Her approach is grounded in Tâm—conscience, moral awareness and responsibility—while respecting legal requirements and international standards. Within the firm, Dr. Truc Nguyen plays a key role in building an ethical organisational culture and climate, supporting responsible management and people-focused practices. These principles also shape the firm's approach to Clients: understanding each Client's circumstances, respecting their individual needs and values, and providing professional advice grounded in integrity, empathy and respect.
 ```
 
 Notes on this biography, all kept verbatim:

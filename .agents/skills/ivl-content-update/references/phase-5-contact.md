@@ -1,5 +1,7 @@
 # Phase 5 - Contact (Client-approved copy)
 
+> **Client revision (feedbacks chỉnh sửa web 15-10.docx):** on the English Contact page the firm card is headed `INTEGRITAS VU LEGAL LLC`, matching the footer. The enquiry form now submits through `/api/contact`, which checks the response body as well as the HTTP status.
+
 > **Client revision (Website - feedback update 28-9-26.docx):** the lawyer is named in short form as "Vu Nguyen" and the Client supplied his own address, vu.nguyen@integritasvulegal.com, replacing the general inbox.
 
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as

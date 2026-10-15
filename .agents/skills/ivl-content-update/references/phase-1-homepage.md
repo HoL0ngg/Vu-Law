@@ -1,5 +1,7 @@
 # Phase 1 - Homepage (client-approved copy)
 
+> **Client revision (feedbacks chỉnh sửa web 15-10.docx):** on the **English** footer the contact column is headed `INTEGRITAS VU LEGAL LLC` instead of the Vietnamese legal entity name. The Vietnamese footer keeps `CÔNG TY LUẬT TNHH INTEGRITAS VŨ LEGAL`.
+
 > **Client revision (Website - feedback update 28-9-26.docx):** the introduction CTA is English, the office address gained "(GF)" and ", Vietnam", and the eight featured expertise items now render in English.
 
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
@@ -155,7 +157,7 @@ Mergers & Acquisitions
 Foreign Investment
 Real Estate & Construction
 Employment
-CÔNG TY LUẬT TNHH INTEGRITAS VŨ LEGAL
+INTEGRITAS VU LEGAL LLC
 Legal
 Terms of Use
 Privacy Policy

@@ -172,17 +172,23 @@ export const vi = {
       "Integritas Vũ Legal tiếp cận mỗi vụ việc từ mục tiêu thực tế của Khách hàng. Chúng tôi xác định vấn đề pháp lý, đánh giá rủi ro, cân nhắc các phương án và xây dựng chiến lược phù hợp với từng hoàn cảnh cụ thể.",
     ],
     firm: {
-      // TODO(client): Vietnamese heading for "Our firm" is not in the Client's document.
+      // Supplied by the Client in the 15-10 feedback.
+      heading: "Giới thiệu",
+      // The closing statement of this section, as the Client wrote it on 15-10.
+      consistentLabel: "Chúng tôi luôn nhất quán theo phương thức tiếp cận:",
+      consistentStatement: "Thấu hiểu vấn đề. Xác định mục tiêu. Xây dựng chiến lược. Thực thi chính xác.",
       paragraphs: [
-        "Integritas Vũ Legal được xây dựng theo mô hình công ty luật boutique, với trọng tâm là chất lượng chuyên môn, sự tham gia trực tiếp của luật sư và khả năng phản hồi linh hoạt.",
+        "Integritas Vũ Legal được xây dựng theo mô hình công ty luật chuyên nghiệp, với trọng tâm là chất lượng chuyên môn, sự tham gia trực tiếp của luật sư và khả năng phản hồi linh hoạt.",
         "Chúng tôi không tiếp cận một vấn đề pháp lý một cách tách biệt. Mỗi tư vấn đều được đặt trong bối cảnh cụ thể của Khách hàng — từ mục tiêu kinh doanh, quyền lợi cần bảo vệ đến những rủi ro và hệ quả có thể phát sinh.",
         "Trong giao dịch, chúng tôi hướng đến việc nhận diện và kiểm soát rủi ro trước khi chúng trở thành tranh chấp.",
         "Trong tranh chấp, chúng tôi tập trung vào việc xác định vị thế của Khách hàng, xây dựng chiến lược và lựa chọn phương thức giải quyết phù hợp.",
       ],
     },
     philosophy: {
-      // TODO(client): Vietnamese heading for "Our Philosophy" is not in the Client's document.
-      title: "Chính trực - Chiến lược - Chính xác - Kết quả",
+      // Supplied by the Client in the 15-10 feedback.
+      heading: "Triết lý làm việc",
+      // An en dash in place of the hyphen: see the matching comment in globals.css.
+      title: "Chính trực – Chiến lược – Chính xác – Kết quả",
       items: [
         {
           term: "Chính trực",
@@ -391,6 +397,13 @@ export const vi = {
   insightsPage: {
     heading: "Góc nhìn",
     readMore: "Đọc thêm",
+    // The Client's Vietnamese "coming soon" notice (15-10 feedback). Their title joins the
+    // section name and the status with an en dash, as written.
+    comingSoonTitle: "Góc nhìn Pháp lý – Sắp ra mắt",
+    comingSoonBody: [
+      "Chuyên mục của chúng tôi hiện đang trong quá trình hoàn thiện. Chúng tôi sẽ sớm cập nhật các bản tin pháp luật mới nhất, góc nhìn thực tiễn và những phân tích chuyên sâu về các vấn đề trọng yếu dành cho doanh nghiệp cũng như cá nhân.",
+      "Quý Khách hàng vui lòng quay lại sau để đón đọc những bài viết mới nhất từ chúng tôi.",
+    ],
     cards: [
       // TODO(client): Supply the article title and URL.
       { category: "CẬP NHẬT QUY ĐỊNH PHÁP LUẬT", title: "[Article title]" },
@@ -423,7 +436,7 @@ export const vi = {
       "Các luật sư của Integritas Vũ Legal làm việc trực tiếp với khách hàng, duy trì trao đổi rõ ràng và chịu trách nhiệm xuyên suốt quá trình xử lý vụ việc.",
     ],
     portraitAlt: "Ảnh chân dung",
-    viewProfile: "XEM HỒ SƠ LUẬT SƯ",
+    viewProfile: "XEM HỒ SƠ",
     backToPeople: "GẶP GỠ ĐỘI NGŨ INTEGRITAS VŨ LEGAL",
     members: [
       {
@@ -447,8 +460,8 @@ export const vi = {
         biography: [
           "TS. Trúc Nguyễn là cố vấn về đạo đức, tổ chức, quản trị và lãnh đạo, với nhiều kinh nghiệm học thuật và chuyên môn tại Việt Nam và Vương quốc Anh. Bà từng đảm nhiệm các vị trí học thuật tại các trường đại học ở cả hai quốc gia. Bà có bằng Tiến sĩ Quản trị từ University of Kent (Vương quốc Anh), MBA từ RMIT University Việt Nam và Cử nhân Quản trị Kinh doanh tại Phần Lan.",
           "Lĩnh vực chuyên môn của bà bao gồm đạo đức kinh doanh, quản trị tổ chức, lãnh đạo, logic thể chế và quản trị đa văn hóa. Thông qua hoạt động nghiên cứu, bà có nhiều cơ hội làm việc và trao đổi với các nhà quản lý tại các tập đoàn đa quốc gia (MNCs), qua đó có những hiểu biết sâu sắc về cách các nhà quản lý tư duy, ra quyết định và xử lý các vấn đề đạo đức, tổ chức và pháp lý trong bối cảnh Việt Nam.",
-          "Đối với khách hàng, Trúc đã tư vấn cho các tổ chức về nhiều vấn đề phức tạp liên quan đến hoạt động kinh doanh và tổ chức, bao gồm các vấn đề nội bộ về lao động và nơi làm việc, tái cơ cấu nhân sự và quyết định cắt giảm lao động, thực tiễn làm thêm giờ, đối xử với người lao động, tuân thủ trong tổ chức và phát triển bền vững về môi trường. Qua những hoạt động này, bà hỗ trợ các tổ chức xem xét và xử lý các khía cạnh đạo đức trong quyết định kinh doanh, cân bằng giữa mục tiêu kinh doanh, yêu cầu pháp luật, phúc lợi người lao động, tính công bằng, lợi ích của các bên liên quan và trách nhiệm của tổ chức, đồng thời tính đến bối cảnh văn hóa và tổ chức tại Việt Nam.",
-          "Phương pháp tiếp cận của bà dựa trên giá trị “Tâm” – lương tâm, nhận thức đạo đức và tinh thần trách nhiệm – đồng thời tôn trọng các yêu cầu pháp luật và chuẩn mực quốc tế. Trong công ty, Trúc đóng vai trò quan trọng trong việc xây dựng văn hóa và môi trường tổ chức đề cao đạo đức, thúc đẩy quản trị có trách nhiệm và các phương thức quản lý lấy con người làm trọng tâm. Những nguyên tắc này cũng được thể hiện trong cách công ty đồng hành cùng khách hàng: thấu hiểu hoàn cảnh của từng khách hàng, tôn trọng nhu cầu và giá trị riêng của họ, đồng thời cung cấp dịch vụ chuyên nghiệp dựa trên sự chính trực, đồng cảm và tôn trọng.",
+          "Đối với khách hàng, Bà Trúc Nguyễn đã tư vấn cho các tổ chức về nhiều vấn đề phức tạp liên quan đến hoạt động kinh doanh và tổ chức, bao gồm các vấn đề nội bộ về lao động và nơi làm việc, tái cơ cấu nhân sự và quyết định cắt giảm lao động, thực tiễn làm thêm giờ, đối xử với người lao động, tuân thủ trong tổ chức và phát triển bền vững về môi trường. Qua những hoạt động này, bà hỗ trợ các tổ chức xem xét và xử lý các khía cạnh đạo đức trong quyết định kinh doanh, cân bằng giữa mục tiêu kinh doanh, yêu cầu pháp luật, phúc lợi người lao động, tính công bằng, lợi ích của các bên liên quan và trách nhiệm của tổ chức, đồng thời tính đến bối cảnh văn hóa và tổ chức tại Việt Nam.",
+          "Phương pháp tiếp cận của bà dựa trên giá trị “Tâm” – lương tâm, nhận thức đạo đức và tinh thần trách nhiệm – đồng thời tôn trọng các yêu cầu pháp luật và chuẩn mực quốc tế. Trong công ty, Bà Trúc Nguyễn đóng vai trò quan trọng trong việc xây dựng văn hóa và môi trường tổ chức đề cao đạo đức, thúc đẩy quản trị có trách nhiệm và các phương thức quản lý lấy con người làm trọng tâm. Những nguyên tắc này cũng được thể hiện trong cách công ty đồng hành cùng khách hàng: thấu hiểu hoàn cảnh của từng khách hàng, tôn trọng nhu cầu và giá trị riêng của họ, đồng thời cung cấp dịch vụ chuyên nghiệp dựa trên sự chính trực, đồng cảm và tôn trọng.",
         ],
       },
     ],

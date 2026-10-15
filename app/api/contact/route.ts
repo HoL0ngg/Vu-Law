@@ -55,13 +55,39 @@ export async function POST(request: Request) {
       body: payload.toString(),
       redirect: "follow",
     });
-  } catch {
+  } catch (error) {
+    console.error("[contact] could not reach the contact service", error);
     return NextResponse.json({ error: "Unable to reach the contact service." }, { status: 502 });
   }
 
-  if (!response.ok) {
+  // Google Apps Script answers 200 even when nothing was sent: a deployment restricted to
+  // signed-in users redirects to a Google sign-in page, and a script that throws returns
+  // an HTML error page. Trusting `response.ok` alone therefore reported success to the
+  // visitor while no mail left the building. The body is read and checked as well, and
+  // every outcome is logged so a failure shows up in the host's logs instead of silently.
+  const body = await response.text().catch(() => "");
+  const finalHost = (() => {
+    try {
+      return new URL(response.url).host;
+    } catch {
+      return "";
+    }
+  })();
+
+  const signInPage = finalHost === "accounts.google.com";
+  const scriptError = /Script function not found|TypeError:|ReferenceError:|Exception:|Authorization is required|Sorry, unable to open the file/i.test(body);
+  const reportedFailure = /"(?:result|status)"\s*:\s*"(?:error|failure|failed)"|"success"\s*:\s*false/i.test(body);
+
+  if (!response.ok || signInPage || scriptError || reportedFailure) {
+    console.error("[contact] enquiry was not delivered", {
+      status: response.status,
+      finalHost,
+      reason: !response.ok ? "http-status" : signInPage ? "google-sign-in-page" : scriptError ? "script-error" : "script-reported-failure",
+      bodyPreview: body.slice(0, 300),
+    });
     return NextResponse.json({ error: "The contact service rejected the submission." }, { status: 502 });
   }
 
+  console.info("[contact] enquiry forwarded", { status: response.status, finalHost });
   return NextResponse.json({ ok: true });
 }
