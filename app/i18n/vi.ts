@@ -95,7 +95,7 @@ export const vi = {
     about: "Về chúng tôi",
     expertise: "Chuyên môn",
     people: "Đội ngũ",
-    insights: "Góc nhìn",
+    insights: "Nhận định",
     careers: "Cơ hội nghề nghiệp",
     contact: "Liên hệ",
   },
@@ -141,18 +141,18 @@ export const vi = {
       featuredItems: financeTab.items,
     },
     insights: {
-      heading: "Góc nhìn pháp lý",
+      heading: "Nhận định pháp lý",
       cards: [
         // TODO(client): Supply the article title and URL.
         { category: "CẬP NHẬT QUY ĐỊNH PHÁP LUẬT", title: "[Article title]", linkLabel: "Đọc thêm" },
         // TODO(client): Supply the article title and URL.
-        { category: "GÓC NHÌN PHÁP LÝ", title: "[Article title]", linkLabel: "Đọc thêm" },
+        { category: "NHẬN ĐỊNH PHÁP LÝ", title: "[Article title]", linkLabel: "Đọc thêm" },
         // TODO(client): Supply the article title and URL.
         { category: "BẢN ÁN/ÁN LỆ", title: "[Article title]", linkLabel: "Đọc thêm" },
         // TODO(client): Supply the article title and URL.
         { category: "HƯỚNG DẪN DOANH NGHIỆP", title: "[Article title]", linkLabel: "Đọc thêm" },
       ],
-      cta: "KHÁM PHÁ GÓC NHÌN CỦA INTEGRITAS VŨ LEGAL",
+      cta: "KHÁM PHÁ NHẬN ĐỊNH CỦA INTEGRITAS VŨ LEGAL",
     },
     people: {
       heading: "Đội ngũ của chúng tôi",
@@ -390,16 +390,16 @@ export const vi = {
     ],
     closing: "Mỗi vụ việc đều có những yếu tố pháp lý, thương mại và thực tiễn riêng. Integritas Vũ Legal hỗ trợ khách hàng xác định vấn đề cốt lõi, đánh giá các lựa chọn và xây dựng phương án phù hợp với mục tiêu cần đạt được.",
     closingCta: "TRAO ĐỔI VỚI LUẬT SƯ",
-    insightsCta: "GÓC NHÌN PHÁP LÝ",
+    insightsCta: "NHẬN ĐỊNH PHÁP LÝ",
   },
   // Confirmed by the Client's updated document (PHASE INSIGHTS - GÓC NHÌN).
   // The article titles stay as placeholders.
   insightsPage: {
-    heading: "Góc nhìn",
+    heading: "Nhận định",
     readMore: "Đọc thêm",
     // The Client's Vietnamese "coming soon" notice (15-10 feedback). Their title joins the
     // section name and the status with an en dash, as written.
-    comingSoonTitle: "Góc nhìn Pháp lý – Sắp ra mắt",
+    comingSoonTitle: "Nhận định Pháp lý – Sắp ra mắt",
     comingSoonBody: [
       "Chuyên mục của chúng tôi hiện đang trong quá trình hoàn thiện. Chúng tôi sẽ sớm cập nhật các bản tin pháp luật mới nhất, góc nhìn thực tiễn và những phân tích chuyên sâu về các vấn đề trọng yếu dành cho doanh nghiệp cũng như cá nhân.",
       "Quý Khách hàng vui lòng quay lại sau để đón đọc những bài viết mới nhất từ chúng tôi.",
@@ -408,7 +408,7 @@ export const vi = {
       // TODO(client): Supply the article title and URL.
       { category: "CẬP NHẬT QUY ĐỊNH PHÁP LUẬT", title: "[Article title]" },
       // TODO(client): Supply the article title and URL.
-      { category: "GÓC NHÌN PHÁP LÝ", title: "[Article title]" },
+      { category: "NHẬN ĐỊNH PHÁP LÝ", title: "[Article title]" },
       // TODO(client): Supply the article title and URL.
       { category: "BẢN ÁN/ÁN LỆ", title: "[Article title]" },
       // TODO(client): Supply the article title and URL.
@@ -420,7 +420,7 @@ export const vi = {
   pages: {
     expertise: "Chuyên môn",
     people: "Đội ngũ",
-    insights: "Góc nhìn",
+    insights: "Nhận định",
     careers: "Cơ hội nghề nghiệp",
     contact: "Liên hệ",
     // TODO(client): the Client's Vietnamese footer has no "Experience" entry

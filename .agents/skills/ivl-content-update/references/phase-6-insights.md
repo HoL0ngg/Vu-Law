@@ -1,5 +1,11 @@
 # Phase 6 - Insights (Client-approved copy)
 
+> **Site-owner revision (2026-10-21):** on the Vietnamese pages the Client's "Góc nhìn" /
+> "GÓC NHÌN PHÁP LÝ" label now reads "Nhận định" / "NHẬN ĐỊNH PHÁP LÝ" (menu, footer, page
+> heading, Homepage section, category label, coming-soon title). The site owner found
+> "Góc nhìn" too informal for a law firm. `TODO(client)`: confirm at sign-off. The list
+> below still shows the Client's original wording.
+
 > **Client revision (Feedbacks, 2026-09):** wherever the company name appeared as
 > "IVL" it now reads in full - "Integritas Vu Legal" in English, "Integritas Vũ Legal"
 > in Vietnamese. Strings below carry the revised form.
