@@ -22,7 +22,8 @@ function articleJsonLd(article: Article, locale: Locale) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: text.title,
-    description: text.subtitle,
+    description: text.metaDescription ?? text.subtitle,
+    ...(article.coverImage ? { image: article.coverImage } : {}),
     inLanguage: locale === "vi" ? "vi-VN" : "en",
     datePublished: article.publishedAt,
     dateModified: article.updatedAt ?? article.publishedAt,
@@ -42,7 +43,7 @@ function articleJsonLd(article: Article, locale: Locale) {
 export default function InsightArticleView({ dictionary, article, locale = "en" }: InsightArticleViewProps) {
   const text = article[locale];
   const category = dictionary.insightsPage.cards[article.category].category;
-  const jsonLd = JSON.stringify(articleJsonLd(article, locale)).replace(/</g, "\u003c");
+  const jsonLd = JSON.stringify(articleJsonLd(article, locale)).replace(/</g, "\\u003c");
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>

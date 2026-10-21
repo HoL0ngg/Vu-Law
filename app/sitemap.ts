@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { insightArticles } from "./content/insights";
+import { getArticles } from "./content/insights";
 import { en } from "./i18n/en";
 import { VI_ENABLED } from "./i18n/config";
 import { insightPath, localePath, personPath, routes } from "./i18n/routes";
@@ -32,7 +32,7 @@ function entry(
     : [{ url: languages.en, ...base }];
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages = indexableRoutes.flatMap((path) =>
     entry(path, localePath(path, "vi"), {
       priority: path === routes.home ? 1 : 0.7,
@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(personPath(member.slug, "en"), personPath(member.slug, "vi"), { priority: 0.6, changeFrequency: "monthly" }),
   );
 
-  const articles = insightArticles.flatMap((article) =>
+  const articles = (await getArticles()).flatMap((article) =>
     entry(insightPath(article.slug, "en"), insightPath(article.slug, "vi"), {
       lastModified: article.updatedAt ?? article.publishedAt,
       priority: 0.8,

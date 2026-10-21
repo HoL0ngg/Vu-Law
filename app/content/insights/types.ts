@@ -19,6 +19,10 @@ export type ArticleLocale = {
   title: string;
   /** The Client's one-line standfirst; also used as the meta description. */
   subtitle: string;
+  /** Optional shorter <title> for search results; shown as written. Falls back to the headline. */
+  seoTitle?: string;
+  /** Optional 120-160 character meta description. Falls back to the standfirst. */
+  metaDescription?: string;
   blocks: readonly ArticleBlock[];
 };
 
@@ -31,6 +35,8 @@ export type Article = {
   updatedAt?: string;
   /** Index into `insightsPage.cards`: 0 Legal Update, 1 Legal Insight, 2 Case Note, 3 Practical Guide. */
   category: 0 | 1 | 2 | 3;
+  /** Optional image URL for social sharing; the firm logo is used when absent. */
+  coverImage?: string;
   en: ArticleLocale;
   vi: ArticleLocale;
 };

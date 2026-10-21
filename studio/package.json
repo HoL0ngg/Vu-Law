@@ -1,0 +1,23 @@
+{
+  "name": "ivl-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio where the Integritas Vu Legal team writes and publishes Insights articles. Separate from the website: deployed to Sanity's own hosting.",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.20.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "typescript": "^5.8.0"
+  }
+}

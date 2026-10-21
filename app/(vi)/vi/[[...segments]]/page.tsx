@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: VietnamesePageProps): Promise
   if (!VI_ENABLED) return {};
   const { segments = [] } = await params;
   if (segments[0] === "insights" && segments.length === 2) {
-    const article = getArticle(segments[1]);
+    const article = await getArticle(segments[1]);
     return article ? articleMetadata(article, "vi") : {};
   }
   const page = PAGES[segments.join("/")];
@@ -72,7 +72,7 @@ export default async function VietnamesePage({ params }: VietnamesePageProps) {
   }
   if (path === "insights") return <InsightsPageView dictionary={dictionary} locale="vi" />;
   if (segments[0] === "insights" && segments.length === 2) {
-    const article = getArticle(segments[1]);
+    const article = await getArticle(segments[1]);
     if (article) return <InsightArticleView dictionary={dictionary} article={article} locale="vi" />;
     notFound();
   }

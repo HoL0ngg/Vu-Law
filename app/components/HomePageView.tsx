@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { vi } from "../i18n/vi";
-import { formatArticleDate, insightArticles } from "../content/insights";
+import { formatArticleDate, getArticles } from "../content/insights";
 import { aboutAnchorPath, insightPath, personPath, routePath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
 import Portrait from "./Portrait";
@@ -14,11 +14,11 @@ type HomePageViewProps = {
   locale?: Locale;
 };
 
-export default function HomePageView({ dictionary, locale = "en" }: HomePageViewProps) {
+export default async function HomePageView({ dictionary, locale = "en" }: HomePageViewProps) {
   const { home } = dictionary;
   const lead = dictionary.peoplePage.members[0];
   // The four latest published articles; none yet means the Client's coming-soon notice.
-  const latestArticles = insightArticles.slice(0, 4);
+  const latestArticles = (await getArticles()).slice(0, 4);
   const hasArticles = latestArticles.length > 0;
   const featuredExpertise = home.expertise.featuredItems.length
     ? home.expertise.featuredItems

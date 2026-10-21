@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
-import { formatArticleDate, insightArticles } from "../content/insights";
+import { formatArticleDate, getArticles } from "../content/insights";
 import { insightPath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
 import PageHero from "./PageHero";
@@ -13,8 +13,9 @@ type InsightsPageViewProps = {
   locale?: Locale;
 };
 
-export default function InsightsPageView({ dictionary, locale = "en" }: InsightsPageViewProps) {
+export default async function InsightsPageView({ dictionary, locale = "en" }: InsightsPageViewProps) {
   const page = dictionary.insightsPage;
+  const insightArticles = await getArticles();
   const hasArticles = insightArticles.length > 0;
 
   return (
