@@ -62,3 +62,8 @@ export function languageAlternates(key: RouteKey) {
 export function personPath(slug: string, locale: Locale = "en"): string {
   return localePath(`${routes.people}/${slug}`, locale);
 }
+
+/** A single article, e.g. `/insights/<slug>` or `/vi/insights/<slug>`. */
+export function insightPath(slug: string, locale: Locale = "en"): string {
+  return localePath(`${routes.insights}/${slug}`, locale);
+}

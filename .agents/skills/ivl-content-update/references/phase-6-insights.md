@@ -19,6 +19,12 @@ Our Insights section is currently being developed. We will soon share legal upda
 Please check back soon for our latest insights.
 ```
 
+**Update 2026-10-21:** the first article is published, so this notice now shows **only while
+no article exists** (`insightArticles` is empty). Until then it is not on the page, so
+`check_copy` against this file is expected to report these three lines missing; the live
+page is verified instead against the article references `phase-8-insight-prevailing-en.md`
+and `-vi.md`. The notice text is kept here because it returns if the list is ever emptied.
+
 The four category cards are **hidden while every title is still `[Article title]`**, so
 the notice stands alone; showing "Coming Soon" above four empty cards read as a
 contradiction. They reappear by themselves as soon as a real title is added to the locale

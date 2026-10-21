@@ -102,6 +102,10 @@ Our Insights section is currently being developed. We will soon share legal upda
 Please check back soon for our latest insights.
 ```
 
+**Update 2026-10-21:** with the first article published, the homepage section shows the latest
+articles (up to four) and this notice appears only while none exists. `check_copy` reports these
+two lines missing for as long as an article is live; that is expected.
+
 The cards come back on their own as soon as a real title reaches the locale file -
 `HomePageView` tests the titles rather than a separate switch. Their wording is kept in
 the locale files and in `phase-6-insights.md`:

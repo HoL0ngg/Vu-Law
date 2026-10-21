@@ -2084,3 +2084,220 @@ a:hover .brand-logo {
   font-size: clamp(34px, 4vw, 66px);
   letter-spacing: -0.03em;
 }
+
+/* ==========================================================================
+   Insights: article list and article page
+   ========================================================================== */
+
+/* --- List cards: date beside the category, and a summary line --- */
+.insight-art-link {
+  display: block;
+}
+
+.insight-card > p time {
+  margin-left: 14px;
+  padding-left: 14px;
+  border-left: 1px solid rgba(13, 33, 48, 0.25);
+  color: #5d6b73;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.insight-card h2 a,
+.insight-card h3 a {
+  transition: color 0.35s var(--ease);
+}
+
+.insight-card h2 a:hover,
+.insight-card h3 a:hover {
+  color: var(--gold-deep);
+}
+
+.insight-card-summary {
+  margin: 0 0 20px;
+  color: #45545c;
+  font-size: clamp(19px, 1.4vw, 22px);
+  line-height: 1.6;
+}
+
+.insight-grid--list {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.insights-section.section-paper {
+  padding-top: 90px;
+}
+
+/* --- Article page --- */
+.article-hero {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 150px 8vw 70px;
+  isolation: isolate;
+}
+
+.article-hero-copy {
+  width: 100%;
+  max-width: 1180px;
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 34px;
+  gap: 12px;
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 22px;
+  gap: 8px 18px;
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.article-meta time {
+  padding-left: 18px;
+  border-left: 1px solid rgba(238, 212, 146, 0.45);
+  color: #d5dde1;
+  letter-spacing: 0.06em;
+  text-transform: none;
+}
+
+.article-hero h1 {
+  max-width: 22ch;
+  margin-bottom: 28px;
+  font-size: clamp(36px, 4.6vw, 74px);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  overflow-wrap: break-word;
+}
+
+.article-standfirst {
+  max-width: 60ch;
+  margin: 0;
+  color: #e0e7ea;
+  font-size: clamp(21px, 1.7vw, 28px);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.article-body {
+  padding: 90px 8vw 130px;
+}
+
+.article-prose {
+  max-width: 74ch;
+  margin: 0 auto;
+}
+
+.article-prose p {
+  margin-bottom: 28px;
+  font-size: clamp(21px, 1.55vw, 25px);
+  line-height: 1.78;
+}
+
+.article-prose h2 {
+  margin: 76px 0 28px;
+  padding-top: 34px;
+  border-top: 1px solid rgba(13, 33, 48, 0.2);
+  color: var(--ink);
+  font-size: clamp(27px, 2.3vw, 38px);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.article-prose h2:first-child {
+  margin-top: 0;
+}
+
+/* The "next angle" teaser that closes a section. */
+.article-aside {
+  padding: 20px 0 20px 28px;
+  border-left: 3px solid var(--gold-deep);
+  color: #3d4c55;
+  font-style: italic;
+}
+
+/* The legal notice and copyright at the foot: smaller, but still readable. */
+.article-note {
+  color: #4f5e66;
+  font-size: clamp(18px, 1.25vw, 20px) !important;
+  font-style: italic;
+  line-height: 1.7 !important;
+}
+
+@media (max-width: 900px) {
+  .article-hero {
+    padding: 118px 24px 52px;
+  }
+
+  .article-body {
+    padding: 64px 24px 90px;
+  }
+
+  .article-prose h2 {
+    margin-top: 56px;
+  }
+
+  .insights-section.section-paper {
+    padding-top: 64px;
+  }
+}
+
+/* --- Article cards: stop the "Read More" and category-label rules leaking --- */
+/* `.insight-card a` styles the Read More link and `.insight-card > p` styles the category
+   label. Both also matched the image link, the title link and the summary line. */
+.insight-card a.insight-art-link {
+  display: block;
+  border-bottom: 0;
+}
+
+.insight-card h2 a,
+.insight-card h3 a {
+  display: inline;
+  border-bottom: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.insight-card > p.insight-card-summary {
+  margin: 0 0 22px;
+  color: #45545c;
+  font-size: clamp(19px, 1.4vw, 22px);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.insight-grid--list {
+  /* min(100%, 380px): a bare 380px floor is wider than a 375px phone and forced sideways scroll. */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 440px));
+  gap: 48px 36px;
+}
+
+.insights-section .insight-card h2 {
+  min-height: 0;
+  margin: 0 0 16px;
+  font-size: clamp(24px, 1.9vw, 30px);
+  line-height: 1.2;
+}
+
+.article-hero h1 {
+  max-width: 26ch;
+}
