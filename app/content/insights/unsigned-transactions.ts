@@ -4,6 +4,7 @@ import type { Article } from "./types";
  * Legal Insights, second article. Transcribed verbatim from the Client's
  * `Blogs/CONTENT 26_10-30_10.docx` - typos included; see the project report for the list.
  * Do not tidy the wording here: ivl-content-update rule, the Client is a law firm.
+ * One exception, at the site owner's request (2026-10-28): the split word "vi ph ạm" in section 01 now reads "vi phạm".
  *
  * Vietnamese only. The Client has not supplied an English version and legal copy is never
  * machine-translated, so this article appears on `/vi` and nowhere on the English pages
@@ -25,7 +26,7 @@ export const unsignedTransactions: Article = {
     blocks: [
       { type: "h2", text: "01 | KHÔNG CÓ HỢP ĐỒNG GIẤY: GIAO DỊCH CÓ ĐƯỢC CÔNG NHẬN?" },
       { type: "p", text: "Trong giao dịch dân sự và hoạt động thương mại, giao dịch có thể được xác lập bằng lời nói, văn bản hoặc hành vi cụ thể; hợp đồng mua bán hàng hóa được Điều 24 Luật Thương mại 2005 ghi nhận các hình thức này. Điều 119 Bộ luật Dân sự 2015 cũng ghi nhận hình thức giao dịch dân sự tương ứng. Vì vậy, không có bản hợp đồng giấy được ký không đồng nghĩa với việc giao dịch đương nhiên không tồn tại hoặc vô hiệu. Tuy nhiên, phải xác định đúng loại giao dịch và điều kiện có hiệu lực của giao dịch cụ thể." },
-      { type: "p", text: "Ngoại lệ cần đặc biệt lưu ý: Khi pháp luật chuyên ngành quy định giao dịch phải lập thành văn bản, công chứng, chứng thực hoặc đăng ký, các bên phải tuân thủ điều kiện tương ứng. Điều 117, Điều 119 và Điều 129 Bộ luật Dân sự 2015 là cơ sở để xem xét điều kiện có hiệu lực và hậu quả của vi ph ạm về hình thức; không thể suy luận rằng cứ đã thanh toán hoặc thực hiện một phần thì mọi thiếu sót về hình thức đều được khắc phục." },
+      { type: "p", text: "Ngoại lệ cần đặc biệt lưu ý: Khi pháp luật chuyên ngành quy định giao dịch phải lập thành văn bản, công chứng, chứng thực hoặc đăng ký, các bên phải tuân thủ điều kiện tương ứng. Điều 117, Điều 119 và Điều 129 Bộ luật Dân sự 2015 là cơ sở để xem xét điều kiện có hiệu lực và hậu quả của vi phạm về hình thức; không thể suy luận rằng cứ đã thanh toán hoặc thực hiện một phần thì mọi thiếu sót về hình thức đều được khắc phục." },
       { type: "p", text: "Vấn đề pháp lý đặt ra: Các bên thực sự thỏa thuận với nhau, hay chỉ có một bên đơn phương gửi báo giá, điều kiện giao dịch rồi coi như đối tác đã chấp nhận?" },
       { type: "h2", text: "02 | AI LÀ CHỦ THỂ GIAO DỊCH — VÀ AI PHẢI CHỊU TRÁCH NHIỆM?" },
       { type: "p", text: "Ai mới là bên có nghĩa vụ: Người gửi đơn hàng có phải đại diện có thẩm quyền? Tiền chuyển từ tài khoản cá nhân có phải là khoản thanh toán của doanh nghiệp? Bên nhận hàng, bên đứng tên hóa đơn và bên phải thanh toán có thực sự là một chủ thể? Đây thường là những điểm bất đồng có ảnh hưởng trực tiếp đến phạm vi yêu cầu khi tranh chấp." },
