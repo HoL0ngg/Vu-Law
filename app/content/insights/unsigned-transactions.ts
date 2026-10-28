@@ -18,6 +18,9 @@ export const unsignedTransactions: Article = {
   // TODO(client): confirm the category. "Legal Insight" like the first article; it could
   // equally be filed as a Practical Guide.
   category: 1,
+  // Supplied by the Client (Blogs/Ảnh - blogs/POST 2.png), resized for the web. The lettering
+  // on the document in the photograph is mirrored in the Client's file; kept as supplied.
+  coverImage: "/images/blog/unsigned-transactions.jpg",
   vi: {
     title: "GIAO DỊCH KHÔNG KÝ HỢP ĐỒNG: NHẬN DIỆN RỦI RO PHÁP LÝ",
     // The document has no separate standfirst line: its opening paragraph is shown as the

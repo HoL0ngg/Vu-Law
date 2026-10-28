@@ -2348,10 +2348,14 @@ a:hover .brand-logo {
   margin: 0 auto 64px;
 }
 
+/* The Client's pictures are often portrait, so the article header shows a 16:9 crop of the
+   middle; pictures served by Sanity's CDN are already cropped to that shape. */
 .article-cover img {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border: 1px solid rgba(212, 175, 55, 0.4);
 }
 

@@ -11,6 +11,8 @@ export const prevailingInLitigation: Article = {
   // day it was put on the site.
   publishedAt: "2026-10-21",
   category: 1,
+  // Supplied by the Client (Blogs/Ảnh - blogs/POST 1.png), resized for the web.
+  coverImage: "/images/blog/prevailing-in-litigation.jpg",
   en: {
     title: "PREVAILING IN LITIGATION DOES NOT NECESSARILY MEAN RECOVERING THE MONEY",
     subtitle: "From Legal Entitlement to Actual Recovery: Key Legal Decisions at Each Stage",
