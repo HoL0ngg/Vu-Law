@@ -2217,7 +2217,7 @@ a:hover .brand-logo {
    Written to keep the reader's scrolling short and the text easy to read:
    - a compact header (the picture no longer sits in a block of its own),
    - body text at weight 500 in the dark ink colour (300 is hairline-thin in this typeface),
-   - the picture beside the text, held in view while it is read. */
+   - the body split into sections: a full-width heading, then the text in two columns. */
 
 .article-hero {
   position: relative;
@@ -2291,94 +2291,9 @@ a:hover .brand-logo {
   padding: 52px 8vw 96px;
 }
 
-.article-body--with-cover {
-  display: grid;
-  grid-template-columns: minmax(0, 780px) minmax(0, 340px);
-  align-items: start;
-  gap: 0 72px;
-}
-
-.article-prose {
-  max-width: 780px;
-}
-
-.article-prose p {
-  margin: 0 0 22px;
-  color: #17262f;
-  font-size: clamp(21px, 1.55vw, 24px);
-  font-weight: 500;
-  line-height: 1.68;
-}
-
-.article-prose h2 {
-  margin: 48px 0 16px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(13, 33, 48, 0.22);
-  color: var(--ink);
-  font-size: clamp(25px, 2vw, 31px);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
-}
-
-.article-prose h2:first-child {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
-}
-
 /* The "next angle" teaser that closes a section. */
-.article-prose p.article-aside {
-  padding: 14px 0 14px 24px;
-  border-left: 3px solid var(--gold-deep);
-  color: #24343d;
-  font-style: italic;
-}
-
 /* Footnotes, legal notice and copyright: a step smaller, still dark enough to read. Web
    addresses in the footnotes wrap instead of widening the page. */
-.article-prose p.article-note {
-  margin-bottom: 14px;
-  color: #34454e;
-  font-size: clamp(18px, 1.2vw, 20px);
-  font-style: italic;
-  line-height: 1.65;
-  overflow-wrap: anywhere;
-}
-
-.article-cover {
-  position: sticky;
-  top: 118px;
-  margin: 0;
-}
-
-.article-cover img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border: 1px solid rgba(212, 175, 55, 0.45);
-}
-
-@media (max-width: 1100px) {
-  .article-body--with-cover {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .article-cover {
-    position: static;
-    order: -1;
-    margin-bottom: 32px;
-  }
-
-  .article-cover img {
-    max-height: 320px;
-    aspect-ratio: 16 / 9;
-  }
-}
-
 @media (max-width: 900px) {
   .article-hero {
     padding: 108px 24px 32px;
@@ -2388,7 +2303,7 @@ a:hover .brand-logo {
     padding: 36px 24px 72px;
   }
 
-  .article-prose h2 {
+  .article-section h2 {
     margin-top: 40px;
   }
 }
@@ -2481,6 +2396,73 @@ a:hover .brand-logo {
 
   .insight-list .insight-art {
     aspect-ratio: 16 / 9;
+  }
+}
+
+/* --- Article body: lead text, then one block per heading ---------------------------------- */
+.article-lead,
+.article-section {
+  max-width: 1180px;
+}
+
+/* The opening text has no heading and is one or two paragraphs, so it stays in a single wide column. */
+.article-lead .article-section-text {
+  max-width: 900px;
+  column-count: 1;
+}
+
+.article-section h2 {
+  margin: 48px 0 18px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(13, 33, 48, 0.22);
+  color: var(--ink);
+  font-size: clamp(25px, 2vw, 31px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+/* Two balanced columns. Each section is short, so the reader finishes the left column and
+   the right one is already on screen. Paragraphs may split across columns; the teaser and
+   the notes are kept whole. */
+.article-section-text {
+  column-count: 2;
+  column-gap: 64px;
+}
+
+.article-section-text p {
+  margin: 0 0 20px;
+  color: #17262f;
+  font-size: clamp(20px, 1.45vw, 23px);
+  font-weight: 500;
+  line-height: 1.65;
+  orphans: 3;
+  widows: 3;
+}
+
+.article-section-text p.article-aside {
+  padding: 12px 0 12px 22px;
+  border-left: 3px solid var(--gold-deep);
+  color: #24343d;
+  font-style: italic;
+  break-inside: avoid;
+}
+
+/* Footnotes, legal notice and copyright: a step smaller, still dark enough to read. Web
+   addresses wrap instead of widening the page. */
+.article-section-text p.article-note {
+  margin-bottom: 14px;
+  color: #34454e;
+  font-size: clamp(18px, 1.2vw, 20px);
+  font-style: italic;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  break-inside: avoid;
+}
+
+@media (max-width: 900px) {
+  .article-section-text {
+    column-count: 1;
   }
 }
 

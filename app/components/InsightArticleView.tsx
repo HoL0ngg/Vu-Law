@@ -1,10 +1,9 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
-import { formatArticleDate, summaryOf, type Article, type ArticleLocale } from "../content/insights";
+import { formatArticleDate, summaryOf, type Article, type ArticleBlock, type ArticleLocale } from "../content/insights";
 import { insightPath, routePath } from "../i18n/routes";
 import { SITE_NAME, absoluteUrl } from "../lib/site";
-import { coverImageUrl } from "../lib/cover-image";
 import PageFrame from "./PageFrame";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
@@ -40,11 +39,29 @@ function articleJsonLd(article: Article, text: ArticleLocale, locale: Locale) {
   };
 }
 
+type Section = { heading?: string; blocks: Exclude<ArticleBlock, { type: "h2" }>[] };
+
+/**
+ * Splits the body at each heading. The text of a section is set in two columns beneath its
+ * heading, which roughly halves the length of the page; a section is short enough for both
+ * columns to sit on one screen, so nobody has to scroll back up to read the second column.
+ */
+function toSections(blocks: readonly ArticleBlock[]): Section[] {
+  const sections: Section[] = [{ blocks: [] }];
+  for (const block of blocks) {
+    if (block.type === "h2") sections.push({ heading: block.text, blocks: [] });
+    else sections[sections.length - 1].blocks.push(block);
+  }
+  // An article that opens with a heading has no lead section.
+  return sections.filter((section) => section.heading !== undefined || section.blocks.length > 0);
+}
+
 export default function InsightArticleView({ dictionary, article, locale = "en" }: InsightArticleViewProps) {
   const text = article[locale];
   // The route only renders an article in a language it has; this keeps the type honest.
   if (!text) return null;
   const category = dictionary.insightsPage.cards[article.category].category;
+  const sections = toSections(text.blocks);
   const jsonLd = JSON.stringify(articleJsonLd(article, text, locale)).replace(/</g, "\\u003c");
 
   return (
@@ -68,24 +85,20 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
           </div>
         </header>
 
-        <div className={`article-body section-paper${article.coverImage ? " article-body--with-cover" : ""}`}>
-          <div className="article-prose">
-            {text.blocks.map((block, index) => {
-              const key = `${block.type}-${index}`;
-              if (block.type === "h2") return <h2 key={key}>{block.text}</h2>;
-              if (block.type === "aside") return <p className="article-aside" key={key}>{block.text}</p>;
-              if (block.type === "note") return <p className="article-note" key={key}>{block.text}</p>;
-              return <p key={key}>{block.text}</p>;
-            })}
-          </div>
-          {/* The picture sits beside the text and stays in view while it is read, so it adds
-              no height to the page. On a narrow screen it comes first, as a short banner. */}
-          {article.coverImage ? (
-            <figure className="article-cover">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={coverImageUrl(article.coverImage, 800, 1000)} alt="" width={800} height={1000} decoding="async" />
-            </figure>
-          ) : null}
+        <div className="article-body section-paper">
+          {sections.map((section, sectionIndex) => (
+            <section className={section.heading ? "article-section" : "article-lead"} key={`${sectionIndex}-${section.heading ?? "lead"}`}>
+              {section.heading ? <h2>{section.heading}</h2> : null}
+              <div className="article-section-text">
+                {section.blocks.map((block, index) => {
+                  const key = `${block.type}-${index}`;
+                  if (block.type === "aside") return <p className="article-aside" key={key}>{block.text}</p>;
+                  if (block.type === "note") return <p className="article-note" key={key}>{block.text}</p>;
+                  return <p key={key}>{block.text}</p>;
+                })}
+              </div>
+            </section>
+          ))}
         </div>
       </article>
     </PageFrame>
