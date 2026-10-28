@@ -20,7 +20,13 @@ export default function ArticleArt({ article, index }: ArticleArtProps) {
       {/* Decorative: the headline sits right under it. A plain img because the picture comes
           from Sanity's image CDN, which already serves a resized crop. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={coverImageUrl(article.coverImage, 800, 870)} alt="" loading="lazy" decoding="async" />
+      <img
+        src={coverImageUrl(article.coverImage, 800, 870)}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        style={article.coverPosition ? { objectPosition: article.coverPosition } : undefined}
+      />
     </div>
   );
 }

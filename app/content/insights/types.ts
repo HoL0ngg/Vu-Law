@@ -41,6 +41,8 @@ export type Article = {
   category: 0 | 1 | 2 | 3;
   /** Optional image URL for social sharing; the firm logo is used when absent. */
   coverImage?: string;
+  /** CSS `object-position` for the card crop (e.g. "50% 28%"), for pictures whose subject is not in the middle. */
+  coverPosition?: string;
   /**
    * Either language may be missing. The Client sometimes supplies one language first, and
    * machine-translating legal copy is forbidden, so an article simply appears only on the

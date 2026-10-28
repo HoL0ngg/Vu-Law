@@ -10,6 +10,9 @@ import type { Article } from "./types";
  *
  * `**Trong Tập 2**` carries the two asterisks the Client typed (Markdown bold). The text is
  * kept as written; `InsightArticleView` shows the marked words in bold.
+ *
+ * One exception, at the site owner's request (2026-10-28): "Trách Nhiện Hữu Hạn" in the legal
+ * notice now reads "Trách Nhiệm Hữu Hạn".
  */
 export const contractNegotiation: Article = {
   slug: "dam-phan-hop-dong-thoa-thuan-da-dat-duoc-nghia-vu-phap-ly-da-ro-rang",
@@ -18,7 +21,11 @@ export const contractNegotiation: Article = {
   // TODO(client): confirm the category. "Legal Insight" like the earlier articles; it could
   // equally be filed as a Practical Guide.
   category: 1,
-  // No picture was supplied for this article, so its card shows the default panel.
+  // Supplied by the Client (Blogs/Ảnh - blogs/POST 3.jpg, a tall 9:16 photograph), resized for
+  // the web. The cards crop it to a landscape band; this points the crop at the gavel and the
+  // hand holding the pen rather than the middle of the picture.
+  coverImage: "/images/blog/contract-negotiation.jpg",
+  coverPosition: "50% 28%",
   vi: {
     title: "ĐÀM PHÁN HỢP ĐỒNG: THỎA THUẬN ĐÃ ĐẠT ĐƯỢC, NGHĨA VỤ PHÁP LÝ ĐÃ RÕ RÀNG?",
     subtitle: "Từ hiệu lực giao dịch đến thẩm quyền đại diện và nội dung nghĩa vụ — ba vấn đề cần giải quyết trước khi đặt bút ký.",
@@ -46,7 +53,7 @@ export const contractNegotiation: Article = {
       { type: "p", text: "Hãy liên hệ Integritas Vũ Legal để được hỗ trợ đánh giá rủi ro và xây dựng phương án pháp lý phù hợp ngay từ giai đoạn chuẩn bị và đàm phán giao dịch." },
       { type: "p", text: "Website: www.integritasvulegal.com  |  Email: contact@integritasvulegal.com" },
       { type: "h2", text: "THÔNG BÁO PHÁP LÝ VÀ QUYỀN TÁC GIẢ" },
-      { type: "note", text: "© 2026 Integritas Vũ Legal. Nội dung bài viết do Công Ty Luật Trách Nhiện Hữu Hạn Integritas Vũ Legal biên soạn và công bố; các quyền đối với phần nội dung thuộc phạm vi bảo hộ được thực hiện theo quy định pháp luật về sở hữu trí tuệ. Không được sao chép, chỉnh sửa, tái bản, phân phối hoặc khai thác nội dung vì mục đích thương mại khi chưa có sự chấp thuận của chủ thể có quyền, trừ các trường hợp được pháp luật cho phép. Khi trích dẫn hợp pháp, đề nghị ghi rõ nguồn và đường dẫn đến bài viết gốc." },
+      { type: "note", text: "© 2026 Integritas Vũ Legal. Nội dung bài viết do Công Ty Luật Trách Nhiệm Hữu Hạn Integritas Vũ Legal biên soạn và công bố; các quyền đối với phần nội dung thuộc phạm vi bảo hộ được thực hiện theo quy định pháp luật về sở hữu trí tuệ. Không được sao chép, chỉnh sửa, tái bản, phân phối hoặc khai thác nội dung vì mục đích thương mại khi chưa có sự chấp thuận của chủ thể có quyền, trừ các trường hợp được pháp luật cho phép. Khi trích dẫn hợp pháp, đề nghị ghi rõ nguồn và đường dẫn đến bài viết gốc." },
       { type: "note", text: "Bài viết chỉ cung cấp thông tin pháp lý tổng quát tại thời điểm công bố, không phải ý kiến tư vấn pháp lý cho một vụ việc cụ thể, không tạo lập quan hệ luật sư – khách hàng và không thay thế việc đánh giá hồ sơ, chứng cứ, thỏa thuận và quy định áp dụng. Người đọc không nên tự ý dựa duy nhất vào nội dung này để thực hiện, trì hoãn hoặc từ bỏ bất kỳ biện pháp pháp lý nào. Kết quả xử lý phụ thuộc vào tình tiết và pháp luật áp dụng trong từng trường hợp; nội dung có thể cần cập nhật khi pháp luật hoặc thực tiễn áp dụng thay đổi." },
     ],
   },
