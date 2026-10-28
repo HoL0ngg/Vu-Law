@@ -41,11 +41,7 @@ function articleJsonLd(article: Article, text: ArticleLocale, locale: Locale) {
 
 type Section = { heading?: string; blocks: Exclude<ArticleBlock, { type: "h2" }>[] };
 
-/**
- * Splits the body at each heading. The text of a section is set in two columns beneath its
- * heading, which roughly halves the length of the page; a section is short enough for both
- * columns to sit on one screen, so nobody has to scroll back up to read the second column.
- */
+/** Splits the body at each heading, so each heading and its text can be laid out as a unit. */
 function toSections(blocks: readonly ArticleBlock[]): Section[] {
   const sections: Section[] = [{ blocks: [] }];
   for (const block of blocks) {

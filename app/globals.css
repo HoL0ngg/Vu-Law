@@ -2217,7 +2217,7 @@ a:hover .brand-logo {
    Written to keep the reader's scrolling short and the text easy to read:
    - a compact header (the picture no longer sits in a block of its own),
    - body text at weight 500 in the dark ink colour (300 is hairline-thin in this typeface),
-   - the body split into sections: a full-width heading, then the text in two columns. */
+   - the text set across the full width of the page, in sections under full-width headings. */
 
 .article-hero {
   position: relative;
@@ -2400,15 +2400,11 @@ a:hover .brand-logo {
 }
 
 /* --- Article body: lead text, then one block per heading ---------------------------------- */
+/* The text runs the full width of the page (to the same margins as the header), as the site
+   owner asked; the cap only matters on very wide monitors. */
 .article-lead,
 .article-section {
-  max-width: 1180px;
-}
-
-/* The opening text has no heading and is one or two paragraphs, so it stays in a single wide column. */
-.article-lead .article-section-text {
-  max-width: 900px;
-  column-count: 1;
+  max-width: 1600px;
 }
 
 .article-section h2 {
@@ -2422,22 +2418,12 @@ a:hover .brand-logo {
   line-height: 1.25;
 }
 
-/* Two balanced columns. Each section is short, so the reader finishes the left column and
-   the right one is already on screen. Paragraphs may split across columns; the teaser and
-   the notes are kept whole. */
-.article-section-text {
-  column-count: 2;
-  column-gap: 64px;
-}
-
 .article-section-text p {
   margin: 0 0 20px;
   color: #17262f;
   font-size: clamp(20px, 1.45vw, 23px);
   font-weight: 500;
   line-height: 1.65;
-  orphans: 3;
-  widows: 3;
 }
 
 .article-section-text p.article-aside {
@@ -2445,7 +2431,6 @@ a:hover .brand-logo {
   border-left: 3px solid var(--gold-deep);
   color: #24343d;
   font-style: italic;
-  break-inside: avoid;
 }
 
 /* Footnotes, legal notice and copyright: a step smaller, still dark enough to read. Web
@@ -2457,13 +2442,6 @@ a:hover .brand-logo {
   font-style: italic;
   line-height: 1.6;
   overflow-wrap: anywhere;
-  break-inside: avoid;
-}
-
-@media (max-width: 900px) {
-  .article-section-text {
-    column-count: 1;
-  }
 }
 
 /* A shorter page band for pages whose content should start close to the top. */
