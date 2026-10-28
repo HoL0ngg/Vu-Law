@@ -39,6 +39,15 @@ function articleJsonLd(article: Article, text: ArticleLocale, locale: Locale) {
   };
 }
 
+/** Words the Client wrapped in double asterisks (Markdown bold) are shown in bold. */
+function inline(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") && part.length > 4
+      ? <strong key={index}>{part.slice(2, -2)}</strong>
+      : part,
+  );
+}
+
 type Section = { heading?: string; blocks: Exclude<ArticleBlock, { type: "h2" }>[] };
 
 /** Splits the body at each heading, so each heading and its text can be laid out as a unit. */
@@ -88,9 +97,9 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
               <div className="article-section-text">
                 {section.blocks.map((block, index) => {
                   const key = `${block.type}-${index}`;
-                  if (block.type === "aside") return <p className="article-aside" key={key}>{block.text}</p>;
-                  if (block.type === "note") return <p className="article-note" key={key}>{block.text}</p>;
-                  return <p key={key}>{block.text}</p>;
+                  if (block.type === "aside") return <p className="article-aside" key={key}>{inline(block.text)}</p>;
+                  if (block.type === "note") return <p className="article-note" key={key}>{inline(block.text)}</p>;
+                  return <p key={key}>{inline(block.text)}</p>;
                 })}
               </div>
             </section>

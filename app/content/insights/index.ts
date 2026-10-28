@@ -1,5 +1,6 @@
 import type { Locale } from "../../i18n/config";
 import { prevailingInLitigation } from "./prevailing-in-litigation";
+import { contractNegotiation } from "./contract-negotiation";
 import { unsignedTransactions } from "./unsigned-transactions";
 import { fetchSanityArticles } from "./sanity";
 import type { Article, ArticleLocale } from "./types";
@@ -9,7 +10,7 @@ import type { Article, ArticleLocale } from "./types";
  * reached. Once an article lives in Sanity it can be deleted from here: when both hold the
  * same slug, the Sanity version wins.
  */
-const localArticles: readonly Article[] = [prevailingInLitigation, unsignedTransactions];
+const localArticles: readonly Article[] = [prevailingInLitigation, unsignedTransactions, contractNegotiation];
 
 /** Every published article, newest first. Sanity articles replace local ones with the same slug. */
 export async function getArticles(): Promise<readonly Article[]> {
