@@ -10,7 +10,7 @@ import InsightsPageView from "../../../components/InsightsPageView";
 import PeoplePageView from "../../../components/PeoplePageView";
 import PersonProfileView from "../../../components/PersonProfileView";
 import PlaceholderPage from "../../../components/PlaceholderPage";
-import { getArticle } from "../../../content/insights";
+import { getArticle, hasLocale } from "../../../content/insights";
 import { getVietnameseDictionary, VI_ENABLED, type Dictionary } from "../../../i18n/config";
 import { languageAlternates, type RouteKey } from "../../../i18n/routes";
 import { articleMetadata } from "../../../lib/article-metadata";
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: VietnamesePageProps): Promise
   const { segments = [] } = await params;
   if (segments[0] === "insights" && segments.length === 2) {
     const article = await getArticle(segments[1]);
-    return article ? articleMetadata(article, "vi") : {};
+    return article && hasLocale(article, "vi") ? articleMetadata(article, "vi") : {};
   }
   const page = PAGES[segments.join("/")];
   if (!page) return {};
@@ -73,7 +73,7 @@ export default async function VietnamesePage({ params }: VietnamesePageProps) {
   if (path === "insights") return <InsightsPageView dictionary={dictionary} locale="vi" />;
   if (segments[0] === "insights" && segments.length === 2) {
     const article = await getArticle(segments[1]);
-    if (article) return <InsightArticleView dictionary={dictionary} article={article} locale="vi" />;
+    if (article && hasLocale(article, "vi")) return <InsightArticleView dictionary={dictionary} article={article} locale="vi" />;
     notFound();
   }
   if (path === "careers") return <CareersPageView dictionary={dictionary} locale="vi" />;

@@ -1,9 +1,10 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
-import { formatArticleDate, type Article } from "../content/insights";
+import { formatArticleDate, type Article, type ArticleLocale } from "../content/insights";
 import { insightPath, routePath } from "../i18n/routes";
 import { SITE_NAME, absoluteUrl } from "../lib/site";
+import { coverImageUrl } from "../lib/cover-image";
 import PageFrame from "./PageFrame";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
@@ -15,8 +16,7 @@ type InsightArticleViewProps = {
 };
 
 /** schema.org Article data, so search engines can read the page as an article. */
-function articleJsonLd(article: Article, locale: Locale) {
-  const text = article[locale];
+function articleJsonLd(article: Article, text: ArticleLocale, locale: Locale) {
   const url = absoluteUrl(insightPath(article.slug, locale));
   return {
     "@context": "https://schema.org",
@@ -42,8 +42,10 @@ function articleJsonLd(article: Article, locale: Locale) {
 
 export default function InsightArticleView({ dictionary, article, locale = "en" }: InsightArticleViewProps) {
   const text = article[locale];
+  // The route only renders an article in a language it has; this keeps the type honest.
+  if (!text) return null;
   const category = dictionary.insightsPage.cards[article.category].category;
-  const jsonLd = JSON.stringify(articleJsonLd(article, locale)).replace(/</g, "\\u003c");
+  const jsonLd = JSON.stringify(articleJsonLd(article, text, locale)).replace(/</g, "\\u003c");
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
@@ -67,6 +69,12 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
         </header>
 
         <div className="article-body section-paper">
+          {article.coverImage ? (
+            <figure className="article-cover">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={coverImageUrl(article.coverImage, 1600, 900)} alt={text.title} width={1600} height={900} decoding="async" />
+            </figure>
+          ) : null}
           <div className="article-prose">
             {text.blocks.map((block, index) => {
               const key = `${block.type}-${index}`;

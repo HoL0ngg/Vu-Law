@@ -1,5 +1,7 @@
 # Phase 1 - Homepage (client-approved copy)
 
+> **Client revision (feedbacks update 26-10-26.docx):** Hero, Introduction (now "OUR PERSPECTIVE"), Our Expertise, the Featured Insights introduction and the People introduction were rewritten, and Mr Vu is "NGUYEN HA THANH VU (VICTOR NGUYEN)" on this page only. The Vietnamese for these will follow in a separate Client file; the superseded Vietnamese is parked in `superseded-vi-2026-10-26.md`.
+
 > **Client revision (feedbacks chỉnh sửa web 15-10.docx):** on the **English** footer the contact column is headed `INTEGRITAS VU LEGAL LLC` instead of the Vietnamese legal entity name. The Vietnamese footer keeps `CÔNG TY LUẬT TNHH INTEGRITAS VŨ LEGAL`.
 
 > **Client revision (Website - feedback update 28-9-26.docx):** the introduction CTA is English, the office address gained "(GF)" and ", Vietnam", and the eight featured expertise items now render in English.
@@ -19,8 +21,8 @@ Brand name as eyebrow, slogan as H1, the two paragraphs below it, then two CTAs.
 ```text
 Integritas Vu Legal
 Strategic Counsel. Resolute Advocacy.
-Integritas Vu Legal is a Vietnam-based law firm providing strategic legal counsel and representation to businesses, investors and private clients in complex transactions, disputes and critical legal matters.
-We combine legal insight, strategic thinking and precise execution to help our clients understand their position, manage risk and make informed decisions.
+Integritas Vu Legal LLC (Integritas Vu Legal) is an independent boutique law firm in Vietnam, providing strategic legal advice and representation to businesses, investors, and private Clients.
+With a strong focus on dispute resolution and a comprehensive approach to corporate and commercial matters and White-Collar Crimes, we deliver tailored legal solutions that address our Clients' priorities, anticipate risks, and protect their interests.
 EXPLORE OUR EXPERTISE
 MEET OUR LAWYERS
 ```
@@ -30,26 +32,24 @@ MEET OUR LAWYERS
 | EXPLORE OUR EXPERTISE | `/expertise` |
 | MEET OUR LAWYERS | `/people` |
 
-## 2. Introduction
+## 2. Introduction ("OUR PERSPECTIVE")
 
-Two-line headline, two paragraphs, one CTA. The two headline lines belong to one heading.
+Rewritten by the Client on 26-10 (`feedbacks update 26-10-26.docx`): the section is named "OUR PERSPECTIVE" (shown as the small label above the headline), the headline is the first sentence pair split over two lines, then three paragraphs and a CTA. The previous copy ("Law is more than a framework...") is gone.
 
 ```text
-Law is more than a framework.
-It is the foundation for sound decisions.
-At Integritas Vu Legal, we believe the value of legal advice lies in helping clients understand the issues, identify risks, evaluate their options and determine the course of action that best serves their objectives.
-Integritas Vu Legal is built as a focused law firm where each matter is approached with independent judgment, rigorous analysis and a solution-oriented mindset.
-ABOUT US
+OUR PERSPECTIVE
+Beyond Legal Advice. Towards Strategic Solutions.
+Effective legal counsel requires more than an understanding of the law. It demands sound judgment, commercial awareness and the ability to navigate complex legal challenges with clarity and precision.
+At Integritas Vu Legal, we look beyond immediate legal questions to understand the broader implications of every decision. Whether advising on a transaction, managing legal exposure or resolving a dispute, we develop strategies tailored to each Client's circumstances and objectives.
+Our commitment is straightforward: to provide independent advice, thoughtful solutions and dedicated representation at every critical stage.
+DISCUSS OUR FIRM
 ```
 
 | CTA | Destination |
 |---|---|
-| ABOUT US | `/about` |
+| DISCUSS OUR FIRM | `/about` |
 
-The Client's original CTA here was `VỀ INTEGRITAS VŨ LEGAL`. In the 28-9 feedback they
-circled it with the note "Vẫn còn tiếng Việt" and asked that the English page carry no
-Vietnamese, but supplied no English replacement. `ABOUT US` - their own navigation label -
-was chosen by the site owner. **Confirm at sign-off.** The Vietnamese CTA is unchanged on `/vi`.
+The Client gave the label but not the destination. It keeps the destination of the CTA it replaces (`/about`). **Confirm at sign-off**, or point it at `/contact`.
 
 ## 3. The IVL approach
 
@@ -66,28 +66,36 @@ DISCOVER HOW INTEGRITAS VU LEGAL WORKS
 
 ## 4. Our expertise
 
-The client gave the four main service areas and asked to keep the 8 featured items from the prototype. Section heading: "Our Expertise" (the client's section name, AGENTS.md open question 5).
+Rewritten by the Client on 26-10: heading, an introduction, seven practice areas that each open on the plus sign to show their description, and a CTA. It replaces the four category tiles and the eight Vietnamese-only items (which closes the old question about their English text). Destination of the CTA: `/expertise`. On `/vi` this section shows the English until the Client supplies the Vietnamese.
 
 ```text
-Dispute Resolution
+Our Expertise
+We advise and represent Clients across a range of contentious and non-contentious matters, combining rigorous legal analysis with a practical understanding of business and individual needs.
+Dispute Resolution & Arbitration
+Strategic representation in complex civil, corporate and commercial disputes, from negotiation and litigation to arbitration and enforcement.
 Corporate & Commercial
+Practical legal counsel on corporate governance, commercial transactions, contractual arrangements and business-related legal risks.
+White-Collar Crimes
+We combine legal analysis with a practical understanding of business operations and evidentiary issues to develop a clear strategy, protect our Clients’ legitimate interests and manage risks throughout each stage of the matter.
+Mergers, Acquisitions & Investment
+Tailored advice on investment structures, acquisitions, transactions and regulatory matters involving domestic and foreign investors.
 Real Estate & Construction
+Legal support for property transactions, construction projects, contractual arrangements and related disputes.
+Employment
+Strategic advice on employment relationships, workplace compliance, executive matters and labour disputes.
 Private Clients
+Discreet and considered legal representation in significant personal, civil, property and inheritance matters.
+VIEW ALL PRACTICE AREAS
 ```
-
-Do not resolve this ambiguity yourself. See AGENTS.md open question 3. Conservative implementation:
-
-- Show the four service areas above as the category labels, in that order. They replace the prototype's four tabs (Tranh tụng / Luật dân sự / Doanh nghiệp / Tài chính).
-- The 8 items exist only in Vietnamese. Keep their text exactly as in the prototype: do not reword, reorder, or translate them. Store them in the `vi` locale (`ivl-i18n` rule 4). On the English page, fall back to the Vietnamese text with a `TODO(client): English text pending`.
-- For cross-checking only, the client's screenshot shows this 8-item list (under the "Tài chính" tab): Tài chính doanh nghiệp; Giao dịch bảo đảm; Thẩm định pháp lý; Cấu trúc đầu tư; Quản trị rủi ro; Thu hồi công nợ; Tư vấn thuế; Ngân hàng & tín dụng. The repo is the source of truth, not this list. Other prototype tabs may hold their own items; if so, keep that data in `vi` too and report how it maps.
-- Report exactly how tabs, categories and items ended up mapped.
-- Write no subtitle under the heading. The prototype's Vietnamese subtitle is parked per `ivl-content-update` step 7.
 
 ## 5. Featured insights
 
 Section heading: "Featured Insights" (the client's section name). Four cards, each with a category label, an article title and a Read More link, then one section CTA. Titles are placeholders until the client supplies articles. Build the cards from a data array so real articles can be dropped in.
 
 ```text
+Legal Perspectives. Practical Implications.
+Explore our perspectives on legal developments, emerging risks and issues affecting businesses, investors and individuals in Vietnam.
+Through our legal insights, we aim to make complex legal matters more accessible while offering practical considerations to support informed decision-making.
 EXPLORE INTEGRITAS VU LEGAL INSIGHTS
 ```
 
@@ -126,7 +134,11 @@ the locale files and in `phase-6-insights.md`:
 Section heading: "Our People" (the client's section name). Photo of Mr. Vũ, name as H3, role line, two CTAs. No biography was provided; add none.
 
 ```text
-NGUYỄN HÀ THANH VŨ
+Personal Commitment. Professional Judgment.
+At Integritas Vu Legal, we believe that the quality of legal representation begins with the people entrusted with each matter.
+Our boutique structure enables direct lawyer involvement, close Client communication and an approach shaped by the specific circumstances of every engagement.
+We value the trust placed in us and approach each matter with independence, diligence and a clear sense of professional responsibility.
+NGUYEN HA THANH VU (VICTOR NGUYEN)
 Founder | Managing Lawyer
 VIEW PROFILE
 MEET OUR PEOPLE

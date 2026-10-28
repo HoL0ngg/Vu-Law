@@ -46,7 +46,7 @@ Chưa đặt hai biến ở bước 6 thì website vẫn chạy bình thường,
 
 Tài khoản Editor **không có nút Publish**, nên bài không thể lên web trước khi được duyệt. Mọi thay đổi tự lưu thành bản nháp.
 
-Nội dung chỉ có các kiểu mà website hiển thị được: đoạn văn, tiêu đề mục, dòng gợi ý chủ đề tiếp theo (chữ nghiêng) và ghi chú pháp lý (chữ nghiêng). Chưa có in đậm, link, danh sách hay ảnh trong thân bài. Cần thì báo để bổ sung.
+Nội dung chỉ có các kiểu mà website hiển thị được: đoạn văn, tiêu đề mục, dòng gợi ý chủ đề tiếp theo (chữ nghiêng) và ghi chú pháp lý (chữ nghiêng). Ảnh đại diện (tab *Thông tin chung*) hiện ở thẻ bài và đầu bài viết. Chưa có in đậm, link, danh sách hay ảnh nằm giữa thân bài. Cần thì báo để bổ sung.
 
 ## 3. Dành cho quản trị viên (vai trò Administrator)
 

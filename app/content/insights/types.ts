@@ -37,8 +37,13 @@ export type Article = {
   category: 0 | 1 | 2 | 3;
   /** Optional image URL for social sharing; the firm logo is used when absent. */
   coverImage?: string;
-  en: ArticleLocale;
-  vi: ArticleLocale;
+  /**
+   * Either language may be missing. The Client sometimes supplies one language first, and
+   * machine-translating legal copy is forbidden, so an article simply appears only on the
+   * pages of the language it has (see `hasLocale`).
+   */
+  en?: ArticleLocale;
+  vi?: ArticleLocale;
 };
 
 export type LocaleKey = Locale;

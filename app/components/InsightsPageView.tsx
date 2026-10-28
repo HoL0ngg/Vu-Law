@@ -1,8 +1,9 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
-import { formatArticleDate, getArticles } from "../content/insights";
+import { formatArticleDate, getArticlesFor } from "../content/insights";
 import { insightPath } from "../i18n/routes";
+import ArticleArt from "./ArticleArt";
 import PageFrame from "./PageFrame";
 import PageHero from "./PageHero";
 
@@ -15,7 +16,7 @@ type InsightsPageViewProps = {
 
 export default async function InsightsPageView({ dictionary, locale = "en" }: InsightsPageViewProps) {
   const page = dictionary.insightsPage;
-  const insightArticles = await getArticles();
+  const insightArticles = await getArticlesFor(locale);
   const hasArticles = insightArticles.length > 0;
 
   return (
@@ -26,12 +27,12 @@ export default async function InsightsPageView({ dictionary, locale = "en" }: In
         <section className="insights-section section-paper">
           <div className="insight-grid insight-grid--list">
             {insightArticles.map((article, index) => {
-              const text = article[locale];
+              const text = article[locale]!;
               const href = insightPath(article.slug, locale);
               return (
                 <article className="insight-card reveal" key={article.slug} style={stagger(index)}>
                   <Link className="insight-art-link" href={href} tabIndex={-1} aria-hidden="true">
-                    <div className={`insight-art insight-art-${(index % 4) + 1}`} />
+                    <ArticleArt article={article} index={index} />
                   </Link>
                   <p>
                     {page.cards[article.category].category}

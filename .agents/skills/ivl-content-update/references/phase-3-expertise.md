@@ -89,19 +89,19 @@ Judgment enforcement and asset recovery
 
 ### White-Collar Crimes
 
-Added in the 28-9 feedback, positioned directly after Dispute Resolution. The Client wrote
-this area's services as a **single paragraph** rather than a list, so the page renders a
-paragraph here and a list everywhere else.
+Added in the 28-9 feedback, positioned directly after Dispute Resolution. Its services were one paragraph; on 26-10 the Client replaced that paragraph with this list (Vietnamese: `Hình sự`, below).
 
 ```text
 White-Collar Crimes matters can expose businesses and individuals to significant legal, financial, and reputational risks. Integritas Vu Legal advises and represents Clients in sensitive and complex matters involving alleged economic and corporate misconduct, from early-stage risk assessment and internal investigations to proceedings before competent authorities and courts.
 We combine legal analysis with a practical understanding of business operations and evidentiary issues to develop a clear strategy, protect our clients’ legitimate interests and manage risks throughout each stage of the matter.
-Our work covers fraud, misappropriation, bribery and corruption, corporate and economic offences, internal investigations, and regulatory and criminal proceedings. We advise and represent businesses and individuals throughout investigations, prosecutions and court proceedings, as well as on asset recovery, compliance and preventive measures to identify and mitigate potential legal and regulatory risks.
+Criminal law consultancy
+Early participation in legal proceedings
+Defending the accused and defendants
+Protecting the legitimate rights and interests of other involved parties
+Other legal support services
 ```
 
-The Client wrote "our clients’ legitimate interests" here in lower case with a curly
-apostrophe. The capitalisation rule for "Client" is applied to the two description
-paragraphs as elsewhere; this one instance sits inside the services paragraph.
+Vietnamese (supplied by the Client 26-10; not checked by `check_copy.py`, which reads the English fences): area name `Hình sự`; services `Tư vấn pháp luật Hình sự`, `Tham gia tố tụng từ sớm`, `Nhận bào chữa cho bị can, bị cáo`, `Bảo vệ quyền và lợi ích hợp pháp cho các đương sự khác trong vụ án`, `Dịch vụ pháp lý khác`. The two descriptive paragraphs are still English on `/vi/expertise`. On `/vi/expertise` the area list was reordered to match the English order and the stray English `Private Clients` entry was removed.
 
 ### Arbitration
 

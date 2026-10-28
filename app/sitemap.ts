@@ -44,13 +44,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entry(personPath(member.slug, "en"), personPath(member.slug, "vi"), { priority: 0.6, changeFrequency: "monthly" }),
   );
 
-  const articles = (await getArticles()).flatMap((article) =>
-    entry(insightPath(article.slug, "en"), insightPath(article.slug, "vi"), {
-      lastModified: article.updatedAt ?? article.publishedAt,
-      priority: 0.8,
-      changeFrequency: "monthly",
-    }),
-  );
+  const articles = (await getArticles()).flatMap((article): MetadataRoute.Sitemap => {
+    const lastModified = article.updatedAt ?? article.publishedAt;
+    const common = { lastModified, priority: 0.8, changeFrequency: "monthly" as const };
+    // An article written in one language is listed once and has no alternate.
+    if (article.en && article.vi) {
+      return entry(insightPath(article.slug, "en"), insightPath(article.slug, "vi"), common);
+    }
+    const locale = article.en ? "en" : "vi";
+    return [{ url: absoluteUrl(insightPath(article.slug, locale)), ...common }];
+  });
 
   return [...pages, ...people, ...articles];
 }

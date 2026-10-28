@@ -373,8 +373,11 @@ a:hover .brand-logo {
 .introduction {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
-  gap: 9vw;
+  /* Was 1.45fr / 0.55fr for two short paragraphs. The Client's "Our Perspective" copy is
+     three paragraphs, which in the narrow column ran to a very tall strip, so the two
+     columns are now close to equal. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 7vw;
   overflow: hidden;
   padding: 145px 8vw;
 }
@@ -394,7 +397,7 @@ a:hover .brand-logo {
 }
 
 .introduction-copy {
-  align-self: end;
+  align-self: center;
   color: #c1cbd1;
 }
 
@@ -488,64 +491,6 @@ a:hover .brand-logo {
 .section-light .text-link,
 .section-paper .text-link {
   color: var(--ink);
-}
-
-.expertise-categories {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgba(13, 33, 48, 0.23);
-  border-left: 1px solid rgba(13, 33, 48, 0.23);
-}
-
-.expertise-category {
-  display: flex;
-  /* Was min-height: 210px with the label bottom-aligned, which left about 139px of empty
-     box above every label. The box now fits its content. */
-  min-height: 0;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 30px;
-  border-right: 1px solid rgba(13, 33, 48, 0.23);
-  border-bottom: 1px solid rgba(13, 33, 48, 0.23);
-  font-size: clamp(27px, 2.35vw, 38px);
-  line-height: 1.05;
-  transition: background 0.35s ease, color 0.35s ease;
-}
-
-.expertise-category i,
-.expertise-item i {
-  flex: none;
-  font-style: normal;
-  font-weight: 300;
-}
-
-.expertise-category:hover {
-  background: var(--navy-soft);
-  color: var(--paper);
-}
-
-.expertise-items {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0 34px;
-  padding-top: 72px;
-}
-
-.expertise-item {
-  display: flex;
-  min-height: 86px;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 22px 0;
-  border-bottom: 1px solid rgba(13, 33, 48, 0.2);
-  font-size: clamp(21px, 1.8vw, 28px);
-  line-height: 1.16;
-}
-
-.expertise-item:hover {
-  color: var(--gold-deep);
 }
 
 .insight-grid {
@@ -748,27 +693,6 @@ a:hover .brand-logo {
   margin-bottom: 26px;
 }
 
-.consistent-statement {
-  margin-top: 50px;
-  padding: 34px 0 0 38px;
-  border-top: 1px solid rgba(13, 33, 48, 0.22);
-  border-left: 2px solid var(--gold);
-}
-
-.consistent-statement p {
-  color: var(--gold-deep);
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
-.consistent-statement strong {
-  font-size: clamp(28px, 2.4vw, 40px);
-  font-weight: 400;
-  line-height: 1.16;
-}
-
 .philosophy-section .about-section-heading,
 .approach-section .about-section-heading,
 .values-section .about-section-heading {
@@ -791,10 +715,11 @@ a:hover .brand-logo {
 }
 
 .principle h3 {
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   color: var(--gold-light);
-  font-size: 43px;
+  font-size: 34px;
   font-weight: 400;
+  letter-spacing: 0.1em;
 }
 
 .principle-descriptor {
@@ -803,8 +728,12 @@ a:hover .brand-logo {
   font-style: italic;
 }
 
-.principle p:last-child {
+.principle p:not(.principle-descriptor) {
   color: #bbc6cc;
+}
+
+.principle p:last-child {
+  margin-bottom: 0;
 }
 
 .section-intro {
@@ -824,18 +753,17 @@ a:hover .brand-logo {
   border-top: 1px solid rgba(13, 33, 48, 0.25);
 }
 
-.approach-step i {
-  display: block;
-  width: 10px;
-  height: 10px;
-  margin-bottom: 42px;
-  transform: rotate(45deg);
-  border: 1px solid var(--gold-deep);
+.approach-step-label {
+  margin-bottom: 30px;
+  color: var(--gold-deep);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
 }
 
 .approach-step h3 {
   margin-bottom: 17px;
-  font-size: 29px;
+  font-size: 27px;
   font-weight: 500;
   line-height: 1.1;
 }
@@ -1046,8 +974,6 @@ a:hover .brand-logo {
     gap: 60px;
   }
 
-  .expertise-categories,
-  .expertise-items,
   .insight-grid,
   .approach-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1156,8 +1082,6 @@ a:hover .brand-logo {
     margin-bottom: 50px;
   }
 
-  .expertise-categories,
-  .expertise-items,
   .insight-grid,
   .philosophy-grid,
   .approach-steps,
@@ -1167,14 +1091,6 @@ a:hover .brand-logo {
   .footer-columns,
   .footer-disclaimer {
     grid-template-columns: 1fr;
-  }
-
-  .expertise-category {
-    min-height: 145px;
-  }
-
-  .expertise-items {
-    padding-top: 55px;
   }
 
   .insight-grid {
@@ -1227,10 +1143,6 @@ a:hover .brand-logo {
 
   .approach-steps {
     gap: 42px;
-  }
-
-  .approach-step i {
-    margin-bottom: 24px;
   }
 
   .site-footer {
@@ -2014,13 +1926,6 @@ a:hover .brand-logo {
 }
 
 /* White-Collar Crimes states its services as a paragraph rather than a list. */
-.practice-area-services-text {
-  max-width: 46ch;
-  margin: 0;
-  font-size: clamp(21px, 1.7vw, 26px);
-  line-height: 1.7;
-}
-
 /* Insights: the notice that stands in until articles are published. */
 .coming-soon {
   padding: 110px 8vw 90px;
@@ -2300,4 +2205,194 @@ a:hover .brand-logo {
 
 .article-hero h1 {
   max-width: 26ch;
+}
+
+/* --- 26-10 feedback ---------------------------------------------------------------- */
+
+.introduction-heading .eyebrow {
+  margin-bottom: 30px;
+}
+
+/* Seven practice areas as one list; each opens on its plus sign to show a short description. */
+.expertise-intro {
+  max-width: 900px;
+  margin: -30px 0 58px;
+  font-size: clamp(21px, 1.7vw, 26px);
+  line-height: 1.6;
+}
+
+.expertise-categories {
+  border-top: 1px solid rgba(13, 33, 48, 0.23);
+}
+
+.expertise-category {
+  border-bottom: 1px solid rgba(13, 33, 48, 0.23);
+}
+
+.expertise-category summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 30px;
+  font-size: clamp(27px, 2.35vw, 38px);
+  line-height: 1.05;
+  list-style: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.expertise-category summary::-webkit-details-marker {
+  display: none;
+}
+
+.expertise-category summary:hover,
+.expertise-category summary:focus-visible {
+  color: var(--gold-deep);
+}
+
+.expertise-category summary i {
+  flex: none;
+  font-size: 1.1em;
+  font-style: normal;
+  font-weight: 300;
+  transition: transform 0.35s ease;
+}
+
+.expertise-category[open] summary i {
+  transform: rotate(45deg);
+}
+
+.expertise-category p {
+  max-width: 62ch;
+  margin: 0;
+  padding: 0 30px 34px;
+  color: #52636c;
+  font-size: clamp(19px, 1.45vw, 23px);
+  line-height: 1.6;
+}
+
+.expertise-cta {
+  margin-top: 56px;
+}
+
+/* An introduction under a section heading: a short lead line, then paragraphs. */
+.section-intro-title {
+  margin-bottom: 16px;
+  color: var(--gold-deep);
+  font-size: clamp(26px, 2.2vw, 34px);
+  line-height: 1.15;
+}
+
+.section-intro-block {
+  max-width: 900px;
+  margin: -24px 0 58px;
+}
+
+.section-intro-block p:not(.section-intro-title) {
+  margin-bottom: 14px;
+  font-size: clamp(19px, 1.45vw, 23px);
+  line-height: 1.6;
+}
+
+.people-intro {
+  max-width: 760px;
+  margin-bottom: 42px;
+  color: #c0ccd2;
+}
+
+.people-intro .section-intro-title {
+  color: var(--gold-light);
+}
+
+.people-intro p:not(.section-intro-title) {
+  margin-bottom: 14px;
+  font-size: clamp(19px, 1.4vw, 22px);
+  line-height: 1.6;
+}
+
+/* About */
+.about-opening p.about-opening-title {
+  margin-bottom: 18px;
+  color: var(--gold-light);
+  font-size: clamp(26px, 2vw, 34px);
+  line-height: 1.15;
+}
+
+.about-prose > p.about-lead {
+  margin-bottom: 34px;
+  font-size: clamp(30px, 2.6vw, 42px);
+  line-height: 1.15;
+}
+
+/* Article pictures */
+.insight-art--photo {
+  background: var(--navy);
+}
+
+.insight-art--photo::before,
+.insight-art--photo::after {
+  display: none;
+}
+
+.insight-art--photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-cover {
+  max-width: 1100px;
+  margin: 0 auto 64px;
+}
+
+.article-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+@media (max-width: 720px) {
+  .expertise-intro,
+  .section-intro-block {
+    margin-top: -20px;
+  }
+
+  .expertise-category summary {
+    padding: 24px 4px;
+  }
+
+  .expertise-category p {
+    padding: 0 4px 28px;
+  }
+}
+
+/* The Homepage name carries a nickname in brackets; it sits on its own line, smaller. */
+.people-copy h3 {
+  font-size: clamp(34px, 3.9vw, 58px);
+}
+
+.people-copy h3 .people-alias {
+  display: block;
+  margin-top: 10px;
+  color: var(--gold-light);
+  font-size: 0.62em;
+  letter-spacing: -0.01em;
+}
+
+/* Long web addresses in the footnotes must wrap instead of widening the page. */
+.article-note {
+  overflow-wrap: anywhere;
+}
+
+/* A standfirst can be a whole paragraph; the list card shows only the first lines of it. */
+.insight-card > p.insight-card-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
 }

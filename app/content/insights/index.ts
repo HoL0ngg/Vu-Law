@@ -22,9 +22,14 @@ export async function getArticle(slug: string): Promise<Article | undefined> {
   return (await getArticles()).find((article) => article.slug === slug);
 }
 
-/** The headline and standfirst of an article in one language. */
-export function articleText(article: Article, locale: Locale) {
-  return article[locale];
+/** True when the article has been written in this language. */
+export function hasLocale(article: Article, locale: Locale): boolean {
+  return Boolean(article[locale]);
+}
+
+/** The articles that exist in one language, newest first: what that language's lists show. */
+export async function getArticlesFor(locale: Locale): Promise<readonly Article[]> {
+  return (await getArticles()).filter((article) => hasLocale(article, locale));
 }
 
 /** Calendar date rendered in the reader's language. UTC avoids a one-day shift in some zones. */
@@ -37,4 +42,4 @@ export function formatArticleDate(isoDate: string, locale: Locale): string {
   }).format(new Date(`${isoDate}T00:00:00Z`));
 }
 
-export type { Article, ArticleBlock } from "./types";
+export type { Article, ArticleBlock, ArticleLocale } from "./types";

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { Article } from "../content/insights";
 import { insightPath } from "../i18n/routes";
 import type { Locale } from "../i18n/config";
+import { coverImageUrl } from "./cover-image";
 import { SITE_NAME, absoluteUrl } from "./site";
 
 /**
@@ -10,20 +11,23 @@ import { SITE_NAME, absoluteUrl } from "./site";
  */
 export function articleMetadata(article: Article, locale: Locale): Metadata {
   const text = article[locale];
+  if (!text) return {};
   const path = insightPath(article.slug, locale);
   const description = text.metaDescription ?? text.subtitle;
-  // Sanity serves resized crops; 1200x630 is the shape social networks expect.
-  const image = article.coverImage ? `${article.coverImage}?w=1200&h=630&fit=crop&auto=format` : absoluteUrl("/images/logo.png");
+  // 1200x630 is the shape social networks expect.
+  const image = article.coverImage ? coverImageUrl(article.coverImage, 1200, 630, true) : absoluteUrl("/images/logo.png");
 
   return {
     title: text.seoTitle ?? `${text.title} | ${SITE_NAME}`,
     description,
     alternates: {
       canonical: absoluteUrl(path),
+      // Only the languages the article exists in: pointing search engines at a page that
+      // 404s would be worse than naming none. English is the default when it exists.
       languages: {
-        en: absoluteUrl(insightPath(article.slug, "en")),
-        vi: absoluteUrl(insightPath(article.slug, "vi")),
-        "x-default": absoluteUrl(insightPath(article.slug, "en")),
+        ...(article.en ? { en: absoluteUrl(insightPath(article.slug, "en")) } : {}),
+        ...(article.vi ? { vi: absoluteUrl(insightPath(article.slug, "vi")) } : {}),
+        "x-default": absoluteUrl(insightPath(article.slug, article.en ? "en" : "vi")),
       },
     },
     openGraph: {

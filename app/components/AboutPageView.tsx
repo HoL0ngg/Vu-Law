@@ -20,6 +20,7 @@ export default function AboutPageView({ dictionary, locale = "en" }: AboutPageVi
         <div className="about-hero-copy">
           <h1 className="reveal-line">{about.title}</h1>
           <div className="about-opening reveal" style={stagger(2)}>
+            <p className="about-opening-title">{about.openingTitle}</p>
             {about.opening.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </div>
@@ -30,13 +31,10 @@ export default function AboutPageView({ dictionary, locale = "en" }: AboutPageVi
           <h2 className="display-heading reveal-line">{about.firm.heading}</h2>
         </div>
         <div className="about-prose">
+          <p className="about-lead reveal">{about.firm.lead}</p>
           {about.firm.paragraphs.map((paragraph, index) => (
             <p className="reveal" key={paragraph} style={stagger(index)}>{paragraph}</p>
           ))}
-          <div className="consistent-statement reveal" style={stagger(4)}>
-            <p>{about.firm.consistentLabel}</p>
-            <strong>{about.firm.consistentStatement}</strong>
-          </div>
         </div>
       </section>
 
@@ -50,7 +48,7 @@ export default function AboutPageView({ dictionary, locale = "en" }: AboutPageVi
             <article className="principle reveal" key={item.term} style={stagger(index)}>
               <h3>{item.term}</h3>
               <p className="principle-descriptor">{item.descriptor}</p>
-              <p>{item.body}</p>
+              {item.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </article>
           ))}
         </div>
@@ -67,7 +65,7 @@ export default function AboutPageView({ dictionary, locale = "en" }: AboutPageVi
         <div className="approach-steps">
           {about.approach.steps.map((step, index) => (
             <article className="approach-step reveal" key={step.name} style={stagger(index)}>
-              <i aria-hidden="true" />
+              <p className="approach-step-label">{step.label}</p>
               <h3>{step.name}</h3>
               <p>{step.body}</p>
             </article>

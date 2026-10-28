@@ -35,26 +35,29 @@ export const en = {
     hero: {
       eyebrow: "Integritas Vu Legal",
       title: "Strategic Counsel. Resolute Advocacy.",
+      // Replaced by the Client in the 26-10 feedback.
       paragraphs: [
-        "Integritas Vu Legal is a Vietnam-based law firm providing strategic legal counsel and representation to businesses, investors and private Clients in complex transactions, disputes and critical legal matters.",
-        "We combine legal insight, strategic thinking and precise execution to help our Clients understand their position, manage risk and make informed decisions.",
+        "Integritas Vu Legal LLC (Integritas Vu Legal) is an independent boutique law firm in Vietnam, providing strategic legal advice and representation to businesses, investors, and private Clients.",
+        "With a strong focus on dispute resolution and a comprehensive approach to corporate and commercial matters and White-Collar Crimes, we deliver tailored legal solutions that address our Clients' priorities, anticipate risks, and protect their interests.",
       ],
       expertiseCta: "EXPLORE OUR EXPERTISE",
       peopleCta: "MEET OUR LAWYERS",
     },
+    // Section renamed "OUR PERSPECTIVE" and rewritten by the Client in the 26-10 feedback.
     introduction: {
+      eyebrow: "OUR PERSPECTIVE",
       titleLines: [
-        "Law is more than a framework.",
-        "It is the foundation for sound decisions.",
+        "Beyond Legal Advice.",
+        "Towards Strategic Solutions.",
       ],
       paragraphs: [
-        "At Integritas Vu Legal, we believe the value of legal advice lies in helping Clients understand the issues, identify risks, evaluate their options and determine the course of action that best serves their objectives.",
-        "Integritas Vu Legal is built as a focused law firm where each matter is approached with independent judgment, rigorous analysis and a solution-oriented mindset.",
+        "Effective legal counsel requires more than an understanding of the law. It demands sound judgment, commercial awareness and the ability to navigate complex legal challenges with clarity and precision.",
+        "At Integritas Vu Legal, we look beyond immediate legal questions to understand the broader implications of every decision. Whether advising on a transaction, managing legal exposure or resolving a dispute, we develop strategies tailored to each Client's circumstances and objectives.",
+        "Our commitment is straightforward: to provide independent advice, thoughtful solutions and dedicated representation at every critical stage.",
       ],
-      // Was the Client's Vietnamese CTA; they asked for the English page to carry no
-    // Vietnamese and supplied no replacement, so this reuses their own nav label,
-    // chosen by the site owner. Confirm at sign-off.
-    cta: "ABOUT US",
+      // TODO(client): the Client gave the label but not the destination. It keeps the
+      // destination of the CTA it replaces (About Us); confirm, or point it at Contact.
+      cta: "DISCUSS OUR FIRM",
     },
     approach: {
       eyebrow: "THE INTEGRITAS VU LEGAL APPROACH",
@@ -62,32 +65,55 @@ export const en = {
       statement: "Principled in judgment. Strategic in approach. Precise in execution. Focused on results.",
       cta: "DISCOVER HOW INTEGRITAS VU LEGAL WORKS",
     },
+    // Rewritten by the Client in the 26-10 feedback: an introduction, seven practice
+    // areas that each open on the plus sign to show a short description, and a CTA. It
+    // replaces the four category tiles and the eight Vietnamese-only items, which closes
+    // the earlier TODO(client) about their English wording.
     expertise: {
       heading: "Our Expertise",
-      categories: [
-        "Dispute Resolution",
-        "Corporate & Commercial",
-        "Real Estate & Construction",
-        "Private Clients",
+      intro: "We advise and represent Clients across a range of contentious and non-contentious matters, combining rigorous legal analysis with a practical understanding of business and individual needs.",
+      areas: [
+        {
+          name: "Dispute Resolution & Arbitration",
+          summary: "Strategic representation in complex civil, corporate and commercial disputes, from negotiation and litigation to arbitration and enforcement.",
+        },
+        {
+          name: "Corporate & Commercial",
+          summary: "Practical legal counsel on corporate governance, commercial transactions, contractual arrangements and business-related legal risks.",
+        },
+        {
+          name: "White-Collar Crimes",
+          summary: "We combine legal analysis with a practical understanding of business operations and evidentiary issues to develop a clear strategy, protect our Clients’ legitimate interests and manage risks throughout each stage of the matter.",
+        },
+        {
+          name: "Mergers, Acquisitions & Investment",
+          summary: "Tailored advice on investment structures, acquisitions, transactions and regulatory matters involving domestic and foreign investors.",
+        },
+        {
+          name: "Real Estate & Construction",
+          summary: "Legal support for property transactions, construction projects, contractual arrangements and related disputes.",
+        },
+        {
+          name: "Employment",
+          summary: "Strategic advice on employment relationships, workplace compliance, executive matters and labour disputes.",
+        },
+        {
+          name: "Private Clients",
+          summary: "Discreet and considered legal representation in significant personal, civil, property and inheritance matters.",
+        },
       ],
-      // TODO(client): confirm this English wording. The Client supplied these eight only
-      // in Vietnamese and asked that the English page show no Vietnamese, so they are
-      // rendered into English at the site owner's direction. Four reuse the Client's own
-      // English from the Expertise page (legal due diligence, risk management, debt
-      // recovery, transaction/investment structuring); the rest are new wording.
-      featuredItems: [
-        "Corporate finance",
-        "Secured transactions",
-        "Legal due diligence",
-        "Investment structuring",
-        "Risk management",
-        "Debt recovery",
-        "Tax advisory",
-        "Banking & credit",
-      ] as string[],
+      cta: "VIEW ALL PRACTICE AREAS",
     },
     insights: {
       heading: "Featured Insights",
+      // The introduction under the heading, supplied by the Client in the 26-10 feedback.
+      intro: {
+        title: "Legal Perspectives. Practical Implications.",
+        paragraphs: [
+          "Explore our perspectives on legal developments, emerging risks and issues affecting businesses, investors and individuals in Vietnam.",
+          "Through our legal insights, we aim to make complex legal matters more accessible while offering practical considerations to support informed decision-making.",
+        ],
+      },
       cards: [
         // TODO(client): Supply the article title and URL.
         { category: "LEGAL UPDATE", title: "[Article title]", linkLabel: "Read More" },
@@ -102,7 +128,19 @@ export const en = {
     },
     people: {
       heading: "Our People",
-      name: "NGUYỄN HÀ THANH VŨ",
+      // Introduction supplied by the Client in the 26-10 feedback.
+      intro: {
+        title: "Personal Commitment. Professional Judgment.",
+        paragraphs: [
+          "At Integritas Vu Legal, we believe that the quality of legal representation begins with the people entrusted with each matter.",
+          "Our boutique structure enables direct lawyer involvement, close Client communication and an approach shaped by the specific circumstances of every engagement.",
+          "We value the trust placed in us and approach each matter with independence, diligence and a clear sense of professional responsibility.",
+        ],
+      },
+      // The Client changed the nickname on the Homepage to "Victor Nguyen" (26-10). The
+      // People and Contact pages still say "Vu Nguyen": flagged for the Client. The part
+      // in brackets is drawn on its own line.
+      name: "NGUYEN HA THANH VU (VICTOR NGUYEN)",
       role: "Founder | Managing Lawyer",
       profileCta: "VIEW PROFILE",
       peopleCta: "MEET OUR PEOPLE",
@@ -110,73 +148,107 @@ export const en = {
       portraitAlt: "Portrait placeholder",
     },
   },
+  // Every About section was rewritten by the Client in the 26-10 feedback.
   about: {
     title: "About Us",
+    openingTitle: "About Integritas Vu Legal",
     opening: [
-      "Integritas Vu Legal is a Vietnam-based law firm providing legal advice and representation to businesses, investors and private Clients.",
-      "Our practice focuses on dispute resolution, corporate and commercial matters, investment, M&A, real estate and construction, as well as complex legal matters affecting our Clients' rights and interests.",
-      "We approach each matter with the Client's objectives in mind. We identify the legal issues, assess the risks, evaluate available options and develop a strategy appropriate to the circumstances.",
+      "Integritas Vu Legal is an independent boutique law firm based in Ho Chi Minh City, Vietnam, providing legal advisory and representation services to domestic and international businesses, investors and private Clients.",
+      "Our practice encompasses dispute resolution, litigation, arbitration, white-collar crimes, corporate and commercial law, mergers and acquisitions, foreign investment, real estate, construction and other significant legal matters.",
+      "We believe that effective legal representation requires more than technical expertise. It calls for independent judgment, strategic foresight and a thorough understanding of the Client's circumstances, priorities and long-term interests.",
+      "With this philosophy at the core of our practice, we strive to deliver legal services that are precise in execution, practical in application and tailored to the complexities of each matter.",
     ],
     firm: {
       heading: "Our firm",
+      lead: "A Boutique Practice. A Distinctive Approach.",
       paragraphs: [
-        "Integritas Vu Legal is structured as a boutique law firm with an emphasis on legal quality, direct lawyer involvement and responsive execution.",
-        "We do not consider legal issues in isolation. Our advice takes into account the Client's circumstances, commercial objectives, rights to be protected and the risks and consequences of each available course of action.",
-        "In transactions, we seek to identify and manage legal risks before they develop into disputes.",
-        "In disputes, we focus on understanding the Client's position, developing the appropriate strategy and selecting the most effective path toward resolution.",
+        "Integritas Vu Legal was established with a clear vision: to build a focused legal practice where professional judgment, personal commitment and the quality of legal services take precedence.",
+        "We recognise that no two Clients face precisely the same legal challenges. A commercially sound solution for one business may not be appropriate for another. Likewise, a dispute cannot be effectively addressed without understanding the underlying relationship, available evidence, legal exposure and practical consequences.",
+        "Our approach is therefore deliberately tailored rather than standardised.",
+        "In advisory matters, we work to identify potential legal exposure, strengthen contractual protections and help Clients make informed decisions before risks materialise.",
+        "In contentious matters, we examine the legal and evidentiary foundations of each case, assess available remedies and develop strategies directed towards protecting our Clients' legitimate rights and interests.",
+        "Our boutique structure allows us to maintain direct lawyer involvement, responsive communication and close attention to the matters entrusted to us.",
+        "We seek to be more than a provider of legal opinions. We aim to be a trusted legal adviser when decisions matter and a committed advocate when interests must be defended.",
       ],
-      consistentLabel: "Our approach remains consistent:",
-      consistentStatement: "Understand the issue. Define the objective. Develop the strategy. Execute with precision",
     },
     philosophy: {
       heading: "Our Philosophy",
       title: "Integrity — Strategy — Precision — Results",
       items: [
         {
-          term: "Integrity",
-          descriptor: "Principled in judgment",
-          body: "“Integritas” reflects the foundation of our practice: independence in judgment, honesty in advice and consistency in protecting our Clients' legitimate interests.",
+          term: "INTEGRITY",
+          descriptor: "Independent Judgment. Principled Advice.",
+          paragraphs: [
+            "Integrity is the foundation of our practice. We provide candid legal assessments, exercise independent professional judgment and uphold the principles of honesty, confidentiality and professional responsibility.",
+            "We believe that Clients are best served by advice that is objective, transparent and grounded in the law, even when that advice involves difficult considerations.",
+          ],
         },
         {
-          term: "Strategy",
-          descriptor: "Strategic in approach",
-          body: "Law provides the framework. Integritas Vu Legal’s team determines how that framework is used to advance the Client's objectives.",
+          term: "STRATEGY",
+          descriptor: "Beyond Legal Questions. Towards Informed Decisions.",
+          paragraphs: [
+            "Legal challenges rarely exist in isolation. They often involve commercial relationships, financial consequences, reputational considerations and competing priorities.",
+            "We approach each matter strategically, evaluating not only what the law permits but also how different legal options may affect the Client's broader interests.",
+          ],
         },
         {
-          term: "Precision",
-          descriptor: "Precise in execution",
-          body: "We place precision at the centre of our legal research, evidence analysis, advocacy, drafting and execution.",
+          term: "PRECISION",
+          descriptor: "Rigorous Analysis. Disciplined Execution.",
+          paragraphs: [
+            "Precision is essential to effective legal practice.",
+            "From legal research and contractual drafting to evidence assessment, negotiation and advocacy, we place careful analysis and attention to detail at the centre of our work.",
+            "Our objective is to ensure that legal strategies are supported by sound reasoning and implemented with diligence.",
+          ],
         },
         {
-          term: "Results",
-          descriptor: "Focused on results",
-          body: "We pursue outcomes that are meaningful, achievable and aligned with our Clients' interests.",
+          term: "RESULTS",
+          descriptor: "Purposeful Action. Meaningful Outcomes.",
+          paragraphs: [
+            "We measure the value of our work by its relevance to the Client's objectives and the practical outcomes it seeks to achieve.",
+            "Whether preventing a dispute, completing a transaction, protecting an investment or pursuing a legal remedy, we remain focused on solutions that are legally sound, commercially sensible and realistically achievable.",
+          ],
         },
       ],
     },
     approach: {
       heading: "Our approach",
-      title: "From legal issues to a course of action.",
+      title: "Every Matter Deserves Its Own Strategy.",
       paragraphs: [
-        "Every matter presents different circumstances, risks and objectives. We therefore do not apply a standard solution to every Client.",
-        "We structure each engagement around four key stages:",
+        "There is no universal solution to a complex legal problem. Each engagement requires an understanding of the facts, the applicable legal framework and the interests at stake.",
+        "Our approach follows four essential stages.",
       ],
       steps: [
-        { name: "Understand the matter", body: "Identify the facts, context, interests and practical objectives of the Client." },
-        { name: "Assess the position", body: "Analyse the applicable law, evidence, risks and available options." },
-        { name: "Develop the strategy", body: "Determine the appropriate course of action by considering objectives, enforceability, cost, timing and potential consequences." },
-        { name: "Execute with precision", body: "Implement the strategy systematically, adapt when circumstances change and maintain clear communication throughout the engagement." },
+        {
+          label: "01 — UNDERSTAND",
+          name: "Understanding the Matter and the Client.",
+          body: "We begin by examining the relevant facts, circumstances and legal relationships while identifying the Client's concerns, expectations and desired outcomes.",
+        },
+        {
+          label: "02 — ASSESS",
+          name: "Evaluating the Legal Position and Risks.",
+          body: "We analyse the applicable law, available evidence, potential liabilities and legal remedies. We also consider the commercial, financial and practical implications of each available option.",
+        },
+        {
+          label: "03 — DEVELOP",
+          name: "Formulating a Tailored Legal Strategy.",
+          body: "Drawing on our assessment, we develop a course of action aligned with the Client's priorities, taking into account legal feasibility, potential exposure, timing, costs and enforceability.",
+        },
+        {
+          label: "04 — EXECUTE",
+          name: "Implementing the Strategy with Precision.",
+          body: "We carry out the agreed strategy with diligence, maintain clear communication and reassess our approach as circumstances evolve.",
+        },
       ],
     },
     values: {
       heading: "Our values",
       intro: "The team at Integritas Vu Legal always places core principles at the heart of the case-handling process.",
       items: [
-        { name: "INDEPENDENCE", body: "Our professional judgment is guided by the law, the facts and our Clients' legitimate interests." },
-        { name: "INTEGRITY", body: "We value honesty, transparency and consistency in every professional relationship." },
-        { name: "CONFIDENTIALITY", body: "Client information is handled with care and in strict accordance with our professional duties of confidentiality." },
-        { name: "EXCELLENCE", body: "Every matter is handled with diligence, precision and professional responsibility." },
-        { name: "COMMITMENT", body: "We take responsibility for the work entrusted to us and remain engaged throughout the course of the matter." },
+        { name: "INDEPENDENCE", body: "We exercise professional judgment based on the law, the facts and the legitimate interests of our Clients." },
+        { name: "CONFIDENTIALITY", body: "We recognise the sensitivity of the information entrusted to us and uphold our professional obligations to protect Client confidentiality." },
+        { name: "RESPONSIBILITY", body: "We approach every engagement with diligence, accountability and a commitment to the responsibilities entrusted to us." },
+        { name: "PROFESSIONAL EXCELLENCE", body: "We pursue high standards of legal analysis, preparation, communication and execution in every matter." },
+        { name: "CLIENT COMMITMENT", body: "We value long-term professional relationships built on trust, responsiveness and a clear understanding of our Clients' needs." },
       ],
     },
   },
@@ -213,9 +285,14 @@ export const en = {
           "White-Collar Crimes matters can expose businesses and individuals to significant legal, financial, and reputational risks. Integritas Vu Legal advises and represents Clients in sensitive and complex matters involving alleged economic and corporate misconduct, from early-stage risk assessment and internal investigations to proceedings before competent authorities and courts.",
           "We combine legal analysis with a practical understanding of business operations and evidentiary issues to develop a clear strategy, protect our clients’ legitimate interests and manage risks throughout each stage of the matter.",
         ],
-        // The Client wrote this area's services as one paragraph rather than a list.
-        servicesText: "Our work covers fraud, misappropriation, bribery and corruption, corporate and economic offences, internal investigations, and regulatory and criminal proceedings. We advise and represent businesses and individuals throughout investigations, prosecutions and court proceedings, as well as on asset recovery, compliance and preventive measures to identify and mitigate potential legal and regulatory risks.",
-        services: [] as string[],
+        // The Client replaced the one-paragraph description with this list (26-10 feedback).
+        services: [
+          "Criminal law consultancy",
+          "Early participation in legal proceedings",
+          "Defending the accused and defendants",
+          "Protecting the legitimate rights and interests of other involved parties",
+          "Other legal support services",
+        ],
       },
       {
         id: "arbitration",

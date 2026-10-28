@@ -82,10 +82,11 @@ export const article = defineType({
     }),
     defineField({
       name: "coverImage",
-      title: "Ảnh đại diện khi chia sẻ lên mạng xã hội (không bắt buộc)",
+      title: "Ảnh đại diện của bài (không bắt buộc)",
       type: "image",
       group: "general",
-      description: "Ảnh ngang, nên 1200 x 630. Để trống thì dùng logo công ty. Ảnh này chưa hiện trong bài.",
+      description:
+        "Hiện trên thẻ bài viết (trang chủ, trang Insights), đầu bài viết và khi chia sẻ lên mạng xã hội. Nên dùng ảnh ngang, tối thiểu 1200 x 630. Để trống thì thẻ bài dùng hình nền hình học mặc định và khi chia sẻ dùng logo công ty.",
       options: { hotspot: true },
     }),
     defineField({
