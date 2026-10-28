@@ -42,8 +42,11 @@ export function summaryOf(text: ArticleLocale, maxLength = 200): string {
   if (text.subtitle) return text.subtitle;
   const first = text.blocks.find((block) => block.type === "p")?.text ?? "";
   if (first.length <= maxLength) return first;
-  const clipped = first.slice(0, maxLength).replace(/\s+\S*$/, "");
-  return `${clipped}…`;
+  const head = first.slice(0, maxLength);
+  // Prefer to end on a full sentence, when one finishes in the later part of the allowance.
+  const sentenceEnd = Math.max(head.lastIndexOf(". "), head.lastIndexOf("? "), head.lastIndexOf("! "));
+  if (sentenceEnd >= maxLength * 0.5) return head.slice(0, sentenceEnd + 1);
+  return `${head.replace(/\s+\S*$/, "")}…`;
 }
 
 /** Calendar date rendered in the reader's language. UTC avoids a one-day shift in some zones. */

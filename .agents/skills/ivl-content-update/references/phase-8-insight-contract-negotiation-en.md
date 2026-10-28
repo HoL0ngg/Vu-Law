@@ -1,0 +1,40 @@
+# Phase 8 - Legal Insights, third article (English)
+
+Source: `Blogs/03.IVL_Contract Negotiations_Part_1_EN.docx`. Published at `/insights/dam-phan-hop-dong-thoa-thuan-da-dat-duoc-nghia-vu-phap-ly-da-ro-rang` (the slug is shared with the Vietnamese page, so it is Vietnamese).
+
+Every line inside the fence must appear verbatim on that page. The text is the Client's own,
+including any spelling it carries, which is listed in the project report rather than corrected here.
+The divider line before the footnotes / legal notice is a layout mark and is not shown.
+The two lines at the top are label lines that appear above the headline.
+
+```text
+INTEGRITAS VU LEGAL  |  LEGAL INSIGHTS
+CONTRACT NEGOTIATION SERIES  •  PART 1/2
+CONTRACT NEGOTIATIONS: AGREEMENT REACHED—BUT ARE THE LEGAL OBLIGATIONS CLEAR?
+From the validity of transactions to authority to represent and the scope of contractual obligations—three issues to resolve before signing.
+Price, delivery schedules and payment terms often dominate commercial negotiations. Yet agreement on commercial interests does not, in itself, answer three essential questions: does the agreement satisfy the requirements for legal validity; does the person making the commitment have the requisite authority to represent the business; and what, precisely, is each party obliged to perform?
+Even a lengthy contract may omit provisions critical to its enforceability. The following questions offer businesses an opportunity to reconsider how they negotiate and document their commitments.
+01 | THE PARTIES HAVE AGREED VOLUNTARILY: ARE THE TERMS NECESSARILY LEGALLY EFFECTIVE?
+Freedom of contract and voluntary agreement are fundamental principles of civil law. They do not, however, mean that parties may agree to any terms whatsoever and automatically insist upon their enforcement. Under Articles 3 and 117 of the 2015 Civil Code, the validity of a civil transaction must be assessed by reference to the parties’ legal capacity, their voluntary participation, whether its purpose and contents contravene statutory prohibitions or social ethics, and—where prescribed by law—compliance with requirements as to form.
+For commercial transactions, Article 4 of the 2005 Commercial Law requires consideration of the Law’s scope of application and its relationship with other applicable legislation. Certain transactions are also subject to sector-specific requirements concerning business conditions, contractual form, notarisation, certification or registration.
+For example, where the law prescribes a mandatory form, the fact that the parties have reached agreement or partly performed their obligations does not, of itself, establish that the transaction is valid. Articles 119 and 129 of the 2015 Civil Code, together with applicable sector-specific provisions, must be considered; the legal consequences of non-compliance depend on the circumstances of the particular case.
+Key consideration: Ascertain the true nature of the transaction, the requirements for its validity, and any applicable formalities or procedures before accepting binding commitments.
+02 | THE NEGOTIATOR HAS AGREED: IS THE COUNTERPARTY LEGALLY BOUND?
+In practice, negotiations may be conducted by a department head, a sales employee, an authorised representative or an individual who routinely communicates with the counterparty. Their participation in negotiations does not necessarily confer authority to bind the business to every obligation.
+Articles 142 and 143 of the 2015 Civil Code address the consequences of transactions entered into or performed without authority to represent another person, or beyond the scope of that authority. Whether the principal is bound cannot be determined solely by a job title on a business card or a signature on a document. The scope of authority, subsequent ratification, knowledge of the transaction without objection within a reasonable period, and other circumstances specified in those provisions must also be considered.
+It would therefore be equally mistaken to assume that every undertaking given by an employee binds the business, or that a transaction can never bind the business where the signatory lacked authority. Enterprise registration records, the charter, internal delegations of authority, powers of attorney and the parties’ subsequent conduct may all be relevant to identifying who bears responsibility.
+Key consideration: Verify the representative’s capacity and scope of authority, and preserve evidence of the acceptance, approval or ratification of material commitments.
+03 | PRICE AND TIMETABLE AGREED: ARE THE CONTRACTUAL OBLIGATIONS SUFFICIENTLY DEFINED?
+A sale and purchase agreement may correctly identify the goods and their unit price while leaving quality specifications, inspection procedures, the point at which risk passes or the grounds for rejecting delivery unresolved. A services agreement may define the scope of work without specifying completion criteria, acceptance procedures or how additional requests will be addressed.
+Article 398 of the 2015 Civil Code addresses the terms that parties may agree upon in a contract; omission of a particular term does not automatically invalidate the contract. Depending on the transaction, however, statutory default rules, the parties’ agreement, lawful trade usages and evidence of the contracting process may affect how obligations are determined. For sales of goods, the provisions of the 2005 Commercial Law concerning delivery, conformity of goods, inspection and payment must also be considered.
+What matters is not the number of clauses, but whether the contract makes it possible to establish which party must do what, by when, to what standard, and by reference to what evidence performance or breach will be assessed.
+Key consideration: Translate commercial expectations into specific, objectively verifiable obligations, with clear provisions on quality standards, acceptance, payment and the handling of additional work.
+FROM AGREEMENT TO REMEDIES: WHAT HAPPENS WHEN A CONTRACT IS BREACHED?
+A legally valid agreement, an appropriately authorised signatory and clearly defined obligations provide an essential foundation. Even where all three are in place, businesses must ask a further question: if the counterparty fails to honour its commitments, will contractual penalties, damages, late-payment interest or termination rights operate as the parties intended?
+In Part 2, Integritas Vu Legal examines the provisions that often determine a business’s ability to protect its interests following a breach: contractual penalties, damages, interest for late payment, and unilateral termination or cancellation of the contract. Notably, a penalty stipulated at 20% of the contract value may not provide the protection its drafter expects.
+Contact Integritas Vu Legal for assistance in assessing legal risks and developing an appropriate legal approach from the transaction planning and negotiation stages.
+Website: www.integritasvulegal.com  |  Email: contact@integritasvulegal.com
+LEGAL NOTICE AND COPYRIGHT
+© 2026 Integritas Vu Legal. This Article has been prepared and published by Integritas Vu Legal LLC. Rights in the content to the extent protected by intellectual property law are reserved and exercised in accordance with applicable law. No part of the content may be reproduced, modified, republished, distributed, or commercially exploited without the authorization of the relevant rights holder, except as permitted by law. Where lawful quotation is made, please acknowledge the source and provide a link to the original Article.
+This Article provides general legal information as at the date of publication. It does not constitute legal advice on any particular matter, does not establish a lawyer–Client relationship, and is not a substitute for reviewing the relevant documents, evidence, agreements, and applicable law. Readers should not rely solely on this Article when taking, delaying, or refraining from any legal action. Outcomes depend on the facts and applicable law in each case, and the content may require updating as legislation or legal practice develops.
+```

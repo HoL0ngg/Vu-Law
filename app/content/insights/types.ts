@@ -27,6 +27,8 @@ export type ArticleLocale = {
   seoTitle?: string;
   /** Optional 120-160 character meta description. Falls back to the standfirst. */
   metaDescription?: string;
+  /** Label lines the Client placed above the headline (a series name, for example). */
+  kicker?: readonly string[];
   blocks: readonly ArticleBlock[];
 };
 

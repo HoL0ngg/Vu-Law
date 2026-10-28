@@ -2466,3 +2466,21 @@ a:hover .brand-logo {
     padding-top: 64px;
   }
 }
+
+/* Label lines the Client puts above a headline (a series name, the part number). */
+.article-kicker {
+  margin: 0 0 8px;
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.article-meta + .article-kicker {
+  margin-top: 4px;
+}
+
+.article-kicker + h1 {
+  margin-top: 14px;
+}

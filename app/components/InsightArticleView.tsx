@@ -85,6 +85,7 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
               <span>{category}</span>
               <time dateTime={article.publishedAt}>{formatArticleDate(article.publishedAt, locale)}</time>
             </p>
+            {text.kicker?.map((line) => <p className="article-kicker reveal" key={line} style={stagger(1)}>{line}</p>)}
             <h1 className="reveal-line" style={stagger(1)}>{text.title}</h1>
             {text.subtitle ? <p className="article-standfirst reveal" style={stagger(3)}>{text.subtitle}</p> : null}
           </div>
