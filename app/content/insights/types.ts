@@ -17,8 +17,12 @@ export type ArticleBlock =
 export type ArticleLocale = {
   /** Verbatim as the Client wrote it, including their capitals. */
   title: string;
-  /** The Client's one-line standfirst; also used as the meta description. */
-  subtitle: string;
+  /**
+   * The Client's one-line standfirst, shown under the headline and used as the summary and
+   * meta description. Optional: some articles open straight into the text, and then the
+   * first paragraph stands in for the summary (see `summaryOf`).
+   */
+  subtitle?: string;
   /** Optional shorter <title> for search results; shown as written. Falls back to the headline. */
   seoTitle?: string;
   /** Optional 120-160 character meta description. Falls back to the standfirst. */

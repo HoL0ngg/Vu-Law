@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
-import { formatArticleDate, type Article, type ArticleLocale } from "../content/insights";
+import { formatArticleDate, summaryOf, type Article, type ArticleLocale } from "../content/insights";
 import { insightPath, routePath } from "../i18n/routes";
 import { SITE_NAME, absoluteUrl } from "../lib/site";
 import { coverImageUrl } from "../lib/cover-image";
@@ -22,7 +22,7 @@ function articleJsonLd(article: Article, text: ArticleLocale, locale: Locale) {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: text.title,
-    description: text.metaDescription ?? text.subtitle,
+    description: text.metaDescription ?? summaryOf(text, 160),
     ...(article.coverImage ? { image: article.coverImage } : {}),
     inLanguage: locale === "vi" ? "vi-VN" : "en",
     datePublished: article.publishedAt,
@@ -64,17 +64,11 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
               <time dateTime={article.publishedAt}>{formatArticleDate(article.publishedAt, locale)}</time>
             </p>
             <h1 className="reveal-line" style={stagger(1)}>{text.title}</h1>
-            <p className="article-standfirst reveal" style={stagger(3)}>{text.subtitle}</p>
+            {text.subtitle ? <p className="article-standfirst reveal" style={stagger(3)}>{text.subtitle}</p> : null}
           </div>
         </header>
 
-        <div className="article-body section-paper">
-          {article.coverImage ? (
-            <figure className="article-cover">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={coverImageUrl(article.coverImage, 1600, 900)} alt={text.title} width={1600} height={900} decoding="async" />
-            </figure>
-          ) : null}
+        <div className={`article-body section-paper${article.coverImage ? " article-body--with-cover" : ""}`}>
           <div className="article-prose">
             {text.blocks.map((block, index) => {
               const key = `${block.type}-${index}`;
@@ -84,6 +78,14 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
               return <p key={key}>{block.text}</p>;
             })}
           </div>
+          {/* The picture sits beside the text and stays in view while it is read, so it adds
+              no height to the page. On a narrow screen it comes first, as a short banner. */}
+          {article.coverImage ? (
+            <figure className="article-cover">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={coverImageUrl(article.coverImage, 800, 1000)} alt="" width={800} height={1000} decoding="async" />
+            </figure>
+          ) : null}
         </div>
       </article>
     </PageFrame>

@@ -6,10 +6,12 @@ type PageHeroProps = {
   title: string;
   paragraphs?: readonly string[];
   children?: ReactNode;
+  /** A shorter band, for pages whose content should start close to the top. */
+  compact?: boolean;
 };
 
 /** Shared page head for the inner pages, reusing the About hero's navy + columns treatment. */
-export default function PageHero({ title, paragraphs = [], children }: PageHeroProps) {
+export default function PageHero({ title, paragraphs = [], children, compact = false }: PageHeroProps) {
   /* Short page labels are Title Case; the long ones are the Client's own sentences in
      capitals. Capitals read much larger at the same px, so "About Us" looked small next
      to "BUILD YOUR PRACTICE WITH US". The two get different sizes in order to look the
@@ -17,7 +19,7 @@ export default function PageHero({ title, paragraphs = [], children }: PageHeroP
   const longTitle = title.length > 20;
 
   return (
-    <section className={`about-hero page-hero ${longTitle ? "page-hero--long" : "page-hero--short"}`}>
+    <section className={`about-hero page-hero ${longTitle ? "page-hero--long" : "page-hero--short"}${compact ? " page-hero--compact" : ""}`}>
       <div className="about-hero-image" aria-hidden="true" />
       <div className="about-hero-shade" />
       <div className="about-hero-copy">

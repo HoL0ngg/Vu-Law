@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
-import { formatArticleDate, getArticlesFor } from "../content/insights";
+import { formatArticleDate, getArticlesFor, summaryOf } from "../content/insights";
 import { insightPath } from "../i18n/routes";
 import ArticleArt from "./ArticleArt";
 import PageFrame from "./PageFrame";
@@ -21,11 +21,11 @@ export default async function InsightsPageView({ dictionary, locale = "en" }: In
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
-      <PageHero title={page.heading} />
+      <PageHero title={page.heading} compact />
 
       {hasArticles ? (
-        <section className="insights-section section-paper">
-          <div className="insight-grid insight-grid--list">
+        <section className="insights-section insights-section--list section-paper">
+          <div className="insight-list">
             {insightArticles.map((article, index) => {
               const text = article[locale]!;
               const href = insightPath(article.slug, locale);
@@ -39,7 +39,7 @@ export default async function InsightsPageView({ dictionary, locale = "en" }: In
                     <time dateTime={article.publishedAt}>{formatArticleDate(article.publishedAt, locale)}</time>
                   </p>
                   <h2><Link href={href}>{text.title}</Link></h2>
-                  <p className="insight-card-summary">{text.subtitle}</p>
+                  <p className="insight-card-summary">{summaryOf(text, 220)}</p>
                   <Link href={href}>{page.readMore}<span aria-hidden="true">→</span></Link>
                 </article>
               );

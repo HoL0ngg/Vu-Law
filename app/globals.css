@@ -2018,153 +2018,9 @@ a:hover .brand-logo {
   color: var(--gold-deep);
 }
 
-.insight-card-summary {
-  margin: 0 0 20px;
-  color: #45545c;
-  font-size: clamp(19px, 1.4vw, 22px);
-  line-height: 1.6;
-}
-
-.insight-grid--list {
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-}
-
-.insights-section.section-paper {
-  padding-top: 90px;
-}
-
 /* --- Article page --- */
-.article-hero {
-  position: relative;
-  display: flex;
-  min-height: 0;
-  align-items: flex-end;
-  overflow: hidden;
-  padding: 150px 8vw 70px;
-  isolation: isolate;
-}
-
-.article-hero-copy {
-  width: 100%;
-  max-width: 1180px;
-}
-
-.article-back {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 34px;
-  gap: 12px;
-  color: var(--gold-light);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.article-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 22px;
-  gap: 8px 18px;
-  color: var(--gold-light);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.17em;
-  text-transform: uppercase;
-}
-
-.article-meta time {
-  padding-left: 18px;
-  border-left: 1px solid rgba(238, 212, 146, 0.45);
-  color: #d5dde1;
-  letter-spacing: 0.06em;
-  text-transform: none;
-}
-
-.article-hero h1 {
-  max-width: 22ch;
-  margin-bottom: 28px;
-  font-size: clamp(36px, 4.6vw, 74px);
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1.04;
-  overflow-wrap: break-word;
-}
-
-.article-standfirst {
-  max-width: 60ch;
-  margin: 0;
-  color: #e0e7ea;
-  font-size: clamp(21px, 1.7vw, 28px);
-  font-style: italic;
-  line-height: 1.5;
-}
-
-.article-body {
-  padding: 90px 8vw 130px;
-}
-
-.article-prose {
-  max-width: 74ch;
-  margin: 0 auto;
-}
-
-.article-prose p {
-  margin-bottom: 28px;
-  font-size: clamp(21px, 1.55vw, 25px);
-  line-height: 1.78;
-}
-
-.article-prose h2 {
-  margin: 76px 0 28px;
-  padding-top: 34px;
-  border-top: 1px solid rgba(13, 33, 48, 0.2);
-  color: var(--ink);
-  font-size: clamp(27px, 2.3vw, 38px);
-  font-weight: 500;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
-}
-
-.article-prose h2:first-child {
-  margin-top: 0;
-}
-
 /* The "next angle" teaser that closes a section. */
-.article-aside {
-  padding: 20px 0 20px 28px;
-  border-left: 3px solid var(--gold-deep);
-  color: #3d4c55;
-  font-style: italic;
-}
-
 /* The legal notice and copyright at the foot: smaller, but still readable. */
-.article-note {
-  color: #4f5e66;
-  font-size: clamp(18px, 1.25vw, 20px) !important;
-  font-style: italic;
-  line-height: 1.7 !important;
-}
-
-@media (max-width: 900px) {
-  .article-hero {
-    padding: 118px 24px 52px;
-  }
-
-  .article-body {
-    padding: 64px 24px 90px;
-  }
-
-  .article-prose h2 {
-    margin-top: 56px;
-  }
-
-  .insights-section.section-paper {
-    padding-top: 64px;
-  }
-}
-
 /* --- Article cards: stop the "Read More" and category-label rules leaking --- */
 /* `.insight-card a` styles the Read More link and `.insight-card > p` styles the category
    label. Both also matched the image link, the title link and the summary line. */
@@ -2181,30 +2037,11 @@ a:hover .brand-logo {
   font-weight: inherit;
 }
 
-.insight-card > p.insight-card-summary {
-  margin: 0 0 22px;
-  color: #45545c;
-  font-size: clamp(19px, 1.4vw, 22px);
-  font-weight: 300;
-  letter-spacing: 0;
-  line-height: 1.6;
-}
-
-.insight-grid--list {
-  /* min(100%, 380px): a bare 380px floor is wider than a 375px phone and forced sideways scroll. */
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 440px));
-  gap: 48px 36px;
-}
-
 .insights-section .insight-card h2 {
   min-height: 0;
   margin: 0 0 16px;
   font-size: clamp(24px, 1.9vw, 30px);
   line-height: 1.2;
-}
-
-.article-hero h1 {
-  max-width: 26ch;
 }
 
 /* --- 26-10 feedback ---------------------------------------------------------------- */
@@ -2343,22 +2180,8 @@ a:hover .brand-logo {
   object-fit: cover;
 }
 
-.article-cover {
-  max-width: 1100px;
-  margin: 0 auto 64px;
-}
-
 /* The Client's pictures are often portrait, so the article header shows a 16:9 crop of the
    middle; pictures served by Sanity's CDN are already cropped to that shape. */
-.article-cover img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-}
-
 @media (max-width: 720px) {
   .expertise-intro,
   .section-intro-block {
@@ -2388,15 +2211,298 @@ a:hover .brand-logo {
 }
 
 /* Long web addresses in the footnotes must wrap instead of widening the page. */
-.article-note {
+/* A standfirst can be a whole paragraph; the list card shows only the first lines of it. */
+
+/* ===== Blog: article page and article list ================================================
+   Written to keep the reader's scrolling short and the text easy to read:
+   - a compact header (the picture no longer sits in a block of its own),
+   - body text at weight 500 in the dark ink colour (300 is hairline-thin in this typeface),
+   - the picture beside the text, held in view while it is read. */
+
+.article-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 124px 8vw 44px;
+  isolation: isolate;
+}
+
+.article-hero-copy {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 22px;
+  gap: 12px;
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 8px 18px;
+  color: var(--gold-light);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.article-meta time {
+  padding-left: 18px;
+  border-left: 1px solid rgba(238, 212, 146, 0.45);
+  color: #e1e8eb;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: none;
+}
+
+.article-hero h1 {
+  max-width: 1000px;
+  margin: 0 0 18px;
+  font-size: clamp(30px, 3.2vw, 50px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  overflow-wrap: break-word;
+}
+
+.article-standfirst {
+  max-width: 68ch;
+  margin: 8px 0 0;
+  color: #e6ecef;
+  font-size: clamp(19px, 1.4vw, 22px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.article-body {
+  padding: 52px 8vw 96px;
+}
+
+.article-body--with-cover {
+  display: grid;
+  grid-template-columns: minmax(0, 780px) minmax(0, 340px);
+  align-items: start;
+  gap: 0 72px;
+}
+
+.article-prose {
+  max-width: 780px;
+}
+
+.article-prose p {
+  margin: 0 0 22px;
+  color: #17262f;
+  font-size: clamp(21px, 1.55vw, 24px);
+  font-weight: 500;
+  line-height: 1.68;
+}
+
+.article-prose h2 {
+  margin: 48px 0 16px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(13, 33, 48, 0.22);
+  color: var(--ink);
+  font-size: clamp(25px, 2vw, 31px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.article-prose h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* The "next angle" teaser that closes a section. */
+.article-prose p.article-aside {
+  padding: 14px 0 14px 24px;
+  border-left: 3px solid var(--gold-deep);
+  color: #24343d;
+  font-style: italic;
+}
+
+/* Footnotes, legal notice and copyright: a step smaller, still dark enough to read. Web
+   addresses in the footnotes wrap instead of widening the page. */
+.article-prose p.article-note {
+  margin-bottom: 14px;
+  color: #34454e;
+  font-size: clamp(18px, 1.2vw, 20px);
+  font-style: italic;
+  line-height: 1.65;
   overflow-wrap: anywhere;
 }
 
-/* A standfirst can be a whole paragraph; the list card shows only the first lines of it. */
-.insight-card > p.insight-card-summary {
+.article-cover {
+  position: sticky;
+  top: 118px;
+  margin: 0;
+}
+
+.article-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+}
+
+@media (max-width: 1100px) {
+  .article-body--with-cover {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-cover {
+    position: static;
+    order: -1;
+    margin-bottom: 32px;
+  }
+
+  .article-cover img {
+    max-height: 320px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 900px) {
+  .article-hero {
+    padding: 108px 24px 32px;
+  }
+
+  .article-body {
+    padding: 36px 24px 72px;
+  }
+
+  .article-prose h2 {
+    margin-top: 40px;
+  }
+}
+
+/* --- The list at /insights: one row per article, picture on the left ------------------ */
+.insights-section--list {
+  padding: 56px 8vw 100px;
+}
+
+.insight-list {
+  max-width: 1100px;
+  border-bottom: 1px solid rgba(13, 33, 48, 0.2);
+}
+
+.insight-list .insight-card {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  /* The picture spans the four text rows; the last row soaks up its extra height so the
+     text stays packed at the top instead of being spread apart. */
+  grid-template-rows: auto auto auto 1fr;
+  align-content: start;
+  padding: 34px 0;
+  border-top: 1px solid rgba(13, 33, 48, 0.2);
+  column-gap: 40px;
+}
+
+.insight-list .insight-card > a.insight-art-link {
+  display: block;
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  border-bottom: 0;
+}
+
+.insight-list .insight-card > :not(.insight-art-link) {
+  grid-column: 2;
+}
+
+.insight-list .insight-art {
+  aspect-ratio: 4 / 3;
+}
+
+.insight-list .insight-card > p {
+  margin: 0 0 10px;
+}
+
+.insight-list .insight-card h2 {
+  min-height: 0;
+  margin: 0 0 12px;
+  font-size: clamp(24px, 1.9vw, 30px);
+  line-height: 1.2;
+}
+
+.insight-list .insight-card > p.insight-card-summary {
   display: -webkit-box;
   overflow: hidden;
+  margin: 0 0 14px;
+  color: #2f3f48;
+  font-size: clamp(19px, 1.4vw, 21px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.55;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  line-clamp: 5;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.insight-list .insight-card > a:not(.insight-art-link) {
+  align-self: start;
+  justify-self: start;
+}
+
+@media (max-width: 720px) {
+  .insights-section--list {
+    padding: 36px 24px 72px;
+  }
+
+  .insight-list .insight-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: none;
+  }
+
+  .insight-list .insight-card > a.insight-art-link {
+    grid-row: auto;
+    margin-bottom: 18px;
+  }
+
+  .insight-list .insight-card > :not(.insight-art-link) {
+    grid-column: 1;
+  }
+
+  .insight-list .insight-art {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* A shorter page band for pages whose content should start close to the top. */
+.page-hero--compact {
+  min-height: 0;
+  padding: 124px 8vw 40px;
+}
+
+@media (max-width: 720px) {
+  .page-hero--compact {
+    padding: 108px 24px 30px;
+  }
+}
+
+/* The Homepage's Featured Insights keeps the tighter top padding it had before. */
+.insights-section.section-paper:not(.insights-section--list) {
+  padding-top: 90px;
+}
+
+@media (max-width: 900px) {
+  .insights-section.section-paper:not(.insights-section--list) {
+    padding-top: 64px;
+  }
 }

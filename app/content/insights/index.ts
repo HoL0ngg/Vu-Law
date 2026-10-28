@@ -2,7 +2,7 @@ import type { Locale } from "../../i18n/config";
 import { prevailingInLitigation } from "./prevailing-in-litigation";
 import { unsignedTransactions } from "./unsigned-transactions";
 import { fetchSanityArticles } from "./sanity";
-import type { Article } from "./types";
+import type { Article, ArticleLocale } from "./types";
 
 /**
  * Articles kept in code, used as the fallback when Sanity is not set up or cannot be
@@ -31,6 +31,18 @@ export function hasLocale(article: Article, locale: Locale): boolean {
 /** The articles that exist in one language, newest first: what that language's lists show. */
 export async function getArticlesFor(locale: Locale): Promise<readonly Article[]> {
   return (await getArticles()).filter((article) => hasLocale(article, locale));
+}
+
+/**
+ * A short summary for lists and for the meta description: the standfirst when there is one,
+ * otherwise the opening paragraph clipped at a word boundary. Nothing is rewritten.
+ */
+export function summaryOf(text: ArticleLocale, maxLength = 200): string {
+  if (text.subtitle) return text.subtitle;
+  const first = text.blocks.find((block) => block.type === "p")?.text ?? "";
+  if (first.length <= maxLength) return first;
+  const clipped = first.slice(0, maxLength).replace(/\s+\S*$/, "");
+  return `${clipped}…`;
 }
 
 /** Calendar date rendered in the reader's language. UTC avoids a one-day shift in some zones. */

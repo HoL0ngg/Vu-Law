@@ -23,10 +23,10 @@ export const unsignedTransactions: Article = {
   coverImage: "/images/blog/unsigned-transactions.jpg",
   vi: {
     title: "GIAO DỊCH KHÔNG KÝ HỢP ĐỒNG: NHẬN DIỆN RỦI RO PHÁP LÝ",
-    // The document has no separate standfirst line: its opening paragraph is shown as the
-    // standfirst under the headline and is not repeated in the body.
-    subtitle: "Không phải giao dịch nào cũng bắt đầu bằng một bản hợp đồng, thỏa thuận được ký kết. Một đơn đặt hàng qua tin nhắn. Một khoản thanh toán đã chuyển. Hàng hóa đã được giao. Nhưng không có hợp đồng ký kết. Giao dịch có thể vẫn phát sinh quyền và nghĩa vụ — song doanh nghiệp đã chuẩn bị đủ hồ sơ để bảo vệ mình trước đối tác, cơ quan thuế và cơ quan tiến hành tố tụng hay chưa?",
+    // The document has no separate standfirst line, so its opening paragraph is the first
+    // paragraph of the body and the list summary is taken from it (`summaryOf`).
     blocks: [
+      { type: "p", text: "Không phải giao dịch nào cũng bắt đầu bằng một bản hợp đồng, thỏa thuận được ký kết. Một đơn đặt hàng qua tin nhắn. Một khoản thanh toán đã chuyển. Hàng hóa đã được giao. Nhưng không có hợp đồng ký kết. Giao dịch có thể vẫn phát sinh quyền và nghĩa vụ — song doanh nghiệp đã chuẩn bị đủ hồ sơ để bảo vệ mình trước đối tác, cơ quan thuế và cơ quan tiến hành tố tụng hay chưa?" },
       { type: "h2", text: "01 | KHÔNG CÓ HỢP ĐỒNG GIẤY: GIAO DỊCH CÓ ĐƯỢC CÔNG NHẬN?" },
       { type: "p", text: "Trong giao dịch dân sự và hoạt động thương mại, giao dịch có thể được xác lập bằng lời nói, văn bản hoặc hành vi cụ thể; hợp đồng mua bán hàng hóa được Điều 24 Luật Thương mại 2005 ghi nhận các hình thức này. Điều 119 Bộ luật Dân sự 2015 cũng ghi nhận hình thức giao dịch dân sự tương ứng. Vì vậy, không có bản hợp đồng giấy được ký không đồng nghĩa với việc giao dịch đương nhiên không tồn tại hoặc vô hiệu. Tuy nhiên, phải xác định đúng loại giao dịch và điều kiện có hiệu lực của giao dịch cụ thể." },
       { type: "p", text: "Ngoại lệ cần đặc biệt lưu ý: Khi pháp luật chuyên ngành quy định giao dịch phải lập thành văn bản, công chứng, chứng thực hoặc đăng ký, các bên phải tuân thủ điều kiện tương ứng. Điều 117, Điều 119 và Điều 129 Bộ luật Dân sự 2015 là cơ sở để xem xét điều kiện có hiệu lực và hậu quả của vi phạm về hình thức; không thể suy luận rằng cứ đã thanh toán hoặc thực hiện một phần thì mọi thiếu sót về hình thức đều được khắc phục." },

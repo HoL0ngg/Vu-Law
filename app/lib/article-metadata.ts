@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { Article } from "../content/insights";
+import { summaryOf, type Article } from "../content/insights";
 import { insightPath } from "../i18n/routes";
 import type { Locale } from "../i18n/config";
 import { coverImageUrl } from "./cover-image";
@@ -13,7 +13,7 @@ export function articleMetadata(article: Article, locale: Locale): Metadata {
   const text = article[locale];
   if (!text) return {};
   const path = insightPath(article.slug, locale);
-  const description = text.metaDescription ?? text.subtitle;
+  const description = text.metaDescription ?? summaryOf(text, 160);
   // 1200x630 is the shape social networks expect.
   const image = article.coverImage ? coverImageUrl(article.coverImage, 1200, 630, true) : absoluteUrl("/images/logo.png");
 
