@@ -5,9 +5,9 @@ import type { Article } from "./types";
  * `Blogs/CONTENT 28-10.docx` - typos included; see the project report for the list.
  * Do not tidy the wording here: ivl-content-update rule, the Client is a law firm.
  *
- * The English version is the Client's own `Blogs/03.IVL_Contract Negotiations_Part_1_EN.docx`.
- * It opens with two label lines the Vietnamese version does not have ("INTEGRITAS VU LEGAL |
- * LEGAL INSIGHTS" and "CONTRACT NEGOTIATION SERIES • PART 1/2"); they are the `kicker`.
+ * Sources: the Vietnamese `Blogs/CONTENT 28-10.docx`, updated by the Client as `Blogs/28.10.26.docx`
+ * (it adds the two label lines now shown as the `kicker`), and the English
+ * `Blogs/03.IVL_Contract Negotiations_Part_1_EN.docx` (re-supplied as `... (1) 28.10.26.docx`, identical).
  *
  * `**Trong Tập 2**` carries the two asterisks the Client typed (Markdown bold). The text is
  * kept as written; `InsightArticleView` shows the marked words in bold.
@@ -17,7 +17,8 @@ import type { Article } from "./types";
  */
 export const contractNegotiation: Article = {
   slug: "dam-phan-hop-dong-thoa-thuan-da-dat-duoc-nghia-vu-phap-ly-da-ro-rang",
-  // The Client named the file "CONTENT 28-10"; TODO(client): confirm the publication date.
+  // 28 October 2026: the date in the names of the Client's files for this article
+  // ("... (EN) 28.10.26.docx", "28.10.26.docx").
   publishedAt: "2026-10-28",
   // TODO(client): confirm the category. "Legal Insight" like the earlier articles; it could
   // equally be filed as a Practical Guide.
@@ -30,6 +31,7 @@ export const contractNegotiation: Article = {
   vi: {
     title: "ĐÀM PHÁN HỢP ĐỒNG: THỎA THUẬN ĐÃ ĐẠT ĐƯỢC, NGHĨA VỤ PHÁP LÝ ĐÃ RÕ RÀNG?",
     subtitle: "Từ hiệu lực giao dịch đến thẩm quyền đại diện và nội dung nghĩa vụ — ba vấn đề cần giải quyết trước khi đặt bút ký.",
+    kicker: ["INTEGRITAS VŨ LEGAL  |  LEGAL INSIGHTS", "CHUYÊN ĐỀ ĐÀM PHÁN HỢP ĐỒNG  •  TẬP 1/2"],
     blocks: [
       { type: "p", text: "Giá cả, tiến độ và phương thức thanh toán thường là trọng tâm của một cuộc đàm phán thương mại. Tuy nhiên, sự thống nhất về lợi ích kinh tế không tự nó trả lời được ba câu hỏi: thỏa thuận có đáp ứng điều kiện có hiệu lực hay không; người đưa ra cam kết có đủ thẩm quyền đại diện hay không; và mỗi bên thực sự phải thực hiện những nghĩa vụ gì?" },
       { type: "p", text: "Một hợp đồng có thể được soạn thảo rất dài nhưng vẫn bỏ sót các điều kiện quyết định khả năng thực thi. Các câu hỏi dưới đây, doanh nghiệp có thể nhìn lại cách mình đang thương lượng và ghi nhận các cam kết." },

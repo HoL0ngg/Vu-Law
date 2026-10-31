@@ -1,7 +1,7 @@
-# Phase 8 - Legal Insights, third article (Vietnamese only)
+# Phase 8 - Legal Insights, third article (Vietnamese)
 
-Source: `Blogs/CONTENT 28-10.docx`. Published at `/vi/insights/dam-phan-hop-dong-thoa-thuan-da-dat-duoc-nghia-vu-phap-ly-da-ro-rang`.
-There is no English version, so it is not on the English pages.
+Source: `Blogs/28.10.26.docx` (the Client's updated file; it supersedes `Blogs/CONTENT 28-10.docx` and adds the two label lines at the top). Published at `/vi/insights/dam-phan-hop-dong-thoa-thuan-da-dat-duoc-nghia-vu-phap-ly-da-ro-rang`.
+The English version is `phase-8-insight-contract-negotiation-en.md`.
 
 Every line inside the fence must appear verbatim on that page. The text is the Client's own,
 including any typos, which are listed in the project report rather than corrected here.
@@ -10,6 +10,8 @@ The divider line before the legal notice is a layout mark and is not shown. The 
 below is written without the asterisks.
 
 ```text
+INTEGRITAS VŨ LEGAL  |  LEGAL INSIGHTS
+CHUYÊN ĐỀ ĐÀM PHÁN HỢP ĐỒNG  •  TẬP 1/2
 ĐÀM PHÁN HỢP ĐỒNG: THỎA THUẬN ĐÃ ĐẠT ĐƯỢC, NGHĨA VỤ PHÁP LÝ ĐÃ RÕ RÀNG?
 Từ hiệu lực giao dịch đến thẩm quyền đại diện và nội dung nghĩa vụ — ba vấn đề cần giải quyết trước khi đặt bút ký.
 Giá cả, tiến độ và phương thức thanh toán thường là trọng tâm của một cuộc đàm phán thương mại. Tuy nhiên, sự thống nhất về lợi ích kinh tế không tự nó trả lời được ba câu hỏi: thỏa thuận có đáp ứng điều kiện có hiệu lực hay không; người đưa ra cam kết có đủ thẩm quyền đại diện hay không; và mỗi bên thực sự phải thực hiện những nghĩa vụ gì?

@@ -11,9 +11,9 @@ import type { Article } from "./types";
  */
 export const unsignedTransactions: Article = {
   slug: "giao-dich-khong-ky-hop-dong-nhan-dien-rui-ro-phap-ly",
-  // TODO(client): confirm the publication date. The document carries none; this is the
-  // day it was put on the site.
-  publishedAt: "2026-10-28",
+  // 26 October 2026: the date the Client put in the names of their files for this article
+  // ("... (EN) 26.10.26.docx", "... (VN) 26.10.26.docx").
+  publishedAt: "2026-10-26",
   // TODO(client): confirm the category. "Legal Insight" like the first article; it could
   // equally be filed as a Practical Guide.
   category: 1,
