@@ -20,7 +20,10 @@ export const contractRemedies: Article = {
   publishedAt: "2026-10-30",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
-  // No picture was supplied for this article, so its card shows the default panel.
+  // Supplied by the Client (Blogs/Ảnh - blogs/Post 4.jpg, 850x567), re-encoded for the web. The
+  // narrower Homepage cards crop it, so the focus sits on the hand holding the pen.
+  coverImage: "/images/blog/contract-remedies.jpg",
+  coverPosition: "30% 60%",
   vi: {
     title: "ĐÀM PHÁN HỢP ĐỒNG: ĐIỀU KHOẢN CHẾ TÀI CÓ BẢO VỆ  DOANH NGHIỆP?",
     subtitle: "Phạt vi phạm, bồi thường thiệt hại, lãi chậm thanh toán và quyền chấm dứt hợp đồng — những khác biệt pháp lý cần được dự liệu từ bàn đàm phán.",
