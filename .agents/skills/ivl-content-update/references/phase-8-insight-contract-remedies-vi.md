@@ -1,0 +1,46 @@
+# Phase 8 - Legal Insights, fourth article (Vietnamese)
+
+Source: `Blogs/04.IVL_Legal Insight_Dam phan hop dong - Tập 2 - Post 30.10.2026.docx`. Published at `/vi/insights/dam-phan-hop-dong-dieu-khoan-che-tai-co-bao-ve-doanh-nghiep`.
+
+Every line inside the fence must appear verbatim on that page. The text is the Client's own,
+including any spelling it carries, which is listed in the project report rather than corrected here.
+The divider line before the legal notice is a layout mark and is not shown.
+One correction at the site owner's request: "Trách Nhiệm Hữu Hạn" (the Client's file reads "Nhiện").
+
+```text
+INTEGRITAS VŨ LEGAL  |  LEGAL INSIGHTS
+CHUYÊN ĐỀ ĐÀM PHÁN HỢP ĐỒNG  •  TẬP 2/2
+ĐÀM PHÁN HỢP ĐỒNG: ĐIỀU KHOẢN CHẾ TÀI CÓ BẢO VỆ  DOANH NGHIỆP?
+Phạt vi phạm, bồi thường thiệt hại, lãi chậm thanh toán và quyền chấm dứt hợp đồng — những khác biệt pháp lý cần được dự liệu từ bàn đàm phán.
+Ở Tập 1, chúng tôi đã phân tích ba vấn đề nền tảng của quá trình đàm phán: điều kiện có hiệu lực của giao dịch, thẩm quyền đại diện và cách xác định nghĩa vụ hợp đồng. Khi các nội dung này được làm rõ, một câu hỏi khác trở nên đặc biệt quan trọng: doanh nghiệp có thể yêu cầu biện pháp xử lý nào nếu đối tác vi phạm?
+Không phải điều khoản được viết càng nghiêm khắc thì khả năng bảo vệ càng cao. Hiệu quả của chế tài phụ thuộc vào pháp luật điều chỉnh, điều kiện áp dụng, phạm vi nghĩa vụ bị vi phạm và chứng cứ mà doanh nghiệp có thể cung cấp.
+04 | PHẠT 20% GIÁ TRỊ HỢP ĐỒNG: CÓ THỂ YÊU CẦU ĐÚNG MỨC ĐÃ GHI?
+Điều 418 Bộ luật Dân sự 2015 quy định mức phạt vi phạm do các bên thỏa thuận, trừ trường hợp luật liên quan có quy định khác. Trong quan hệ thuộc phạm vi điều chỉnh của Luật Thương mại 2005, Điều 300 và Điều 301 đặt ra điều kiện áp dụng phạt vi phạm và giới hạn thông thường không quá 8% giá trị phần nghĩa vụ hợp đồng bị vi phạm; cần lưu ý ngoại lệ được dẫn chiếu tại Điều 266 và các quy định chuyên ngành có liên quan.
+Vì vậy, việc hợp đồng ghi “phạt 20% tổng giá trị hợp đồng” không tự nó bảo đảm rằng bên bị vi phạm có thể yêu cầu toàn bộ khoản phạt này. Phải xác định đúng luật điều chỉnh, hành vi vi phạm, phần nghĩa vụ bị vi phạm và ngoại lệ có thể áp dụng. Ngược lại, cũng không nên mặc nhiên kết luận toàn bộ điều khoản vô hiệu chỉ vì con số được ghi vượt giới hạn của một chế độ pháp luật cụ thể.
+Một điều khoản chế tài cần được xây dựng trên cơ sở cơ chế pháp lý áp dụng cho giao dịch, thay vì chỉ lựa chọn mức phạt cao để tạo sức ép trong đàm phán.
+Điểm cần lưu ý: Rà soát căn cứ phạt, mức phạt, giá trị phần nghĩa vụ bị vi phạm và sự phối hợp giữa phạt vi phạm với các biện pháp bảo vệ khác.
+05 | ĐÃ THỎA THUẬN PHẠT VI PHẠM: CÓ ĐƯỢC YÊU CẦU THÊM BỒI THƯỜNG?
+Phạt vi phạm và bồi thường thiệt hại là hai chế định khác nhau. Khả năng áp dụng đồng thời phụ thuộc vào quan hệ pháp luật và quy định điều chỉnh hợp đồng.
+Theo khoản 3 Điều 418 Bộ luật Dân sự 2015, trong cơ chế của điều khoản này, nếu các bên chỉ thỏa thuận về phạt vi phạm mà không thỏa thuận vừa phạt vừa bồi thường thì bên vi phạm chỉ phải chịu phạt; khi áp dụng vẫn phải xét liệu luật liên quan có quy định khác hay không. Ngược lại, khoản 2 Điều 307 Luật Thương mại 2005 quy định rằng, khi có thỏa thuận phạt vi phạm, bên bị vi phạm có quyền áp dụng cả phạt vi phạm và buộc bồi thường thiệt hại, trừ trường hợp Luật này có quy định khác.
+Tuy nhiên, có quyền yêu cầu bồi thường không đồng nghĩa mọi khoản tổn thất được nêu ra đều được chấp nhận. Trong thương mại, các Điều 302–305 Luật Thương mại 2005 đặt ra yêu cầu về phạm vi thiệt hại, căn cứ phát sinh trách nhiệm, nghĩa vụ chứng minh tổn thất và nghĩa vụ hạn chế tổn thất. Việc thiếu chứng từ, không chứng minh được quan hệ nhân quả hoặc không thực hiện biện pháp hợp lý để hạn chế thiệt hại có thể ảnh hưởng đến yêu cầu bồi thường.
+Điểm cần lưu ý: Thiết kế rõ cơ chế chế tài và chủ động lưu giữ chứng cứ về hành vi vi phạm, tổn thất, quan hệ nhân quả và biện pháp hạn chế tổn thất.
+06 | ĐỐI TÁC CHẬM THANH TOÁN: LÃI CHẬM TRẢ ĐƯỢC XÁC ĐỊNH THẾ NÀO?
+Chậm thanh toán có thể làm phát sinh trách nhiệm trả lãi, nhưng không thể áp dụng một mức lãi suất chung cho mọi hợp đồng. Điều 357 Bộ luật Dân sự 2015 quy định trách nhiệm do chậm thực hiện nghĩa vụ trả tiền, với việc xác định lãi suất cần đối chiếu Điều 468 và thỏa thuận hợp pháp.
+Đối với quan hệ thuộc phạm vi Điều 306 Luật Thương mại 2005, bên bị vi phạm có thể có quyền yêu cầu lãi trên số tiền chậm thanh toán theo lãi suất nợ quá hạn trung bình trên thị trường tại thời điểm thanh toán tương ứng với thời gian chậm trả, trừ trường hợp có thỏa thuận khác hoặc pháp luật có quy định khác. Điều 11 Nghị quyết 01/2019/NQ-HĐTP hướng dẫn cách Tòa án xác định mức lãi suất này dựa trên ít nhất ba ngân hàng thương mại tại địa bàn xét xử.
+Vì thế, việc hợp đồng không quy định riêng về lãi chậm trả không nhất thiết làm mất quyền yêu cầu; ngược lại, ghi nhận một tỷ lệ lãi suất mà không xét pháp luật áp dụng cũng có thể dẫn đến tranh chấp về số tiền được yêu cầu.
+Điểm cần lưu ý: Quy định rõ thời hạn thanh toán, điều kiện đến hạn, chứng từ xác nhận công nợ và cơ chế tính lãi phù hợp với loại giao dịch.
+07 | ĐỐI TÁC VI PHẠM: CÓ THỂ ĐƠN PHƯƠNG CHẤM DỨT HOẶC HỦY BỎ HỢP ĐỒNG?
+Một hành vi vi phạm không mặc nhiên làm phát sinh quyền đơn phương chấm dứt thực hiện hoặc hủy bỏ hợp đồng. Đây là các cơ chế khác nhau về căn cứ và hậu quả pháp lý. Điều 423, Điều 427 và Điều 428 Bộ luật Dân sự 2015 cần được xem xét theo đúng trường hợp, bao gồm điều kiện hủy bỏ, hậu quả hủy bỏ, điều kiện đơn phương chấm dứt, nghĩa vụ thông báo và trách nhiệm phát sinh.
+Trong hoạt động thương mại, Điều 310 và Điều 312 Luật Thương mại 2005 điều chỉnh đình chỉ thực hiện và hủy bỏ hợp đồng khi xảy ra hành vi vi phạm mà các bên đã thỏa thuận là điều kiện áp dụng chế tài hoặc vi phạm cơ bản nghĩa vụ hợp đồng, có xét các trường hợp miễn trách nhiệm tại Điều 294. Các quy định về thông báo và hậu quả pháp lý tại Điều 311 và Điều 313–315 cũng cần được áp dụng phù hợp.
+Việc thực hiện quyền chấm dứt hoặc hủy bỏ khi có căn cứ hợp pháp về nguyên tắc không đòi hỏi phán quyết trước của Tòa án. Tuy nhiên, khi phát sinh tranh chấp, tính hợp pháp của căn cứ, trình tự và cách thức thực hiện có thể bị xem xét. Một thông báo gửi đi không tự nó chứng minh rằng quyền chấm dứt hoặc hủy bỏ đã được thực hiện đúng pháp luật; hành vi chấm dứt thiếu căn cứ có thể khiến chính bên đưa ra thông báo phải chịu trách nhiệm.
+Điểm cần lưu ý: Phân biệt rõ tạm ngừng, đình chỉ, đơn phương chấm dứt và hủy bỏ; thỏa thuận điều kiện áp dụng, thông báo, thời điểm có hiệu lực và xử lý nghĩa vụ còn lại.
+TẠI SAO DOANH NGHIỆP NÊN THAM VẤN Ý KIẾN PHÁP LÝ TRƯỚC KHI HOÀN TẤT ĐÀM PHÁN?
+Đàm phán hợp đồng không chỉ nhằm thống nhất các điều kiện thương mại mà còn là giai đoạn quan trọng để xác định quyền, nghĩa vụ, phân bổ trách nhiệm và dự liệu hậu quả pháp lý khi phát sinh vi phạm. Việc tham vấn ý kiến pháp lý ngay từ giai đoạn này giúp doanh nghiệp nhận diện, đánh giá và kiểm soát rủi ro; xây dựng các điều khoản và cơ chế bảo vệ quyền lợi phù hợp với bản chất giao dịch, mục tiêu kinh doanh và pháp luật áp dụng.
+Tại Công ty Luật Trách Nhiệm Hữu Hạn Integritas Vũ Legal (Integritas Vũ Legal), chúng tôi tiếp cận quá trình đàm phán hợp đồng từ góc độ quản trị rủi ro pháp lý, hỗ trợ doanh nghiệp rà soát cấu trúc giao dịch, đánh giá các cam kết và xây dựng phương án pháp lý phù hợp. Mục tiêu không phải loại bỏ mọi rủi ro thương mại, mà là giúp doanh nghiệp đưa ra quyết định trên cơ sở hiểu rõ các quyền, nghĩa vụ và hệ quả pháp lý có thể phát sinh.
+Trên cơ sở mục tiêu thương mại và đặc thù của từng giao dịch, Integritas Vũ Legal hỗ trợ khách hàng đánh giá cấu trúc pháp lý, nhận diện các nghĩa vụ và trách nhiệm tiềm ẩn, rà soát điều khoản, xây dựng cơ chế bảo vệ quyền lợi và dự liệu phương án xử lý khi phát sinh bất đồng. Một quyết định thương mại hiệu quả cần được xây dựng không chỉ trên lợi ích kỳ vọng, mà còn trên sự hiểu biết đầy đủ về những rủi ro pháp lý đi kèm.
+Hãy liên hệ Integritas Vũ Legal để được hỗ trợ đánh giá rủi ro và xây dựng phương án pháp lý phù hợp ngay từ giai đoạn chuẩn bị và đàm phán giao dịch.
+Website: www.integritasvulegal.com  |  Email: contact@integritasvulegal.com
+THÔNG BÁO PHÁP LÝ VÀ QUYỀN TÁC GIẢ
+© 2026 Integritas Vũ Legal. Nội dung bài viết do Công Ty Luật Trách Nhiệm Hữu Hạn Integritas Vũ Legal biên soạn và công bố; các quyền đối với phần nội dung thuộc phạm vi bảo hộ được thực hiện theo quy định pháp luật về sở hữu trí tuệ. Không được sao chép, chỉnh sửa, tái bản, phân phối hoặc khai thác nội dung vì mục đích thương mại khi chưa có sự chấp thuận của chủ thể có quyền, trừ các trường hợp được pháp luật cho phép. Khi trích dẫn hợp pháp, đề nghị ghi rõ nguồn và đường dẫn đến bài viết gốc.
+Bài viết chỉ cung cấp thông tin pháp lý tổng quát tại thời điểm công bố, không phải ý kiến tư vấn pháp lý cho một vụ việc cụ thể, không tạo lập quan hệ luật sư – khách hàng và không thay thế việc đánh giá hồ sơ, chứng cứ, thỏa thuận và quy định áp dụng. Người đọc không nên tự ý dựa duy nhất vào nội dung này để thực hiện, trì hoãn hoặc từ bỏ bất kỳ biện pháp pháp lý nào. Kết quả xử lý phụ thuộc vào tình tiết và pháp luật áp dụng trong từng trường hợp; nội dung có thể cần cập nhật khi pháp luật hoặc thực tiễn áp dụng thay đổi.
+```
