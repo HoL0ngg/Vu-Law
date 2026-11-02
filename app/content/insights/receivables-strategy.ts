@@ -20,7 +20,11 @@ export const receivablesStrategy: Article = {
   publishedAt: "2026-11-02",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
-  // No picture was supplied for this article, so its card shows the default panel.
+  // Supplied by the Client (Blogs/Ảnh - blogs/post 5.jpg, a tall photograph of a tower against the
+  // sky), re-encoded for the web. The tower fills only the lower part of the picture, so the
+  // card crop is pointed at it instead of at the empty sky in the middle.
+  coverImage: "/images/blog/receivables-strategy.jpg",
+  coverPosition: "50% 92%",
   vi: {
     title: "CÓ KHOẢN PHẢI THU QUÁ HẠN: THƯƠNG LƯỢNG, KHỞI KIỆN HAY LỰA CHỌN MỘT CHIẾN LƯỢC KHÁC?",
     subtitle: "Một quyết định pháp lý phù hợp không chỉ nhằm xác lập quyền được thanh toán, mà còn phải tính đến khả năng thực hiện quyền đó trên thực tế.",
