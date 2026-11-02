@@ -96,6 +96,7 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
             </p>
             {text.kicker?.map((line) => <p className="article-kicker reveal" key={line} style={stagger(1)}>{line}</p>)}
             <h1 className="reveal-line" style={stagger(1)}>{text.title}</h1>
+            {text.topic ? <p className="article-topic reveal" style={stagger(2)}>{text.topic}</p> : null}
             {text.subtitle ? <p className="article-standfirst reveal" style={stagger(3)}>{text.subtitle}</p> : null}
           </div>
         </header>
@@ -107,6 +108,27 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
               <div className="article-section-text">
                 {section.blocks.map((block, index) => {
                   const key = `${block.type}-${index}`;
+                  if (block.type === "table") {
+                    return (
+                      <div className="article-table-wrap" key={key}>
+                        <table className="article-table">
+                          <thead>
+                            <tr>{block.head.map((cell) => <th key={cell} scope="col">{cell}</th>)}</tr>
+                          </thead>
+                          <tbody>
+                            {block.rows.map((row, rowIndex) => (
+                              <tr key={rowIndex}>
+                                {row.map((cell, cellIndex) => (
+                                  // data-label lets narrow screens show each cell under its column name.
+                                  <td key={cellIndex} data-label={block.head[cellIndex]}>{cell}</td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    );
+                  }
                   if (block.type === "aside") return <p className="article-aside" key={key}>{inline(block.text)}</p>;
                   if (block.type === "note") return <p className="article-note" key={key}>{inline(block.text)}</p>;
                   return <p key={key}>{inline(block.text)}</p>;

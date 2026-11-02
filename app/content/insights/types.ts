@@ -12,7 +12,9 @@ export type ArticleBlock =
   /** The italic "next angle" teaser that closes a section. */
   | { type: "aside"; text: string }
   /** The italic legal notice and copyright paragraphs at the end. */
-  | { type: "note"; text: string };
+  | { type: "note"; text: string }
+  /** A table the Client set in the text: a header row and the rows beneath it. */
+  | { type: "table"; head: readonly string[]; rows: readonly (readonly string[])[] };
 
 export type ArticleLocale = {
   /** Verbatim as the Client wrote it, including their capitals. */
@@ -29,6 +31,8 @@ export type ArticleLocale = {
   metaDescription?: string;
   /** Label lines the Client placed above the headline (a series name, for example). */
   kicker?: readonly string[];
+  /** A topic label the Client set directly under the headline, e.g. "TOPIC 01: ...". */
+  topic?: string;
   blocks: readonly ArticleBlock[];
 };
 

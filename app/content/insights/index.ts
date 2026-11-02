@@ -2,16 +2,17 @@ import type { Locale } from "../../i18n/config";
 import { prevailingInLitigation } from "./prevailing-in-litigation";
 import { contractNegotiation } from "./contract-negotiation";
 import { contractRemedies } from "./contract-remedies";
+import { receivablesStrategy } from "./receivables-strategy";
 import { unsignedTransactions } from "./unsigned-transactions";
 import { fetchSanityArticles } from "./sanity";
-import type { Article, ArticleLocale } from "./types";
+import type { Article, ArticleBlock, ArticleLocale } from "./types";
 
 /**
  * Articles kept in code, used as the fallback when Sanity is not set up or cannot be
  * reached. Once an article lives in Sanity it can be deleted from here: when both hold the
  * same slug, the Sanity version wins.
  */
-const localArticles: readonly Article[] = [prevailingInLitigation, unsignedTransactions, contractNegotiation, contractRemedies];
+const localArticles: readonly Article[] = [prevailingInLitigation, unsignedTransactions, contractNegotiation, contractRemedies, receivablesStrategy];
 
 /** Every published article, newest first. Sanity articles replace local ones with the same slug. */
 export async function getArticles(): Promise<readonly Article[]> {
@@ -41,7 +42,8 @@ export async function getArticlesFor(locale: Locale): Promise<readonly Article[]
  */
 export function summaryOf(text: ArticleLocale, maxLength = 200): string {
   if (text.subtitle) return text.subtitle;
-  const first = text.blocks.find((block) => block.type === "p")?.text ?? "";
+  const firstParagraph = text.blocks.find((block): block is Extract<ArticleBlock, { type: "p" }> => block.type === "p");
+  const first = firstParagraph?.text ?? "";
   if (first.length <= maxLength) return first;
   const head = first.slice(0, maxLength);
   // Prefer to end on a full sentence, when one finishes in the later part of the allowance.
