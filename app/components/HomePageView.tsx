@@ -3,7 +3,9 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { formatArticleDate, getArticlesFor } from "../content/insights";
 import { aboutAnchorPath, insightPath, personPath, routePath } from "../i18n/routes";
+import { organizationJsonLd } from "../lib/structured-data";
 import ArticleArt from "./ArticleArt";
+import JsonLd from "./JsonLd";
 import PageFrame from "./PageFrame";
 import Portrait from "./Portrait";
 
@@ -25,6 +27,7 @@ export default async function HomePageView({ dictionary, locale = "en" }: HomePa
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
+      <JsonLd data={organizationJsonLd(dictionary, locale)} />
       <section className="hero" data-hero>
         <div className="hero-image" data-hero-image />
         <div className="hero-shade" />

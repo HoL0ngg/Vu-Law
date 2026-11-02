@@ -51,7 +51,10 @@ export default function ScrollFX() {
       if (nav) {
         nav.classList.toggle("is-scrolled", y > 40);
         // Chỉ ẩn khi đã cuộn qua hẳn phần hero đầu trang, tránh giật khi vừa chạm mép.
-        nav.classList.toggle("is-hidden", !reduced && y > 320 && y > lastY + 6);
+        // Never hide the header while the mobile menu is open or while a keyboard user is
+        // focused inside it (:focus-visible, so a mouse click on a link does not count).
+        const keepVisible = nav.hasAttribute("data-menu-open") || nav.querySelector(":focus-visible") !== null;
+        nav.classList.toggle("is-hidden", !reduced && !keepVisible && y > 320 && y > lastY + 6);
       }
       lastY = y;
 

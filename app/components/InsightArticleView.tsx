@@ -4,6 +4,8 @@ import type { Dictionary, Locale } from "../i18n/config";
 import { formatArticleDate, summaryOf, type Article, type ArticleBlock, type ArticleLocale } from "../content/insights";
 import { insightPath, routePath } from "../i18n/routes";
 import { SITE_NAME, absoluteUrl } from "../lib/site";
+import { breadcrumbJsonLd } from "../lib/structured-data";
+import JsonLd from "./JsonLd";
 import PageFrame from "./PageFrame";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
@@ -72,6 +74,13 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: dictionary.navigation.home, path: routePath("home", locale) },
+          { name: dictionary.navigation.insights, path: routePath("insights", locale) },
+          { name: text.title, path: insightPath(article.slug, locale) },
+        ])}
+      />
 
       <article className="article-page">
         <header className="article-hero">

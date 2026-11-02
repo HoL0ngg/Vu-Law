@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import PersonProfileView from "../../../components/PersonProfileView";
 import { en } from "../../../i18n/en";
-import { personPath } from "../../../i18n/routes";
+import { routes } from "../../../i18n/routes";
+import { pageMetadata, snippet } from "../../../lib/page-metadata";
 
 type PersonPageProps = { params: Promise<{ person: string }> };
 
@@ -14,12 +15,12 @@ export async function generateMetadata({ params }: PersonPageProps): Promise<Met
   const { person } = await params;
   const member = en.peoplePage.members.find((candidate) => candidate.slug === person);
   if (!member) return {};
-  return {
+  return pageMetadata({
     title: `${member.name} | ${en.brand.name}`,
-    alternates: {
-      languages: { en: personPath(member.slug, "en"), vi: personPath(member.slug, "vi") },
-    },
-  };
+    description: snippet(member.biography[0]),
+    path: `${routes.people}/${member.slug}`,
+    locale: "en",
+  });
 }
 
 export default async function PersonPage({ params }: PersonPageProps) {

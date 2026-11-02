@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import PlaceholderPage from "../../components/PlaceholderPage";
-import { languageAlternates } from "../../i18n/routes";
+import { routes } from "../../i18n/routes";
+import { pageMetadata } from "../../lib/page-metadata";
 import { en } from "../../i18n/en";
 
-export const metadata: Metadata = {
-  title: en.meta.experienceTitle, robots: { index: false, follow: true },
-  alternates: { languages: languageAlternates("experience") },
-};
+export const metadata: Metadata = pageMetadata({
+  title: en.meta.experienceTitle,
+  path: routes.experience,
+  locale: "en",
+  noindex: true,
+});
 
 export default function ExperiencePage() {
   return <PlaceholderPage dictionary={en} title={en.pages.experience} />;

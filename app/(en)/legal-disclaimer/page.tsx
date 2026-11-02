@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import PlaceholderPage from "../../components/PlaceholderPage";
-import { languageAlternates } from "../../i18n/routes";
+import { routes } from "../../i18n/routes";
+import { pageMetadata } from "../../lib/page-metadata";
 import { en } from "../../i18n/en";
 
-export const metadata: Metadata = {
-  title: en.meta.legalDisclaimerTitle, robots: { index: false, follow: true },
-  alternates: { languages: languageAlternates("legalDisclaimer") },
-};
+export const metadata: Metadata = pageMetadata({
+  title: en.meta.legalDisclaimerTitle,
+  path: routes.legalDisclaimer,
+  locale: "en",
+  noindex: true,
+});
 
 export default function LegalDisclaimerPage() {
   return <PlaceholderPage dictionary={en} title={en.pages.legalDisclaimer} />;
