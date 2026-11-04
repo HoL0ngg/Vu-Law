@@ -7,6 +7,8 @@ import type { Locale } from "../../i18n/config";
 export type ArticleBlock =
   /** A numbered or titled section heading. */
   | { type: "h2"; text: string }
+  /** A sub-heading inside a section, e.g. "4.1. ...". */
+  | { type: "h3"; text: string }
   /** An ordinary paragraph. */
   | { type: "p"; text: string }
   /** The italic "next angle" teaser that closes a section. */

@@ -129,6 +129,7 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
                       </div>
                     );
                   }
+                  if (block.type === "h3") return <h3 className="article-subheading" key={key}>{block.text}</h3>;
                   if (block.type === "aside") return <p className="article-aside" key={key}>{inline(block.text)}</p>;
                   if (block.type === "note") return <p className="article-note" key={key}>{inline(block.text)}</p>;
                   return <p key={key}>{inline(block.text)}</p>;
