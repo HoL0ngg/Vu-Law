@@ -1,0 +1,114 @@
+# Publishes Legal Insights from the Google Drive folder. See scripts/drive-sync/README.md.
+#
+# Runs when the Apps Script in Drive reports a change (repository_dispatch), every hour as a
+# fallback (which also releases articles whose date has arrived), and on demand.
+# A folder that fails a check is never published: the job opens an issue for it instead.
+name: Drive sync
+
+on:
+  repository_dispatch:
+    types: [drive-sync]
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: drive-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GDRIVE_SA_KEY: ${{ secrets.GDRIVE_SA_KEY }}
+      GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check configuration
+        id: cfg
+        run: |
+          if [ -z "$GDRIVE_SA_KEY" ] || [ -z "$GDRIVE_FOLDER_ID" ]; then
+            echo "::notice::Drive sync is not set up yet (GDRIVE_SA_KEY / GDRIVE_FOLDER_ID missing). Nothing to do."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.cfg.outputs.ready == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.cfg.outputs.ready == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install the sync tools
+        if: steps.cfg.outputs.ready == 'true'
+        run: pip install -r scripts/drive-sync/requirements.txt
+
+      - name: Read Drive and convert new or changed folders
+        if: steps.cfg.outputs.ready == 'true'
+        run: python scripts/drive-sync/sync.py --drive --report "$RUNNER_TEMP/report.json"
+
+      - name: Did any article change?
+        if: steps.cfg.outputs.ready == 'true'
+        id: changed
+        run: |
+          echo "content=$(python scripts/drive-sync/report.py changed-content "$RUNNER_TEMP/report.json")" >> "$GITHUB_OUTPUT"
+          if [ -n "$(git status --porcelain)" ]; then echo "any=true" >> "$GITHUB_OUTPUT"; else echo "any=false" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/setup-node@v4
+        if: steps.changed.outputs.content == 'true'
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Check the site still builds
+        id: build
+        if: steps.changed.outputs.content == 'true'
+        continue-on-error: true
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+
+      - name: Build failed - publish nothing, remember the folders as failed
+        if: steps.changed.outputs.content == 'true' && steps.build.outcome == 'failure'
+        run: |
+          git checkout -- app public
+          git clean -fd app public
+          python scripts/drive-sync/sync.py --record-failure "$RUNNER_TEMP/report.json"
+          python - "$RUNNER_TEMP/report.json" <<'EOF'
+          import json, sys
+          p = sys.argv[1]
+          r = json.load(open(p, encoding="utf-8"))
+          r["failed"] += [{"folder": i["folder"], "folder_id": i["folder_id"], "error": "web không build được khi có bài này; xem log của lần chạy GitHub Actions"} for i in r["published"] + r["updated"]]
+          r["published"], r["updated"], r["hidden"] = [], [], []
+          json.dump(r, open(p, "w", encoding="utf-8"), ensure_ascii=False)
+          EOF
+
+      - name: Commit and push
+        if: steps.changed.outputs.any == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A app public scripts/drive-sync/state.json
+          if git diff --cached --quiet; then exit 0; fi
+          python scripts/drive-sync/report.py commit-message "$RUNNER_TEMP/report.json" > "$RUNNER_TEMP/msg.txt"
+          git commit -F "$RUNNER_TEMP/msg.txt"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Open an issue for each folder that was not published
+        if: steps.cfg.outputs.ready == 'true'
+        run: |
+          python scripts/drive-sync/report.py issues "$RUNNER_TEMP/report.json" "$RUNNER_TEMP/issues"
+          for title in "$RUNNER_TEMP"/issues/*.title; do
+            [ -e "$title" ] || continue
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$(cat "$title")" --body-file "${title%.title}.md"
+          done

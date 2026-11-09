@@ -1,0 +1,7 @@
+{
+  "_comment": "Fixed corrections applied to every article from Drive, at the site owner's request. Each pair is [wrong, right]. Every correction applied is listed in the commit message.",
+  "replace": [
+    ["Trách Nhiện Hữu", "Trách Nhiệm Hữu"],
+    ["vi ph ạm", "vi phạm"]
+  ]
+}
