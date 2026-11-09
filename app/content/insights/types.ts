@@ -15,6 +15,8 @@ export type ArticleBlock =
   | { type: "aside"; text: string }
   /** The italic legal notice and copyright paragraphs at the end. */
   | { type: "note"; text: string }
+  /** A bulleted list the Client set in the text; each item is one bullet, as written. */
+  | { type: "list"; items: readonly string[] }
   /** A table the Client set in the text: a header row and the rows beneath it. */
   | { type: "table"; head: readonly string[]; rows: readonly (readonly string[])[] };
 

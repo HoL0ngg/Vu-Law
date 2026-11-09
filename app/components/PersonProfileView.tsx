@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import type { Dictionary, Locale } from "../i18n/config";
 import { routePath } from "../i18n/routes";
+import { isPlaceholder, mailHref, telHref } from "../lib/contact";
 import PageFrame from "./PageFrame";
 import Portrait from "./Portrait";
 
@@ -15,9 +16,14 @@ type PersonProfileViewProps = {
   locale?: Locale;
 };
 
-/** A single lawyer's page: portrait, name, role and the Client's biography. */
+/**
+ * A single lawyer's page: a framed portrait with the name and role, the Client's biography
+ * as a list of points (one paragraph per point, text untouched) and a sticky contact card.
+ * Every word comes from copy the Client already supplied; the layout adds none.
+ */
 export default function PersonProfileView({ dictionary, member, locale = "en" }: PersonProfileViewProps) {
   const page = dictionary.peoplePage;
+  const { footer } = dictionary;
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
@@ -30,34 +36,51 @@ export default function PersonProfileView({ dictionary, member, locale = "en" }:
             src={member.photo}
             alt={member.photoAlt || page.portraitAlt}
             initials={member.initials}
-            sizes="(max-width: 900px) 60vw, 230px"
+            sizes="(max-width: 900px) 60vw, 310px"
             priority
           />
           <div>
-            <h1 className="reveal-line">
+            <p className="lawyer-role reveal" style={stagger(1)}>{member.role}</p>
+            <h1 className="reveal-line" style={stagger(2)}>
               {member.name}
               {member.nameAlt ? <><br />{member.nameAlt}</> : null}
             </h1>
-            <p className="lawyer-role reveal" style={stagger(2)}>{member.role}</p>
           </div>
         </div>
       </section>
 
       <section className="profile-body section-paper">
-        {member.biography.length > 0 ? (
-          <div className="profile-prose">
-            {member.biography.map((paragraph, index) => (
-              <p className="reveal" key={paragraph} style={stagger(index)}>{paragraph}</p>
-            ))}
-          </div>
-        ) : (
-          // TODO(client): no biography supplied for this lawyer. Nothing is written here
-          // in its place (ivl-legal-guardrails rule 1: only Client-supplied facts).
-          <div className="profile-prose" />
-        )}
-        <Link className="text-link reveal" href={routePath("people", locale)}>
-          {page.backToPeople}<span aria-hidden="true">→</span>
-        </Link>
+        <div className="profile-layout">
+          {member.biography.length > 0 ? (
+            <ul className="profile-points">
+              {member.biography.map((paragraph, index) => (
+                <li className={index === 0 ? "reveal profile-point--lead" : "reveal"} key={paragraph} style={stagger(index)}>
+                  {paragraph}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            // TODO(client): no biography supplied for this lawyer. Nothing is written here
+            // in its place (ivl-legal-guardrails rule 1: only Client-supplied facts).
+            <div />
+          )}
+
+          <aside className="profile-card reveal" style={stagger(2)} aria-labelledby="profile-card-title">
+            <h2 className="section-label" id="profile-card-title">{dictionary.contactPage.form.detailsTitle}</h2>
+            <p>
+              {isPlaceholder(footer.telephone) ? footer.telephone : <a href={telHref(footer.telephone)}>{footer.telephone}</a>}
+            </p>
+            <p>
+              {isPlaceholder(footer.email) ? footer.email : <a href={mailHref(footer.email)}>{footer.email}</a>}
+            </p>
+            <Link className="text-link profile-card-cta" href={routePath("contact", locale)}>
+              {dictionary.expertisePage.lawyersCta}<span aria-hidden="true">→</span>
+            </Link>
+            <Link className="text-link text-link-muted" href={routePath("people", locale)}>
+              {page.backToPeople}<span aria-hidden="true">→</span>
+            </Link>
+          </aside>
+        </div>
       </section>
     </PageFrame>
   );

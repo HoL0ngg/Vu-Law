@@ -108,6 +108,13 @@ export default function InsightArticleView({ dictionary, article, locale = "en" 
               <div className="article-section-text">
                 {section.blocks.map((block, index) => {
                   const key = `${block.type}-${index}`;
+                  if (block.type === "list") {
+                    return (
+                      <ul className="article-list" key={key}>
+                        {block.items.map((item) => <li key={item}>{inline(item)}</li>)}
+                      </ul>
+                    );
+                  }
                   if (block.type === "table") {
                     return (
                       <div className="article-table-wrap" key={key}>
