@@ -19,7 +19,10 @@ export const claimIdentification: Article = {
   publishedAt: "2026-11-04",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
-  // No picture was supplied for this article, so its card shows the default panel.
+  // The Client's picture "Post 6.jpg" (1024x1024, money and a calculator): web copy in public/images/blog,
+  // cropped on cards towards the calculator and the hands.
+  coverImage: "/images/blog/claim-identification.jpg",
+  coverPosition: "50% 62%",
   vi: {
     title: "CÙNG LÀ NGHĨA VỤ TRẢ TIỀN, VÌ SAO GỐC, LÃI, PHẠT VÀ BỒI THƯỜNG ĐƯỢC XÁC ĐỊNH KHÁC NHAU?",
     topic: "CHỦ ĐỀ 02: XÁC ĐỊNH QUYỀN YÊU CẦU",

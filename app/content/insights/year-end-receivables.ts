@@ -20,7 +20,10 @@ export const yearEndReceivables: Article = {
   publishedAt: "2026-11-09",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
-  // No picture was supplied for this article, so its card shows the default panel.
+  // The Client's picture "Post 7.jpg" (235x416, a hand pointing a pen at a contract): web copy in public/images/blog,
+  // cropped on cards towards the clipboard and the pen.
+  coverImage: "/images/blog/year-end-receivables.jpg",
+  coverPosition: "50% 42%",
   vi: {
     title: "CUỐI NĂM, DOANH NGHIỆP NÊN ƯU TIÊN XỬ LÝ KHOẢN CÔNG NỢ NÀO TRƯỚC? CÁC TIÊU CHÍ ĐỂ BẢO VỆ DÒNG TIỀN VÀ QUYỀN THU HỒI",
     blocks: [
