@@ -14,3 +14,6 @@ npm-debug.log*
 
 # Word lock files
 ~$*
+
+# Word exports of the site text (scripts/export-docx)
+/exports/
