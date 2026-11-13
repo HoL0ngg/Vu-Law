@@ -96,7 +96,7 @@ export default async function HomePageView({ dictionary, locale = "en" }: HomePa
               <summary>
                 <span>{area.name}</span><i aria-hidden="true">+</i>
               </summary>
-              <p>{area.summary}</p>
+              {area.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </details>
           ))}
         </div>
@@ -162,7 +162,7 @@ export default async function HomePageView({ dictionary, locale = "en" }: HomePa
         <div className="people-copy">
           <h2 className="section-label reveal">{home.people.heading}</h2>
           <div className="people-intro reveal">
-            <p className="section-intro-title">{home.people.intro.title}</p>
+            {home.people.intro.title ? <p className="section-intro-title">{home.people.intro.title}</p> : null}
             {home.people.intro.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
           <h3 className="display-heading reveal-line">

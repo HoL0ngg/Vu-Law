@@ -28,7 +28,7 @@ export default function ExpertisePageView({ dictionary, locale = "en" }: Experti
         <ul className="practice-index-list">
           {page.areas.map((area, index) => (
             <li className="reveal" key={area.id} style={stagger(index)}>
-              <a href={`#${area.id}`}>{area.name}<i aria-hidden="true">↓</i></a>
+              <a href={`#${area.id}`}>{("navName" in area && area.navName) || area.name}<i aria-hidden="true">↓</i></a>
             </li>
           ))}
         </ul>

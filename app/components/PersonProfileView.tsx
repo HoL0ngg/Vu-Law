@@ -24,6 +24,7 @@ type PersonProfileViewProps = {
 export default function PersonProfileView({ dictionary, member, locale = "en" }: PersonProfileViewProps) {
   const page = dictionary.peoplePage;
   const { footer } = dictionary;
+  const email = member.email || footer.email;
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
@@ -42,7 +43,7 @@ export default function PersonProfileView({ dictionary, member, locale = "en" }:
           <div>
             <p className="lawyer-role reveal" style={stagger(1)}>{member.role}</p>
             <h1 className="reveal-line" style={stagger(2)}>
-              {member.name}
+              {member.profileName || member.name}
               {member.nameAlt ? <><br />{member.nameAlt}</> : null}
             </h1>
           </div>
@@ -71,7 +72,8 @@ export default function PersonProfileView({ dictionary, member, locale = "en" }:
               {isPlaceholder(footer.telephone) ? footer.telephone : <a href={telHref(footer.telephone)}>{footer.telephone}</a>}
             </p>
             <p>
-              {isPlaceholder(footer.email) ? footer.email : <a href={mailHref(footer.email)}>{footer.email}</a>}
+              {/* The lawyer's own address when the Client gave one, else the firm's inbox. */}
+              {isPlaceholder(email) ? email : <a href={mailHref(email)}>{email}</a>}
             </p>
             <Link className="text-link profile-card-cta" href={routePath("contact", locale)}>
               {dictionary.expertisePage.lawyersCta}<span aria-hidden="true">→</span>

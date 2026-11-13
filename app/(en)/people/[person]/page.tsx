@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PersonPageProps): Promise<Met
   const member = en.peoplePage.members.find((candidate) => candidate.slug === person);
   if (!member) return {};
   return pageMetadata({
-    title: `${member.name} | ${en.brand.name}`,
+    title: `${member.titleName || member.profileName || member.name} | ${en.brand.name}`,
     description: snippet(member.biography[0]),
     path: `${routes.people}/${member.slug}`,
     locale: "en",

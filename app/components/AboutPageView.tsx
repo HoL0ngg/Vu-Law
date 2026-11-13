@@ -20,7 +20,7 @@ export default function AboutPageView({ dictionary, locale = "en" }: AboutPageVi
         <div className="about-hero-copy">
           <h1 className="reveal-line">{about.title}</h1>
           <div className="about-opening reveal" style={stagger(2)}>
-            <p className="about-opening-title">{about.openingTitle}</p>
+            {about.openingTitle ? <p className="about-opening-title">{about.openingTitle}</p> : null}
             {about.opening.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           </div>
         </div>

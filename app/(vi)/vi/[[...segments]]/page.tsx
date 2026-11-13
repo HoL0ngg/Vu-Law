@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: VietnamesePageProps): Promise
     const member = dictionary.peoplePage.members.find((candidate) => candidate.slug === segments[1]);
     if (!member) return {};
     return pageMetadata({
-      title: `${member.name} | ${dictionary.brand.name}`,
+      title: `${member.titleName || member.profileName || member.name} | ${dictionary.brand.name}`,
       description: snippet(member.biography[0]),
       path: `${routes.people}/${member.slug}`,
       locale: "vi",

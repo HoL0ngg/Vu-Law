@@ -26,9 +26,15 @@ function isPlainObject(value: unknown): value is Plain {
  * `peoplePage.members` off `undefined` and thrown. Walking English as the shape means a
  * missing Vietnamese key yields the English string instead of a crash or a blank.
  *
- * Arrays are merged by index so a short Vietnamese list cannot shift its English
- * counterparts out of alignment - the footer's navigation labels are paired with routes
- * by position, and the Client's Vietnamese list is one entry shorter than the English.
+ * Arrays of objects are merged by index, so each Vietnamese item lands on its English
+ * counterpart (practice areas, members, values). A list of plain strings that Vietnamese
+ * supplies is taken whole: it is the Client's own list of paragraphs or items, and may be
+ * longer or shorter than the English (12-11: a Vietnamese value card has three paragraphs
+ * where the English has two). Merging those by index used to drop the extra Vietnamese
+ * paragraph or leave a trailing English one on the Vietnamese page.
+ *
+ * An empty string in the Vietnamese file means the Client removed that line there (for
+ * example the title above the About opening), so it is kept empty, not filled with English.
  */
 function mergeDeep<T>(base: T, override: unknown): T {
   if (override === undefined || override === null) return base;
@@ -36,6 +42,9 @@ function mergeDeep<T>(base: T, override: unknown): T {
   if (Array.isArray(base)) {
     if (!Array.isArray(override)) return base;
     if (base.length === 0) return override as unknown as T;
+    if (override.length > 0 && override.every((item) => typeof item === "string")) {
+      return override as unknown as T;
+    }
     return base.map((item, index) => mergeDeep(item, override[index])) as unknown as T;
   }
 
@@ -48,8 +57,6 @@ function mergeDeep<T>(base: T, override: unknown): T {
     return merged as T;
   }
 
-  // An empty string is treated as "not supplied" so a placeholder cannot blank a label.
-  if (typeof override === "string" && override.trim() === "") return base;
   return override as T;
 }
 
