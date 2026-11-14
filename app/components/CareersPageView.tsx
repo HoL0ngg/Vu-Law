@@ -16,7 +16,7 @@ export default function CareersPageView({ dictionary, locale = "en" }: CareersPa
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
-      <PageHero title={page.heading} />
+      <PageHero view="careers" title={page.heading} />
 
       <section className="careers section-paper">
         <div className="careers-block">

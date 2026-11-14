@@ -1,6 +1,8 @@
 import type { CSSProperties } from "react";
 import type { Dictionary, Locale } from "../i18n/config";
 import PageFrame from "./PageFrame";
+import PageHero from "./PageHero";
+import ReadingBand from "./ReadingBand";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
 
@@ -11,20 +13,31 @@ type AboutPageViewProps = {
 
 export default function AboutPageView({ dictionary, locale = "en" }: AboutPageViewProps) {
   const { about } = dictionary;
+  const aboutIndex = [
+    { anchor: "firm", id: "our-firm", label: about.firm.heading },
+    { anchor: "philosophy", id: "our-philosophy", label: about.philosophy.heading },
+    { anchor: "approach", id: "our-approach", label: about.approach.heading },
+    { anchor: "values", id: "our-values", label: about.values.heading },
+  ];
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
-      <section className="about-hero">
-        <div className="about-hero-image" aria-hidden="true" />
-        <div className="about-hero-shade" />
-        <div className="about-hero-copy">
-          <h1 className="reveal-line">{about.title}</h1>
-          <div className="about-opening reveal" style={stagger(2)}>
-            {about.openingTitle ? <p className="about-opening-title">{about.openingTitle}</p> : null}
-            {about.opening.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </div>
-      </section>
+      {/* The first opening paragraph leads; the others follow in the band below. */}
+      <PageHero view="firm" title={about.title} openingTitle={about.openingTitle} paragraphs={about.opening.slice(0, 1)} />
+
+      <ReadingBand paragraphs={about.opening.slice(1)} side="end">
+        {/* Desktop only (hidden below 1081 px in CSS): the page's own four section headings,
+            as links, in the half that used to be empty. */}
+        <nav className="page-index" aria-label={about.title}>
+          <ul className="page-index-list">
+            {aboutIndex.map((item) => (
+              <li key={item.anchor}>
+                <a href={`#${item.id}`}>{item.label}<i aria-hidden="true">↓</i></a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </ReadingBand>
 
       <section className="about-section firm-section section-paper" id="our-firm">
         <div className="about-section-heading">

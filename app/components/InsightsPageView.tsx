@@ -21,7 +21,7 @@ export default async function InsightsPageView({ dictionary, locale = "en" }: In
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
-      <PageHero title={page.heading} compact />
+      <PageHero view="insights" title={page.heading} compact />
 
       {hasArticles ? (
         <section className="insights-section insights-section--list section-paper">

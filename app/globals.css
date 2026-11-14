@@ -56,7 +56,8 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+summary:focus-visible {
   outline: 2px solid var(--gold-light);
   outline-offset: 5px;
 }
@@ -304,20 +305,6 @@ a:hover .brand-logo {
   letter-spacing: -0.045em;
   line-height: 1.02;
   overflow-wrap: break-word;
-}
-
-.hero-body {
-  display: grid;
-  max-width: 760px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 34px;
-  color: #d5dde1;
-}
-
-.hero-body p {
-  margin-bottom: 0;
-  font-size: clamp(21px, 1.7vw, 26px);
-  line-height: 1.55;
 }
 
 .cta-row {
@@ -1022,7 +1009,9 @@ a:hover .brand-logo {
   }
 
   .hero {
-    min-height: 900px;
+    /* A fixed 900px made the hero taller than most phones once its text was cut to one
+       paragraph and two links; it now fits the screen. */
+    min-height: 100svh;
     padding: 125px 22px 65px;
   }
 
@@ -1037,15 +1026,6 @@ a:hover .brand-logo {
   .hero h1,
   .about-hero h1 {
     font-size: clamp(52px, 16vw, 78px);
-  }
-
-  .hero-body {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .hero-body p {
-    margin-bottom: 17px;
   }
 
   .cta-row {
@@ -2924,4 +2904,333 @@ a:hover .brand-logo {
   transform: rotate(45deg);
   background: var(--gold-deep);
   content: "";
+}
+
+/* ==========================================================================
+   Reading layout (2026-11-14)
+   Every page opens like a title page: the heading, ONE lead paragraph and the links.
+   The rest of the Client's opening copy continues directly below on a light band, at
+   reading size, in one measured column. Nothing is hidden or shortened; this block only
+   decides size, measure and position. It sits last so it wins over the older hero rules.
+   ========================================================================== */
+
+:root {
+  --text-lead: clamp(21px, 1.55vw, 25px);
+  --text-read: clamp(21px, 1.6vw, 24px);
+  /* In em, so the column is about 60 characters at any size of text. */
+  --measure: 27em;
+}
+
+/* --- Homepage hero ------------------------------------------------------------------ */
+.hero h1 {
+  text-wrap: balance;
+}
+
+html[lang="vi"] .hero h1 {
+  /* Stacked Vietnamese diacritics need more room than the English 0.94. */
+  line-height: 1;
+}
+
+.hero-lead {
+  max-width: var(--measure);
+  margin: 0;
+  color: #e0e7ea;
+  font-size: var(--text-lead);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+@media (max-width: 1080px) {
+  /* On tablets and phones the lead spans the width where the photograph is brightest, so
+     the shade turns vertical and stays dense behind the text. */
+  .hero-shade {
+    background: linear-gradient(180deg, rgba(8, 22, 34, 0.8) 0%, rgba(10, 26, 40, 0.84) 55%, rgba(8, 20, 31, 0.94) 100%);
+  }
+}
+
+/* --- Inner-page hero ---------------------------------------------------------------- */
+.page-hero .about-hero-copy h1:only-child {
+  /* Careers and Insights have no lead: the heading takes both columns. */
+  grid-column: 1 / -1;
+}
+
+.page-hero .about-opening {
+  max-width: var(--measure);
+}
+
+.page-hero .about-opening::before {
+  display: block;
+  width: 50px;
+  height: 1px;
+  margin-bottom: 26px;
+  background: var(--gold);
+  content: "";
+}
+
+.page-hero .about-opening p {
+  margin: 0 0 1em;
+  font-size: var(--text-lead);
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.page-hero .about-opening p + p {
+  color: #c1cbd1;
+}
+
+.page-hero .about-opening > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.page-hero .about-opening p.about-opening-title {
+  margin-bottom: 14px;
+  font-size: clamp(26px, 2vw, 34px);
+  line-height: 1.15;
+}
+
+/* The links now sit under the lead, inside the same column. */
+.page-hero .about-opening .text-link {
+  margin-top: 34px;
+}
+
+html[lang="vi"] .page-hero h1 {
+  line-height: 1.1;
+}
+
+/* Compact: the hero is only as tall as its heading and lead. At 60svh it left a block of
+   empty navy above them (site owner, 2026-11-14), so the band sizes to its content again. */
+.page-hero:not(.page-hero--compact) {
+  min-height: 0;
+  padding-bottom: 58px;
+}
+
+/* A heading with no lead (Careers) gets a little more air than the two-part heroes. */
+.page-hero--solo:not(.page-hero--compact) {
+  padding-top: 150px;
+  padding-bottom: 72px;
+}
+
+/* The inner heroes shared the heavy navy of the Homepage's left side, which hid the
+   columns photograph. This one is light at the top, where the header floats, and dense at
+   the bottom, where the heading and the lead sit. Scoped to .page-hero: the profile and
+   article heroes use .about-hero-shade too. */
+.page-hero:not(.page-hero--compact) .about-hero-shade {
+  background:
+    linear-gradient(180deg, rgba(8, 20, 31, 0.72) 0%, rgba(8, 20, 31, 0.56) 22%, rgba(8, 20, 31, 0.76) 50%, rgba(8, 20, 31, 0.94) 100%),
+    linear-gradient(90deg, rgba(8, 20, 31, 0.5), transparent 60%);
+}
+
+@media (max-width: 1080px) {
+  /* One column: the long capital headings no longer sit in a 210px column on tablets. */
+  .page-hero .about-hero-copy {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* The first screen fades in from CSS, so it never waits for a script. */
+  @keyframes page-hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .page-hero h1 {
+    animation: page-hero-in 0.9s var(--ease) both;
+  }
+
+  .page-hero .about-opening {
+    animation: page-hero-in 0.9s var(--ease) 0.14s both;
+  }
+}
+
+/* --- Reading band: the rest of the opening copy ------------------------------------- */
+.reading-band {
+  padding: 64px 8vw 72px;
+}
+
+.reading-column {
+  position: relative;
+  max-width: var(--measure);
+  padding-top: 26px;
+  border-top: 1px solid rgba(13, 33, 48, 0.22);
+  font-size: var(--text-read);
+}
+
+.reading-column::before {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--gold-deep);
+  content: "";
+}
+
+.reading-column p {
+  margin: 0 0 1.05em;
+  color: #17262f;
+  line-height: 1.68;
+  text-wrap: pretty;
+}
+
+.reading-column p:last-child {
+  margin-bottom: 0;
+}
+
+.reading-band-aside .people-grid {
+  margin-top: 56px;
+}
+
+@media (min-width: 1081px) {
+  /* Two rails on the same axis as the hero above: the lead and its continuation share one
+     left edge, and the rail on the left carries something useful instead of empty navy. */
+  .reading-band--end:not(.reading-band--wide) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 6vw;
+    align-items: start;
+    padding-top: 72px;
+    padding-bottom: 84px;
+  }
+
+  .reading-band--end:not(.reading-band--wide) .reading-column {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .reading-band--end:not(.reading-band--wide) .reading-band-aside {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* People: the two portraits need about 270px each, so the side-by-side layout starts
+     here; below it the text comes first and the cards follow. */
+  .reading-band--end.reading-band--wide {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 6vw;
+    align-items: start;
+    padding-top: 72px;
+    padding-bottom: 84px;
+  }
+
+  .reading-band--end.reading-band--wide .reading-column {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .reading-band--end.reading-band--wide .reading-band-aside {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .reading-band--wide .reading-band-aside .people-grid {
+    grid-template-columns: repeat(2, minmax(0, 300px));
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .reading-band {
+    padding: 52px 22px 58px;
+  }
+}
+
+/* --- About: index of the page's own four sections (desktop only) -------------------- */
+.page-index-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(13, 33, 48, 0.22);
+  list-style: none;
+}
+
+.page-index-list li {
+  border-bottom: 1px solid rgba(13, 33, 48, 0.16);
+}
+
+.page-index-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 24px 20px 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+  transition: color 0.3s var(--ease), padding 0.3s var(--ease);
+}
+
+.page-index-list a:hover {
+  padding-left: 12px;
+  color: var(--gold-deep);
+}
+
+.page-index-list i {
+  flex: none;
+  color: var(--gold-deep);
+  font-size: 19px;
+  font-style: normal;
+}
+
+@media (max-width: 1080px) {
+  /* On a phone the index would sit directly above the section it links to. */
+  .page-index {
+    display: none;
+  }
+}
+
+/* --- No script: nothing waits for the reveal observer -------------------------------- */
+@media (scripting: none) {
+  .reveal,
+  .reveal-line,
+  .reveal-zoom {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* --- Inner heroes: one photograph, six framings -------------------------------------- */
+/* Every inner hero uses the same columns photograph (1672x941). Showing the same strip on
+   each page made them look identical, so each page crops a different area, zoomed a little.
+   Only the image layer moves; the shade and the text are untouched. */
+.page-hero--view-firm .about-hero-image {
+  background-position: 58% 50%;
+}
+
+.page-hero--view-people .about-hero-image {
+  background-position: 18% 22%;
+  background-size: 125%;
+}
+
+.page-hero--view-expertise .about-hero-image {
+  background-position: 82% 68%;
+  background-size: 125%;
+}
+
+.page-hero--view-contact .about-hero-image {
+  background-position: 22% 30%;
+  background-size: 135%;
+}
+
+.page-hero--view-careers .about-hero-image {
+  background-position: 72% 14%;
+  background-size: 135%;
+}
+
+.page-hero--view-insights .about-hero-image {
+  background-position: 12% 62%;
+  background-size: 125%;
 }

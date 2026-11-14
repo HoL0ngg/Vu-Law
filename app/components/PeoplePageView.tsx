@@ -4,6 +4,7 @@ import type { Dictionary, Locale } from "../i18n/config";
 import { personPath } from "../i18n/routes";
 import PageFrame from "./PageFrame";
 import PageHero from "./PageHero";
+import ReadingBand from "./ReadingBand";
 import Portrait from "./Portrait";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
@@ -23,9 +24,11 @@ export default function PeoplePageView({ dictionary, locale = "en" }: PeoplePage
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
-      <PageHero title={dictionary.pages.people} paragraphs={page.paragraphs} />
+      <PageHero view="people" title={dictionary.pages.people} paragraphs={page.paragraphs.slice(0, 1)} />
 
-      <section className="people-list section-paper">
+      {/* The remaining paragraphs sit beside the two portraits (from 1280 px; below that the
+          text comes first and the cards follow). DOM order is text, then cards, as before. */}
+      <ReadingBand paragraphs={page.paragraphs.slice(1)} side="end" tone="paper" wide className="people-band">
         <div className="people-grid">
           {page.members.map((member, index) => (
             <Link
@@ -52,7 +55,7 @@ export default function PeoplePageView({ dictionary, locale = "en" }: PeoplePage
             </Link>
           ))}
         </div>
-      </section>
+      </ReadingBand>
     </PageFrame>
   );
 }

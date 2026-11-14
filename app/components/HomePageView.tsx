@@ -7,6 +7,7 @@ import { organizationJsonLd } from "../lib/structured-data";
 import ArticleArt from "./ArticleArt";
 import JsonLd from "./JsonLd";
 import PageFrame from "./PageFrame";
+import ReadingBand from "./ReadingBand";
 import Portrait from "./Portrait";
 
 const stagger = (index: number) => ({ "--d": index }) as CSSProperties;
@@ -23,6 +24,7 @@ export default async function HomePageView({ dictionary, locale = "en" }: HomePa
   const latestArticles = (await getArticlesFor(locale)).slice(0, 4);
   const hasArticles = latestArticles.length > 0;
   // "NAME (NICKNAME)": the bracketed part is drawn on its own line, as on the People page.
+  const [leadParagraph, ...heroRest] = home.hero.paragraphs;
   const [leadName, ...leadAlias] = home.people.name.split(/\s+(?=\()/);
 
   return (
@@ -39,9 +41,9 @@ export default async function HomePageView({ dictionary, locale = "en" }: HomePa
         <div className="hero-copy">
           <p className="eyebrow hero-eyebrow">{home.hero.eyebrow}</p>
           <h1>{home.hero.title}</h1>
-          <div className="hero-body">
-            {home.hero.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
+          {/* The first paragraph leads the page; the others continue in the band below the
+              hero. Both come from the same list, so a paragraph added later is never lost. */}
+          <p className="hero-lead">{leadParagraph}</p>
           <div className="cta-row">
             <Link className="text-link" href={routePath("expertise", locale)}>
               {home.hero.expertiseCta}<span aria-hidden="true">→</span>
@@ -52,6 +54,8 @@ export default async function HomePageView({ dictionary, locale = "en" }: HomePa
           </div>
         </div>
       </section>
+
+      <ReadingBand paragraphs={heroRest} />
 
       <section className="introduction section-dark">
         <div className="orb" data-parallax aria-hidden="true" />

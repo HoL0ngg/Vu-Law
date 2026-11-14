@@ -20,7 +20,7 @@ export default function ContactPageView({ dictionary, locale = "en" }: ContactPa
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
-      <PageHero title={page.heading} paragraphs={page.paragraphs} />
+      <PageHero view="contact" title={page.heading} paragraphs={page.paragraphs} />
 
       <section className="contact-lawyer section-paper">
         <div className="contact-card reveal">

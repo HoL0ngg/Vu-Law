@@ -17,8 +17,8 @@ export default function ExpertisePageView({ dictionary, locale = "en" }: Experti
 
   return (
     <PageFrame dictionary={dictionary} locale={locale}>
-      <PageHero title={dictionary.pages.expertise} paragraphs={[page.intro]}>
-        <Link className="text-link reveal" style={stagger(3)} href={routePath("contact", locale)}>
+      <PageHero view="expertise" title={dictionary.pages.expertise} paragraphs={[page.intro]}>
+        <Link className="text-link" href={routePath("contact", locale)}>
           {page.lawyersCta}<span aria-hidden="true">→</span>
         </Link>
       </PageHero>
