@@ -6,6 +6,8 @@ import { receivablesStrategy } from "./receivables-strategy";
 import { claimIdentification } from "./claim-identification";
 import { yearEndReceivables } from "./year-end-receivables";
 import { partnerPaymentExtension } from "./partner-payment-extension";
+import { employmentLaw2025 } from "./employment-law-2025";
+import { evidenceAndProof } from "./evidence-and-proof";
 import { unsignedTransactions } from "./unsigned-transactions";
 import { driveArticles } from "./drive";
 import { fetchSanityArticles } from "./sanity";
@@ -25,6 +27,8 @@ const localArticles: readonly Article[] = [
   claimIdentification,
   yearEndReceivables,
   partnerPaymentExtension,
+  employmentLaw2025,
+  evidenceAndProof,
   // Published automatically from Google Drive by scripts/drive-sync (see its README).
   ...driveArticles,
 ];

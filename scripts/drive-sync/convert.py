@@ -129,7 +129,9 @@ def _is_upper(text: str) -> bool:
 
 def _is_kicker(text: str) -> bool:
     upper = text.upper()
-    return _is_upper(text) and len(text) < 90 and ("LEGAL INSIGHTS" in upper or "•" in text)
+    # A series or topic label above the headline: "LEGAL INSIGHTS | ...", "... • PART 1/2",
+    # "CHUYÊN ĐỀ: PHÁP LUẬT LAO ĐỘNG VÀ BẢO HIỂM", "CHUYÊN ĐỀ 03| CHỨNG CỨ VÀ TỐ TỤNG".
+    return _is_upper(text) and len(text) < 90 and ("LEGAL INSIGHTS" in upper or "•" in text or upper.startswith("CHUYÊN ĐỀ"))
 
 
 def convert(docx: Path | bytes) -> Converted:
