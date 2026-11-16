@@ -20,10 +20,11 @@ export const yearEndReceivables: Article = {
   publishedAt: "2026-11-09",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
-  // The Client's picture "Post 7.jpg" (235x416, a hand pointing a pen at a contract): web copy in public/images/blog,
-  // cropped on cards towards the clipboard and the pen.
-  coverImage: "/images/blog/year-end-receivables.jpg",
-  coverPosition: "50% 42%",
+  // The Client's picture "Post 9.11.jpg" (736x1104, a hand signing a document), sent on 2026-11-16 to
+  // replace the earlier "Post 7.jpg" (235x416, too small). The web copy has a new file name so
+  // browsers do not keep showing the old picture from cache.
+  coverImage: "/images/blog/year-end-receivables-signing.jpg",
+  coverPosition: "50% 62%",
   vi: {
     title: "CUỐI NĂM, DOANH NGHIỆP NÊN ƯU TIÊN XỬ LÝ KHOẢN CÔNG NỢ NÀO TRƯỚC? CÁC TIÊU CHÍ ĐỂ BẢO VỆ DÒNG TIỀN VÀ QUYỀN THU HỒI",
     blocks: [
