@@ -15,7 +15,10 @@ export const partnerPaymentExtension: Article = {
   publishedAt: "2026-11-11",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
-  // No picture was supplied for this article, so its card shows the default panel.
+  // The Client's picture "Post 11.11.jpg" (two people at a document), sent on 2026-11-16; the same
+  // photograph as the tenth article's cover.
+  coverImage: "/images/blog/partner-payment-extension.jpg",
+  coverPosition: "50% 52%",
   vi: {
     "title": "ĐỐI TÁC XIN TRẢ KHOẢN NỢ THÀNH NHIỀU ĐỢT THANH TOÁN: 5 ĐIỀU CẦN KIỂM TRA TRƯỚC KHI ĐỒNG Ý",
     "blocks": [

@@ -15,8 +15,10 @@ export const employmentLaw2025: Article = {
   publishedAt: "2026-11-16",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
-  coverImage: "/images/blog/employment-law-2025.jpg",
-  coverPosition: "50% 62%",
+  // The Client's picture "Post 16.11.jpg" (a gavel and a clipboard on a desk), sent on 2026-11-16;
+  // the same photograph as the third article's cover. New file name to get past the image cache.
+  coverImage: "/images/blog/employment-law-2025-gavel.jpg",
+  coverPosition: "50% 28%",
   vi: {
     "title": "LUẬT VIỆC LÀM 2025: NHỮNG THAY ĐỔI VỀ BẢO HIỂM THẤT NGHIỆP DOANH NGHIỆP CẦN LƯU Ý",
     "kicker": [
