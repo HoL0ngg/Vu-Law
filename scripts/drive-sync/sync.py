@@ -30,7 +30,7 @@ from typing import Callable
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 sys.path.insert(0, str(HERE))
-from convert import ConversionError, article_ts, check_complete, convert, detect_language, slugify, ts_identifier  # noqa: E402
+from convert import ConversionError, article_ts, check_complete, convert_all, slugify, ts_identifier  # noqa: E402
 
 CONTENT_DIR = ROOT / "app" / "content" / "insights"
 DRIVE_DIR = CONTENT_DIR / "drive"
@@ -209,13 +209,13 @@ def publish_folder(folder: SourceFolder, files: list[SourceFile], entry: dict, t
     locales: dict[str, dict] = {}
     corrections: list[str] = []
     for doc in docs:
-        converted = convert(doc.fetch())
-        check_complete(converted)
-        lang = detect_language(doc.name, converted)
-        if lang in locales:
-            raise ConversionError(f"có hai file Word cùng là {'tiếng Việt' if lang == 'vi' else 'tiếng Anh'}; hãy đặt tên có (VN) và (EN)")
-        locales[lang] = converted.as_locale()
-        corrections += converted.corrections
+        # A file may hold one article, or the Vietnamese and the English one after each other.
+        for lang, converted in convert_all(doc.fetch(), doc.name):
+            check_complete(converted)
+            if lang in locales:
+                raise ConversionError(f"có hai file Word cùng là {'tiếng Việt' if lang == 'vi' else 'tiếng Anh'}; hãy đặt tên có (VN) và (EN)")
+            locales[lang] = converted.as_locale()
+            corrections += converted.corrections
 
     slug = entry.get("slug")
     if not slug:

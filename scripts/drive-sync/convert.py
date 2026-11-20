@@ -26,6 +26,10 @@ NOTICE_HEADINGS = ("THÔNG BÁO PHÁP LÝ VÀ QUYỀN TÁC GIẢ", "LEGAL NOTICE
 TOPIC_PREFIX = re.compile(r"^(CHỦ ĐỀ|TOPIC)\s*\d+", re.IGNORECASE)
 NUMBERED_HEADING = re.compile(r"^\d{1,2}\s*\|\s*\S")
 SUB_HEADING = re.compile(r"^\d+\.\d+\.\s")
+# "1. Heading text" (a number and a full stop, not "4.1." and not a sentence that ends in a full stop).
+NUMBERED_PERIOD = re.compile(r"^\d{1,2}\.(?!\d)\s*\S")
+# Unnumbered closing headings written in ordinary case.
+CLOSING_HEADINGS = ("kết luận", "conclusion")
 DIVIDER = re.compile(r"^[_\-–—=*·.\s]{5,}$")
 FOOTNOTE = re.compile(r"^\[\d+\]\s")
 # Words the site owner asked to be corrected wherever they appear; see corrections.json.
@@ -127,6 +131,15 @@ def _is_upper(text: str) -> bool:
     return bool(letters) and all(not c.islower() for c in letters)
 
 
+def _is_section_heading(text: str) -> bool:
+    """"01 | TITLE", "1. Title" or the closing "Kết luận" / "Conclusion"."""
+    if NUMBERED_HEADING.match(text):
+        return True
+    if NUMBERED_PERIOD.match(text) and len(text) < 130 and not text.rstrip().endswith("."):
+        return True
+    return text.strip().casefold() in CLOSING_HEADINGS
+
+
 def _is_kicker(text: str) -> bool:
     upper = text.upper()
     # A series or topic label above the headline: "LEGAL INSIGHTS | ...", "... • PART 1/2",
@@ -136,6 +149,10 @@ def _is_kicker(text: str) -> bool:
 
 def convert(docx: Path | bytes) -> Converted:
     items, applied = read_items(docx)
+    return convert_items(items, applied)
+
+
+def convert_items(items: list[tuple], applied: list[str]) -> Converted:
     if not items or items[0][0] != "p" and items[0][0] != "li":
         raise ConversionError("file Word không bắt đầu bằng tiêu đề bài")
 
@@ -157,7 +174,7 @@ def convert(docx: Path | bytes) -> Converted:
     while pos < len(lines):
         kind = lines[pos][0]
         text = lines[pos][1] if kind != "table" else ""
-        if kind == "p" and (NUMBERED_HEADING.match(text) or (_is_upper(text) and not TOPIC_PREFIX.match(text) and len(text) < 130)):
+        if kind == "p" and (_is_section_heading(text) or (_is_upper(text) and not TOPIC_PREFIX.match(text) and len(text) < 130)):
             break
         opening.append(lines[pos])
         pos += 1
@@ -199,7 +216,7 @@ def convert(docx: Path | bytes) -> Converted:
         if text in NOTICE_HEADINGS:
             notice = True
             blocks.append({"type": "h2", "text": text})
-        elif not in_opening and not notice and (NUMBERED_HEADING.match(text) or (_is_upper(text) and len(text) < 130)):
+        elif not in_opening and not notice and (_is_section_heading(text) or (_is_upper(text) and len(text) < 130)):
             blocks.append({"type": "h2", "text": text})
         elif not notice and SUB_HEADING.match(text):
             blocks.append({"type": "h3", "text": text})
@@ -260,6 +277,54 @@ def check_complete(c: Converted) -> None:
         raise ConversionError("thiếu phần 'THÔNG BÁO PHÁP LÝ VÀ QUYỀN TÁC GIẢ' / 'LEGAL NOTICE AND COPYRIGHT' ở cuối bài")
     if not any(b["type"] == "p" for b in c.blocks):
         raise ConversionError("bài không có đoạn nội dung nào")
+
+
+# --------------------------------------------------------------------------------------
+# One Word file holding the Vietnamese article and then the English one
+# --------------------------------------------------------------------------------------
+
+def _vietnamese_share(text: str) -> float:
+    text = text.lower()
+    return sum(ch in VI_LETTERS for ch in text) / max(1, sum(ch.isalpha() for ch in text))
+
+
+def split_bilingual(items: list[tuple]) -> tuple[list[tuple], list[tuple]] | None:
+    """Split a file that holds two articles one after the other, or None if it holds one.
+
+    Each article ends with its own legal notice. After the first notice heading the notice's
+    paragraphs follow; the second article starts at the first later paragraph that has no
+    Vietnamese letters (its headline), so the notice itself can be in either language.
+    """
+    notice_at = [i for i, it in enumerate(items) if it[0] == "p" and it[1] in NOTICE_HEADINGS]
+    if len(notice_at) < 2:
+        return None
+    for j in range(notice_at[0] + 1, notice_at[1]):
+        it = items[j]
+        if it[0] == "p" and not DIVIDER.match(it[1]) and len(it[1]) > 20 and _vietnamese_share(it[1]) == 0:
+            return items[:j], items[j:]
+    return None
+
+
+def convert_all(docx: Path | bytes, file_name: str = "") -> list[tuple[str, Converted]]:
+    """Every article in a Word file as (language, converted). Usually one; two for a combined file."""
+    items, applied = read_items(docx)
+    parts = split_bilingual(items)
+    if parts is None:
+        converted = convert_items(items, applied)
+        return [(detect_language(file_name, converted), converted)]
+    results = []
+    for part in parts:
+        converted = convert_items(part, applied)
+        results.append(("vi" if _vietnamese_share(" ".join(converted.source_lines[:20])) > 0.02 else "en", converted))
+    # A first paragraph under 250 characters is shown as a standfirst. The two languages of one
+    # article should look alike, so when only one of them qualifies (the translation is shorter),
+    # it stays an ordinary opening paragraph in both.
+    if len({bool(c.subtitle) for _, c in results}) > 1:
+        for _, c in results:
+            if c.subtitle:
+                c.blocks.insert(0, {"type": "p", "text": c.subtitle})
+                c.subtitle = None
+    return results
 
 
 # --------------------------------------------------------------------------------------
