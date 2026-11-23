@@ -17,7 +17,10 @@ export const yearEndTermination: Article = {
   slug: "cham-dut-hop-dong-lao-dong-dip-cuoi-nam-6-van-de-can-ra-soat",
   // 23 November 2026: the date in the name of the Client's file.
   publishedAt: "2026-11-23",
-  // No cover picture was supplied for this article, so its card shows the default panel.
+  // The Client's picture "Post 23.11.jpg" (1200x1800, a handshake over case files), sent after the
+  // article; cropped on cards towards the handshake.
+  coverImage: "/images/blog/year-end-termination.jpg",
+  coverPosition: "50% 56%",
   // TODO(client): confirm the category. "Legal Insight" like the other articles.
   category: 1,
   vi: {
