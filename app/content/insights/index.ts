@@ -9,6 +9,7 @@ import { partnerPaymentExtension } from "./partner-payment-extension";
 import { employmentLaw2025 } from "./employment-law-2025";
 import { evidenceAndProof } from "./evidence-and-proof";
 import { supplierDeliveryDelay } from "./supplier-delivery-delay";
+import { yearEndTermination } from "./year-end-termination";
 import { unsignedTransactions } from "./unsigned-transactions";
 import { driveArticles } from "./drive";
 import { fetchSanityArticles } from "./sanity";
@@ -31,6 +32,7 @@ const localArticles: readonly Article[] = [
   employmentLaw2025,
   evidenceAndProof,
   supplierDeliveryDelay,
+  yearEndTermination,
   // Published automatically from Google Drive by scripts/drive-sync (see its README).
   ...driveArticles,
 ];
