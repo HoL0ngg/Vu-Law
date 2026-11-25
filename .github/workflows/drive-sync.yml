@@ -101,6 +101,10 @@ jobs:
           if git diff --cached --quiet; then exit 0; fi
           python scripts/drive-sync/report.py commit-message "$RUNNER_TEMP/report.json" > "$RUNNER_TEMP/msg.txt"
           git commit -F "$RUNNER_TEMP/msg.txt"
+          # `npm run build` rewrites tracked files such as next-env.d.ts and tsconfig.tsbuildinfo.
+          # They are not part of the article, and `git pull --rebase` refuses to run while they
+          # are modified, so drop those edits first.
+          git checkout -- .
           git pull --rebase origin main
           git push origin HEAD:main
 
